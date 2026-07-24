@@ -1,0 +1,869 @@
+/* =========================================
+   FRAUDE BANCARIO
+   TEMA AZUL
+========================================= */
+
+
+.fb-page{
+
+    background:#ffffff;
+
+    color:#111827;
+
+    width:100%;
+
+}
+
+
+
+
+
+/* ==============================
+   HERO
+============================== */
+
+
+.fb-hero{
+
+    padding:120px 8% 90px;
+
+    text-align:center;
+
+    background:#eff6ff;
+
+}
+
+
+
+
+.fb-etiqueta{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+
+.fb-etiqueta svg{
+
+    color:#2563eb;
+
+}
+
+
+
+
+.fb-hero h1{
+
+    margin-top:25px;
+
+    font-size:48px;
+
+    line-height:1.2;
+
+    color:#111827;
+
+}
+
+
+
+
+.fb-hero p{
+
+    max-width:750px;
+
+    margin:25px auto;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#64748b;
+
+}
+
+
+
+
+.fb-hero a{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#0f766e;
+
+    color:white;
+
+    padding:14px 35px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================
+   TITULOS
+============================== */
+
+
+.fb-titulo{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:0 auto 45px;
+
+}
+
+
+
+.fb-titulo h2{
+
+    font-size:38px;
+
+    color:#111827;
+
+}
+
+
+
+.fb-titulo p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================
+   SECCIONES
+============================== */
+
+
+.fb-seccion{
+
+    padding:90px 8%;
+
+}
+
+
+
+
+.fb-fondo{
+
+    background:#f8fafc;
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   TARJETAS
+============================== */
+
+
+.fb-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+
+.fb-grid.cuatro{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+
+
+.fb-card{
+
+
+    background:white;
+
+
+    padding:35px 25px;
+
+
+    border-radius:22px;
+
+
+    border:1px solid #dbeafe;
+
+
+    box-shadow:0 10px 25px rgba(30,64,175,.10);
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.fb-card h3{
+
+    margin:20px 0 12px;
+
+    color:#1e40af;
+
+}
+
+
+
+
+.fb-card p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* ICONOS AZULES */
+
+
+.fb-icono{
+
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
+
+
+    border-radius:16px;
+
+
+    background:#dbeafe;
+
+
+    color:#2563eb;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    font-size:28px;
+
+}
+
+
+
+
+
+
+/* ==============================
+   TESTIMONIO
+============================== */
+
+
+.fb-testimonio{
+
+
+    margin-top:60px;
+
+
+    background:#f0f7ff;
+
+
+    border-radius:25px;
+
+
+    padding:45px;
+
+
+    text-align:center;
+
+
+    border:1px solid #bfdbfe;
+
+
+}
+
+
+
+
+.fb-testimonio svg{
+
+
+    color:#2563eb;
+
+    font-size:35px;
+
+
+}
+
+
+
+.fb-testimonio p{
+
+
+    max-width:800px;
+
+
+    margin:25px auto;
+
+
+    font-size:18px;
+
+
+    line-height:1.7;
+
+
+    font-style:italic;
+
+
+}
+
+
+
+
+.fb-testimonio strong{
+
+
+    display:block;
+
+    color:#111827;
+
+    font-size:20px;
+
+
+}
+
+
+
+.fb-testimonio span{
+
+
+    color:#64748b;
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================
+   FAQ
+============================== */
+
+
+.fb-faq{
+
+
+    max-width:900px;
+
+
+    margin:auto;
+
+
+}
+
+
+
+
+.fb-faq-item{
+
+
+    border:1px solid #bfdbfe;
+
+
+    border-radius:15px;
+
+
+    margin-bottom:15px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.fb-faq-item button{
+
+
+    width:100%;
+
+
+    padding:20px;
+
+
+    background:white;
+
+
+    border:none;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    cursor:pointer;
+
+
+    font-size:16px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+.fb-faq-item span{
+
+
+    color:#2563eb;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
+.fb-faq-respuesta{
+
+
+    padding:20px;
+
+
+    background:#eff6ff;
+
+
+    color:#475569;
+
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==============================
+   CASO DE EXITO
+============================== */
+
+
+.fb-caso{
+
+
+    margin:80px 8%;
+
+
+    display:grid;
+
+
+    grid-template-columns:350px 1fr;
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+
+.fb-caso-resultado{
+
+
+    background:#dbeafe;
+
+
+    border-radius:25px;
+
+
+    padding:45px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.fb-caso-resultado svg{
+
+
+    color:#2563eb;
+
+
+    font-size:40px;
+
+
+}
+
+
+
+
+
+.fb-caso-resultado h3{
+
+
+    color:#1e40af;
+
+
+}
+
+
+
+
+
+.fb-caso-resultado strong{
+
+
+    display:block;
+
+
+    font-size:40px;
+
+
+    color:#111827;
+
+
+    margin:20px 0;
+
+
+}
+
+
+
+
+
+.fb-caso-historia{
+
+
+    background:white;
+
+
+    border-radius:25px;
+
+
+    padding:40px;
+
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+.fb-caso-historia h2{
+
+
+    color:#111827;
+
+
+}
+
+
+
+.fb-caso-historia h3{
+
+
+    color:#2563eb;
+
+
+}
+
+
+
+.fb-caso-historia p{
+
+
+    color:#64748b;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+.fb-caso-historia a{
+
+
+    color:#0f766e;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==============================
+   SERVICIOS RELACIONADOS
+============================== */
+
+
+.fb-relacionados{
+
+
+    background:#f8fafc;
+
+
+    padding:70px 8%;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.fb-relacionados-grid{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:20px;
+
+
+}
+
+
+
+.fb-relacionados-grid a{
+
+
+    width:150px;
+
+
+    background:#e5e7eb;
+
+
+    color:#64748b;
+
+
+    padding:20px;
+
+
+    border-radius:18px;
+
+
+    text-decoration:none;
+
+
+}
+
+
+
+.fb-relacionados-grid svg{
+
+
+    display:block;
+
+
+    margin:auto auto 10px;
+
+
+    font-size:25px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==============================
+   WHATSAPP
+============================== */
+
+
+.fb-whatsapp{
+
+
+    position:fixed;
+
+
+    right:25px;
+
+
+    bottom:25px;
+
+
+    width:60px;
+
+
+    height:60px;
+
+
+    border-radius:50%;
+
+
+    background:#25d366;
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    font-size:30px;
+
+
+    z-index:999;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+
+@media(max-width:1000px){
+
+
+.fb-grid,
+
+.fb-grid.cuatro{
+
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.fb-caso{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.fb-hero h1{
+
+
+    font-size:36px;
+
+
+}
+
+
+
+}

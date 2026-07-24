@@ -1,446 +1,758 @@
 import React, { useState } from "react";
+import { FaSearch, FaWhatsapp, FaShieldAlt, FaGlobe, FaBalanceScale } from "react-icons/fa";
 import "../style/ListaNegraBrokers.css";
-
 
 const brokersData = [
 
     {
         nombre:"Global Trade FX",
         categoria:"Broker No Regulado",
-        estado:"lista"
+        estado:"lista",
+        fecha:"15 Marzo 2026"
     },
 
     {
         nombre:"CryptoMina MX",
         categoria:"Esquema Ponzi",
-        estado:"lista"
+        estado:"lista",
+        fecha:"22 Febrero 2026"
     },
 
     {
         nombre:"Support-Banamex.com",
         categoria:"Sitio Phishing",
-        estado:"lista"
+        estado:"lista",
+        fecha:"02 Abril 2026"
     },
 
     {
         nombre:"Go4Rex",
         categoria:"Broker No Regulado",
-        estado:"lista"
+        estado:"lista",
+        fecha:"18 Enero 2026"
     },
 
     {
         nombre:"70Trades",
         categoria:"Broker No Regulado",
-        estado:"lista"
+        estado:"lista",
+        fecha:"10 Marzo 2026"
     },
 
     {
         nombre:"AMG GPT",
         categoria:"Esquema de Inversión",
-        estado:"lista"
+        estado:"lista",
+        fecha:"28 Abril 2026"
     },
 
     {
         nombre:"Forex Blend",
         categoria:"Broker Forex",
-        estado:"lista"
+        estado:"lista",
+        fecha:"07 Mayo 2026"
     },
 
     {
         nombre:"FORTIS IM TRADE",
         categoria:"Plataforma Trading",
-        estado:"lista"
+        estado:"lista",
+        fecha:"20 Marzo 2026"
     },
 
     {
         nombre:"Omega Pro",
         categoria:"MLM / Cripto",
-        estado:"lista"
+        estado:"lista",
+        fecha:"14 Enero 2026"
     },
 
     {
         nombre:"Generación Zoe",
         categoria:"Esquema Ponzi",
-        estado:"lista"
+        estado:"lista",
+        fecha:"11 Febrero 2026"
     },
-
 
     {
         nombre:"eToro",
         categoria:"Broker Internacional",
-        estado:"precaucion"
+        estado:"precaucion",
+        fecha:"05 Junio 2026"
     },
 
     {
         nombre:"IQ Option",
         categoria:"Opciones Binarias",
-        estado:"precaucion"
+        estado:"precaucion",
+        fecha:"12 Mayo 2026"
     },
 
     {
         nombre:"XM Global",
         categoria:"Forex / CFDs",
-        estado:"precaucion"
+        estado:"precaucion",
+        fecha:"08 Junio 2026"
     },
 
     {
         nombre:"Exness",
         categoria:"Forex / CFDs",
-        estado:"precaucion"
+        estado:"precaucion",
+        fecha:"16 Mayo 2026"
     },
 
     {
         nombre:"Plus500",
         categoria:"CFDs",
-        estado:"precaucion"
+        estado:"precaucion",
+        fecha:"01 Junio 2026"
     }
 
 ];
-
-
-
-const preguntas = [
-
-    {
-       pregunta:"¿Por qué hay brokers en 'Precaución'?",
-        respuesta:"Porque algunas plataformas pueden operar internacionalmente, pero requieren verificar regulación, permisos y condiciones antes de invertir."
-    },
-
-    {
-        pregunta:"¿Cómo puedo denunciar un broker fraudulento?",
-        respuesta:"Puedes enviarnos información de la entidad para analizar antecedentes, señales de riesgo y posibles acciones."
-    },
-
-    {
-        pregunta:"¿Es seguro operar con brokers no regulados en México?",
-        respuesta:"Operar con entidades sin regulación comprobable aumenta el riesgo de pérdida patrimonial."
-    },
-
-    {
-        pregunta:"¿Su broker no aparece aquí?",
-        respuesta:"Nuestra base se actualiza constantemente. Puedes solicitar una revisión gratuita."
-    }
-
-];
-
-
-
 
 function ListaNegraBrokers(){
 
-    const [busqueda,setBusqueda] = useState("");
-    const [filtro,setFiltro] = useState("todos");
+    const [busqueda,setBusqueda]=useState("");
+
+    const [filtro,setFiltro]=useState("todos");
+
 
 
     const brokersFiltrados = brokersData.filter((broker)=>{
 
-
-        const coincideNombre =
-        broker.nombre
+        const nombreCoincide = broker.nombre
         .toLowerCase()
         .includes(busqueda.toLowerCase());
 
-
-        const coincideFiltro =
+        const filtroCoincide =
         filtro==="todos" ||
         broker.estado===filtro;
 
-
-        return coincideNombre && coincideFiltro;
+        return nombreCoincide && filtroCoincide;
 
     });
 
 
 
+
     return(
 
-        <main className="lista-brokers">
+<main className="lista-brokers">
 
 
-            {/* HERO */}
 
-            <section className="broker-hero">
 
-                <div>
+{/* HERO */}
 
-                    <h1>
-                        Lista Negra de Brokers
-                    </h1>
 
-                    <p>
-                        Consulte nuestra base de datos de entidades financieras 
-                        identificadas con señales de riesgo. Proteja su patrimonio 
-                        verificando antes de invertir.
-                    </p>
+<section className="broker-hero">
 
+    <div className="hero-contenido">
 
-                    <button
-                    onClick={()=>
-                    document
-                    .getElementById("reporte")
-                    .scrollIntoView()
-                    }
-                    >
-                        Reportar Broker
-                    </button>
+        <h1>
 
-                </div>
+            Lista Negra de Brokers
 
-            </section>
+        </h1>
 
+        <p>
 
+            Consulte nuestra base de datos de entidades financieras
+            identificadas con señales de riesgo. Proteja su patrimonio
+            verificando antes de invertir.
 
+        </p>
 
-            {/* BUSCADOR */}
+    </div>
 
-            <section className="buscador-brokers">
+</section>
 
 
-                <h2>
-                    Buscar Broker
-                </h2>
 
 
-                <input
 
-                type="text"
 
-                placeholder="Escribe el nombre del broker"
+{/* BUSCADOR */}
 
-                value={busqueda}
 
-                onChange={(e)=>
-                setBusqueda(e.target.value)
-                }
+<section className="buscador-section">
 
-                />
+    <h2>
 
+        Buscar Broker
 
-            </section>
+    </h2>
 
 
+    <div className="buscador-box">
 
+        <FaSearch className="icon-search"/>
 
+        <input
 
-            {/* FILTROS */}
+        type="text"
 
-            <section className="filtros-brokers">
+        placeholder="Escribe el nombre del broker"
 
+        value={busqueda}
 
-                <button
-                className={filtro==="todos" ? "activo":""}
-                onClick={()=>setFiltro("todos")}
-                >
-                    Todos
-                </button>
+        onChange={(e)=>setBusqueda(e.target.value)}
 
+        />
 
-                <button
-                className={filtro==="lista" ? "activo":""}
-                onClick={()=>setFiltro("lista")}
-                >
-                    Lista Negra
-                </button>
+    </div>
 
 
-                <button
-                className={filtro==="precaucion" ? "activo":""}
-                onClick={()=>setFiltro("precaucion")}
-                >
-                    Precaución
-                </button>
+    <button
 
+    className="reportar-btn"
 
-            </section>
+    onClick={()=>document.getElementById("reporte").scrollIntoView({behavior:"smooth"})}
 
+    >
 
+        Reportar Broker
 
+    </button>
 
+</section>
 
 
-            {/* TARJETAS */}
 
-            <section className="tarjetas-brokers">
 
 
-                {
-                    brokersFiltrados.map((broker,index)=>(
 
+{/* FILTROS */}
 
-                        <article
-                        className={`broker-card ${broker.estado}`}
-                        key={index}
-                        >
 
+<section className="filtros-brokers">
 
-                            <h3>
-                                {broker.nombre}
-                            </h3>
 
+<button
 
-                            <span>
-                                {broker.categoria}
-                            </span>
+className={filtro==="todos" ? "activo" : ""}
 
+onClick={()=>setFiltro("todos")}
 
-                            <p>
+>
 
-                            {
-                            broker.estado==="lista"
-                            ?
-                            "⚠️ Entidad con señales de riesgo"
-                            :
-                            "🔎 Requiere verificar regulación"
-                            }
+Todos
 
-                            </p>
+</button>
 
 
-                        </article>
 
+<button
 
-                    ))
-                }
+className={filtro==="lista" ? "activo" : ""}
 
+onClick={()=>setFiltro("lista")}
 
-            </section>
+>
 
+Lista Negra
 
+</button>
 
 
 
 
-            {/* FAQ */}
+<button
 
-            <section className="faq-brokers">
+className={filtro==="precaucion" ? "activo" : ""}
 
+onClick={()=>setFiltro("precaucion")}
 
-                <h2>
-                    Preguntas frecuentes sobre Brokers
-                </h2>
+>
 
+Precaución
 
-                {
-                    preguntas.map((item,index)=>(
+</button>
 
-                        <article key={index}>
 
-                            <h3>
-                                {item.pregunta}
-                            </h3>
+</section>
 
-                            <p>
-                                {item.respuesta}
-                            </p>
 
-                        </article>
 
-                    ))
-                }
 
 
-            </section>
 
+{/* TARJETAS */}
 
 
 
+<section className="tarjetas-brokers">
 
 
+{
 
-            {/* FORMULARIO */}
+brokersFiltrados.map((broker,index)=>(
 
-            <section 
-            className="reporte-broker"
-            id="reporte"
-            >
 
+<div
 
-                <div className="reporte-info">
+className={`broker-card ${broker.estado}`}
 
+key={index}
 
-                    <h2>
-                        ¿Fuiste víctima de un broker?
-                    </h2>
+>
 
+<div className="estado-broker">
 
-                    <p>
-                        Podemos ayudarte a analizar tu caso,
-                        revisar información disponible y orientarte
-                        sobre los siguientes pasos.
-                    </p>
+{
 
+broker.estado==="lista"
 
-                    <button>
-                        Reportar entidad sospechosa
-                    </button>
+?
 
+<span className="badge-lista">
 
-                </div>
+Lista Negra
 
+</span>
 
+:
 
+<span className="badge-precaucion">
 
+Precaución
 
-                <form className="formulario-broker">
-
-
-                    <input
-                    type="text"
-                    placeholder="Nombre completo"
-                    />
-
-
-                    <input
-                    type="email"
-                    placeholder="Correo electrónico"
-                    />
-
-
-                    <input
-                    type="tel"
-                    placeholder="Teléfono"
-                    />
-
-
-                    <input
-                    type="text"
-                    placeholder="Nombre del broker"
-                    />
-
-
-                    <input
-                    type="text"
-                    placeholder="Monto aproximado"
-                    />
-
-
-                    <textarea
-                    placeholder="Cuéntanos tu caso"
-                    ></textarea>
-
-
-                    <button>
-                        Enviar caso
-                    </button>
-
-
-                    <small>
-                        🔒 Información protegida mediante cifrado 256-bits.
-                    </small>
-
-
-                </form>
-
-
-            </section>
-
-
-
-        </main>
-
-    );
+</span>
 
 }
 
+</div>
+
+
+<h3>
+
+{broker.nombre}
+
+</h3>
+
+
+<h4>
+
+{broker.categoria}
+
+</h4>
+
+
+<p className="fecha-reporte">
+
+Reportado:
+
+<strong>
+
+{broker.fecha}
+
+</strong>
+
+</p>
+
+
+<p>
+
+{
+
+broker.estado==="lista"
+
+?
+
+"Entidad identificada con señales de riesgo."
+
+:
+
+"Se recomienda verificar regulación antes de invertir."
+
+}
+
+</p>
+
+</div>
+
+))
+
+}
+
+</section>
+{/* ============================
+    PREGUNTAS FRECUENTES
+============================ */}
+
+<section className="faq-brokers">
+
+    <h2>
+
+        Preguntas Frecuentes sobre Brokers
+
+    </h2>
+
+
+    <details>
+
+        <summary>
+
+            ¿Por qué hay brokers en "Precaución"?
+
+        </summary>
+
+        <p>
+
+            Algunas plataformas operan internacionalmente y ofrecen
+            servicios financieros de alto riesgo. Antes de invertir,
+            recomendamos verificar su regulación y autorización para
+            operar en su país.
+
+        </p>
+
+    </details>
+
+
+
+    <details>
+
+        <summary>
+
+            ¿Cómo puedo denunciar un broker fraudulento?
+
+        </summary>
+
+        <p>
+
+            Puede enviarnos la información disponible de la entidad
+            para realizar una revisión preventiva de antecedentes,
+            licencias y posibles alertas regulatorias.
+
+        </p>
+
+    </details>
+
+
+
+
+    <details>
+
+        <summary>
+
+            ¿Debo pagar impuestos por inversiones en el extranjero?
+
+        </summary>
+
+        <p>
+
+            Las obligaciones fiscales dependen del país de residencia
+            y del tipo de inversión realizada. Recomendamos recibir
+            asesoría especializada.
+
+        </p>
+
+    </details>
+
+
+
+
+    <details>
+
+        <summary>
+
+            ¿Es seguro operar con brokers no regulados en México?
+
+        </summary>
+
+        <p>
+
+            Operar con entidades sin regulación comprobable aumenta
+            significativamente el riesgo de fraude y de pérdida
+            patrimonial.
+
+        </p>
+
+    </details>
+
+</section>
+
+
+
+
+
+
+{/* ============================
+        FORMULARIO
+============================ */}
+
+<section
+
+className="reporte-broker"
+
+id="reporte"
+
+>
+
+
+
+
+
+<div className="reporte-info">
+
+
+
+<h2>
+
+¿Su broker no aparece aquí?
+
+</h2>
+
+
+
+<p>
+
+Nuestra lista negra se actualiza mensualmente.
+
+Si tiene sospechas sobre una entidad financiera,
+
+podemos realizar una verificación preventiva
+
+de antecedentes regulatorios.
+
+</p>
+
+
+
+
+
+<div className="info-item">
+
+<FaShieldAlt/>
+
+<div>
+
+<h4>
+
+Verificación de licencia
+
+</h4>
+
+<p>
+
+Comprobamos autorizaciones y registros.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div className="info-item">
+
+<FaGlobe/>
+
+<div>
+
+<h4>
+
+Rastreo de IP y dominios
+
+</h4>
+
+<p>
+
+Analizamos antecedentes digitales.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div className="info-item">
+
+<FaBalanceScale/>
+
+<div>
+
+<h4>
+
+Historial legal
+
+</h4>
+
+<p>
+
+Revisamos reportes y alertas públicas.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div className="linea-directa">
+
+<p>
+
+Línea directa
+
+</p>
+
+<h3>
+
+5663820152
+
+</h3>
+
+<span>
+
+recuperacionasistente@gmail.com
+
+</span>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<form className="formulario-broker">
+
+
+
+<input
+
+type="text"
+
+placeholder="Nombre completo"
+
+/>
+
+
+
+<input
+
+type="email"
+
+placeholder="Correo electrónico"
+
+/>
+
+
+
+<input
+
+type="tel"
+
+placeholder="Teléfono"
+
+/>
+
+
+
+<input
+
+type="text"
+
+placeholder="Monto aproximado perdido"
+
+/>
+
+
+
+<textarea
+
+placeholder="Describa brevemente su caso"
+
+></textarea>
+
+
+
+
+
+<button>
+
+Enviar Consulta
+
+</button>
+
+
+
+
+
+<small>
+
+Información encriptada mediante cifrado AES-256.
+
+Tus datos son tratados de forma confidencial.
+
+</small>
+
+
+
+
+
+</form>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+{/* BOTON FLOTANTE WHATSAPP */}
+
+
+
+<a
+
+href="https://wa.me/5663820152"
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+className="whatsapp-float"
+
+>
+
+<FaWhatsapp/>
+
+</a>
+
+
+
+
+
+</main>
+
+);
+
+}
 
 export default ListaNegraBrokers;

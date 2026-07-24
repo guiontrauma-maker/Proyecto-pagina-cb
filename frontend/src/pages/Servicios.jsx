@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import "../style/Servicios.css";
 
-
 import {
     FaBalanceScale,
     FaGlobe,
@@ -27,30 +26,26 @@ import {
 } from "react-icons/fa";
 
 
-
 function Servicios(){
 
-
-const [faqActivo, setFaqActivo] = useState(null);
-
+    const [faqActivo, setFaqActivo] = useState(null);
 
 
-const abrirFaq = (index)=>{
+    const abrirFaq = (index)=>{
 
-    setFaqActivo(
-        faqActivo === index ? null : index
-    );
+        setFaqActivo(
+            faqActivo === index ? null : index
+        );
 
-};
+    };
+
 
 return(
-
 
 <main className="servicios-page">
 
 
-
-
+{/* HERO */}
 
 <section className="servicios-hero">
 
@@ -58,9 +53,7 @@ return(
 <div className="servicios-hero-content">
 
 
-
 <h1>
-
 
 <span className="titulo-pequeno">
 
@@ -69,17 +62,13 @@ Nuestros Servicios:
 </span>
 
 
-
 <span className="titulo-principal">
 
 EXPERTOS EN RECUPERACIÓN DE ACTIVOS
 
 </span>
 
-
 </h1>
-
-
 
 
 
@@ -94,14 +83,10 @@ lo que te pertenece.
 
 
 
-
-
-
 <div className="hero-buttons">
 
 
 <a href="#areas-practica">
-
 
 <button>
 
@@ -109,12 +94,11 @@ Explora nuestros servicios
 
 </button>
 
-
 </a>
 
 
-<a href="#testimonios">
 
+<a href="#testimonios">
 
 <button className="outline-btn">
 
@@ -122,12 +106,11 @@ Ver casos de éxito
 
 </button>
 
-
 </a>
 
 
-
 </div>
+
 
 </div>
 
@@ -136,8 +119,11 @@ Ver casos de éxito
 
 
 
-<section className="reconocidos-section">
 
+
+{/* RECONOCIDOS */}
+
+<section className="reconocidos-section">
 
 
 <h2>
@@ -148,11 +134,7 @@ Reconocidos por nuestra efectividad en
 
 
 
-
-
 <div className="reconocidos-grid">
-
-
 
 
 
@@ -161,12 +143,12 @@ Reconocidos por nuestra efectividad en
 <FaBalanceScale/>
 
 <span>
+
 Tribunales Federales
+
 </span>
 
 </div>
-
-
 
 
 
@@ -175,12 +157,12 @@ Tribunales Federales
 <FaGlobe/>
 
 <span>
+
 Arbitraje Internacional
+
 </span>
 
 </div>
-
-
 
 
 
@@ -189,12 +171,12 @@ Arbitraje Internacional
 <FaUniversity/>
 
 <span>
+
 CONDUSEF
+
 </span>
 
 </div>
-
-
 
 
 
@@ -203,12 +185,12 @@ CONDUSEF
 <FaShieldAlt/>
 
 <span>
+
 CyberForensics
+
 </span>
 
 </div>
-
-
 
 
 
@@ -217,19 +199,25 @@ CyberForensics
 <FaChartLine/>
 
 <span>
+
 Recuperación Forex y CFDs
+
 </span>
 
 </div>
 
 
-
-
 </div>
 
 
-
 </section>
+
+
+
+
+
+
+{/* AREAS DE PRACTICA */}
 
 
 <section 
@@ -263,8 +251,9 @@ Soluciones especializadas para distintos tipos de fraude financiero.
 
 
 
-
 <div className="areas-grid">
+
+
 
 
 
@@ -286,12 +275,14 @@ Fraudes Bancarios
 </h3>
 
 
+
 <p>
 
 Phishing, transferencias no reconocidas y operaciones
 bancarias fraudulentas.
 
 </p>
+
 
 
 <a href="/servicios/fraudes-bancarios">
@@ -301,8 +292,12 @@ Ver detalles →
 </a>
 
 
-
 </article>
+
+
+
+
+
 
 <article className="area-card fraude-digital">
 
@@ -339,8 +334,12 @@ Ver detalles →
 </a>
 
 
-
 </article>
+
+
+
+
+
 
 <article className="area-card identidad">
 
@@ -358,6 +357,7 @@ Ver detalles →
 Robo de Identidad
 
 </h3>
+
 
 
 <p>
@@ -378,6 +378,11 @@ Ver detalles →
 </article>
 
 
+
+
+
+
+
 <article className="area-card forex">
 
 
@@ -396,12 +401,14 @@ Estafas de Inversión
 </h3>
 
 
+
 <p>
 
 Recuperación de activos relacionados con brokers fraudulentos,
 Forex y CFDs.
 
 </p>
+
 
 
 <a href="/servicios/estafas-inversion">
@@ -411,8 +418,13 @@ Ver detalles →
 </a>
 
 
-
 </article>
+
+
+
+
+
+
 
 <article className="area-card romanticas">
 
@@ -441,7 +453,6 @@ Investigación de engaños sentimentales y redes internacionales.
 
 
 
-
 <a href="/servicios/estafas-romanticas">
 
 Ver detalles →
@@ -449,8 +460,13 @@ Ver detalles →
 </a>
 
 
-
 </article>
+
+
+
+
+
+
 
 <article className="area-card piramidales">
 
@@ -486,14 +502,16 @@ Ver detalles →
 </a>
 
 
-
 </article>
+
+
+
 
 </div>
 
+
 </section>
-
-
+{/* DETALLE FOREX */}
 
 <section className="servicio-detalle">
 
@@ -501,12 +519,17 @@ Ver detalles →
 <div className="detalle-left">
 
 
-<h2>
+<div className="titulo-servicio">
 
-Recuperación en Forex y CFDs
+    <div className="icono-titulo forex-icono">
+        <FaChartLine/>
+    </div>
 
-</h2>
+    <h2>
+        Recuperación en Forex y CFDs
+    </h2>
 
+</div>
 
 
 
@@ -533,8 +556,10 @@ finalmente desaparecen.
 </p>
 
 
-
 </div>
+
+
+
 
 
 <div className="detalle-card forex-card">
@@ -578,13 +603,13 @@ Chargebacks estratégicos y documentación técnica.
 </ul>
 
 
+</div>
+
 
 </div>
 
 
 
-
-</div>
 
 
 <div className="detalle-right">
@@ -611,14 +636,12 @@ $45,000 USD Recuperados
 </strong>
 
 
-
 <p>
 
 Recuperación mediante investigación financiera
 y estrategia internacional.
 
 </p>
-
 
 
 </div>
@@ -648,13 +671,22 @@ no regulados.
 </div>
 
 
-
-
 </div>
 
 
 
 </section>
+
+
+
+
+
+
+
+
+
+{/* CRIPTOMONEDAS */}
+
 
 <section className="servicio-detalle cripto-section">
 
@@ -663,11 +695,19 @@ no regulados.
 
 
 
-<h2>
+<div className="titulo-servicio">
 
-Fraudes con Criptomonedas
+    <div className="icono-titulo cripto-icono">
+        <FaBitcoin/>
+    </div>
 
-</h2>
+    <h2>
+        Fraudes con Criptomonedas
+    </h2>
+
+</div>
+
+
 
 
 
@@ -694,8 +734,13 @@ fondos terminan pasando por exchanges regulados.
 </p>
 
 
-
 </div>
+
+
+
+
+
+
 
 <div className="detalle-card cripto-card">
 
@@ -735,19 +780,22 @@ Solicitud de congelamiento de fondos.
 </li>
 
 
-
 </ul>
 
 
+</div>
+
+
 
 </div>
 
 
 
 
-</div>
+
 
 <div className="detalle-right">
+
 
 
 <div className="caso-card">
@@ -777,8 +825,11 @@ investigación blockchain.
 </p>
 
 
-
 </div>
+
+
+
+
 
 <div className="mini-card colaboracion">
 
@@ -805,18 +856,41 @@ de exchanges globales.
 </section>
 
 
+
+
+
+
+
+
+
+{/* ESQUEMAS PIRAMIDALES */}
+
+
 <section className="servicio-detalle">
+
 
 
 <div className="detalle-left">
 
 
 
-<h2>
+<div className="titulo-servicio">
 
-Esquemas Piramidales (Ponzi)
+    <div className="icono-titulo ponzi-icono">
+        <FaUsers/>
+    </div>
 
-</h2>
+    <h2>
+        Esquemas Piramidales (Ponzi)
+    </h2>
+
+</div>
+
+
+
+
+
+
 
 <div className="detalle-card piramidal-card">
 
@@ -840,8 +914,11 @@ y generan conflictos legales entre afectados.
 </p>
 
 
-
 </div>
+
+
+
+
 
 <div className="detalle-card piramidal-card">
 
@@ -880,14 +957,22 @@ Representación colectiva.
 
 </li>
 
+
 </ul>
 
 
+</div>
+
+
 
 </div>
 
 
-</div>
+
+
+
+
+
 <div className="detalle-right">
 
 
@@ -921,6 +1006,10 @@ patrimonio.
 
 </div>
 
+
+
+
+
 <div className="mini-card">
 
 
@@ -937,11 +1026,15 @@ Litigio Civil y Mercantil
 </div>
 
 
+
 </div>
 
 
 
 </section>
+
+{/* OTRAS ESPECIALIDADES */}
+
 
 <section className="otras-especialidades">
 
@@ -967,7 +1060,15 @@ Estrategias adaptadas para diferentes tipos de fraude.
 
 </div>
 
+
+
+
+
 <div className="especialidades-grid">
+
+
+
+
 
 <article className="especialidad-card broker">
 
@@ -999,8 +1100,14 @@ Consultar sobre mi Broker →
 </a>
 
 
-
 </article>
+
+
+
+
+
+
+
 <article className="especialidad-card romantica">
 
 
@@ -1031,8 +1138,13 @@ Solicitar investigación →
 </a>
 
 
-
 </article>
+
+
+
+
+
+
 
 <article className="especialidad-card bancaria-grande">
 
@@ -1078,9 +1190,7 @@ de reclamación.
 </p>
 
 
-
 </div>
-
 
 
 
@@ -1096,9 +1206,15 @@ Reportar ahora →
 
 </article>
 
+
+
+
 </div>
 
+
 </section>
+{/* COMO LUCHAMOS */}
+
 <section className="como-luchamos">
 
 
@@ -1121,7 +1237,14 @@ Un proceso diseñado para analizar, investigar y actuar.
 
 
 </div>
+
+
+
+
+
 <div className="proceso-linea">
+
+
 
 <div className="paso-proceso">
 
@@ -1143,6 +1266,7 @@ Evaluamos tu caso
 </h3>
 
 
+
 <p>
 
 Analizamos la información inicial y conocemos
@@ -1155,8 +1279,6 @@ los detalles de tu situación.
 
 
 </div>
-
-
 
 
 
@@ -1182,6 +1304,7 @@ Investigamos evidencia
 </h3>
 
 
+
 <p>
 
 Revisamos documentos, movimientos y pruebas
@@ -1194,6 +1317,10 @@ relacionadas con el fraude.
 
 
 </div>
+
+
+
+
 
 <div className="paso-proceso">
 
@@ -1215,6 +1342,7 @@ Definimos una estrategia
 </h3>
 
 
+
 <p>
 
 Seleccionamos las acciones legales y financieras
@@ -1227,6 +1355,12 @@ más adecuadas.
 
 
 </div>
+
+
+
+
+
+
 <div className="paso-proceso">
 
 
@@ -1247,6 +1381,7 @@ Damos seguimiento
 </h3>
 
 
+
 <p>
 
 Acompañamos el proceso hasta obtener resultados.
@@ -1261,10 +1396,15 @@ Acompañamos el proceso hasta obtener resultados.
 
 
 
+
 </div>
 
-<div className="garantia-box">
 
+
+
+
+
+<div className="garantia-box">
 
 
 <div className="garantia-icon">
@@ -1274,6 +1414,9 @@ Acompañamos el proceso hasta obtener resultados.
 
 
 </div>
+
+
+
 
 <div>
 
@@ -1294,7 +1437,6 @@ patrimonial.
 </p>
 
 
-
 </div>
 
 
@@ -1309,13 +1451,13 @@ Solicitar evaluación
 
 
 
-
-
 </div>
 
 
 
 </section>
+{/* TESTIMONIOS */}
+
 
 <section 
 className="testimonios-servicios"
@@ -1324,48 +1466,44 @@ id="testimonios"
 
 
 
-
 <div className="estadisticas-testimonios">
 
 
-<div>
-
-<strong>
-
+<span>
 Resultados comprobados
-
-</strong>
-
-</div>
+</span>
 
 
-
-<div>
-
-<strong>
-
+<span>
 +500 casos exitosos
-
-</strong>
-
-
-</div>
-
+</span>
 
 
 </div>
+
+
+
+
+
 
 <div className="section-header">
 
 
 <h2>
 
-Lo que dicen nuestros clientes
+Lo que Dicen Nuestros Clientes
 
 </h2>
 
 
 </div>
+
+
+
+
+
+
+
 <div className="testimonios-grid">
 
 
@@ -1378,14 +1516,14 @@ Lo que dicen nuestros clientes
 
 <div className="stars">
 
-
 <FaStar/>
 <FaStar/>
 <FaStar/>
 <FaStar/>
-
+<FaStar/>
 
 </div>
+
 
 
 
@@ -1398,26 +1536,37 @@ durante todo el proceso."
 
 
 
+
 <strong>
 
-Nombre del cliente
+-Maria G., Guadalajara
 
 </strong>
+
+
+
 </article>
+
+
+
+
+
+
+
 
 <article className="testimonio-card">
 
 
 <div className="stars">
 
-
 <FaStar/>
 <FaStar/>
 <FaStar/>
 <FaStar/>
-
+<FaStar/>
 
 </div>
+
 
 
 
@@ -1430,43 +1579,53 @@ para recuperar nuestro patrimonio."
 
 
 
+
 <strong>
 
-Nombre del cliente
+-Alfonso T., Ciudad de México
 
 </strong>
 
 
 
 </article>
+
+
+
+
+
+
+
+
 <article className="testimonio-card">
 
 
 <div className="stars">
 
-
 <FaStar/>
 <FaStar/>
 <FaStar/>
 <FaStar/>
-
+<FaStar/>
 
 </div>
+
 
 
 
 <p>
 
 "El seguimiento profesional nos dio tranquilidad
-durante el procedimiento."
+durante todo el procedimiento."
 
 </p>
 
 
 
+
 <strong>
 
-Nombre del cliente
+-David R., Puebla
 
 </strong>
 
@@ -1484,11 +1643,14 @@ Nombre del cliente
 
 
 </section>
+
+{/* FORMULARIO */}
+
+
 <section 
 className="formulario-servicios"
 id="formulario-servicios"
 >
-
 
 
 
@@ -1510,6 +1672,7 @@ Recupere su patrimonio
 
 
 
+
 <p>
 
 Cuéntenos su caso. Nuestro equipo analizará
@@ -1522,10 +1685,12 @@ para iniciar una estrategia de recuperación.
 
 
 
+
 <div className="info-item">
 
 
 <FaShieldAlt/>
+
 
 <span>
 
@@ -1545,6 +1710,7 @@ Evaluación confidencial de su caso.
 
 <FaCheckCircle/>
 
+
 <span>
 
 Estrategias personalizadas.
@@ -1557,8 +1723,13 @@ Estrategias personalizadas.
 
 
 
-
 </div>
+
+
+
+
+
+
 
 <div className="formulario-box">
 
@@ -1571,6 +1742,7 @@ Estrategias personalizadas.
 <div className="form-row">
 
 
+
 <input
 
 type="text"
@@ -1578,6 +1750,8 @@ type="text"
 placeholder="Nombre completo"
 
 />
+
+
 
 
 
@@ -1590,9 +1764,18 @@ placeholder="Correo electrónico"
 />
 
 
+
 </div>
 
+
+
+
+
+
+
 <div className="form-row">
+
+
 
 <input
 
@@ -1601,6 +1784,9 @@ type="tel"
 placeholder="Número telefónico"
 
 />
+
+
+
 
 
 <input
@@ -1613,8 +1799,8 @@ placeholder="Monto estimado afectado"
 
 
 
-
 </div>
+
 
 
 
@@ -1644,6 +1830,7 @@ Enviar solicitud
 
 
 
+
 <div className="seguridad">
 
 
@@ -1662,30 +1849,35 @@ Sus datos son tratados con estricta confidencialidad.
 
 
 
-
 </form>
 
 
 
 
-
 </div>
 
 
 
 
 
-
 </div>
-
 
 
 
 </section>
 
+
+
+
+
+
+
+
+
+{/* FAQ */}
+
+
 <section className="faq-servicios">
-
-
 
 
 
@@ -1699,9 +1891,7 @@ Preguntas frecuentes
 </h2>
 
 
-
 </div>
-
 
 
 
@@ -1715,40 +1905,30 @@ Preguntas frecuentes
 
 {[
 
-{
 
+{
 pregunta:"¿Pueden recuperar mi dinero?",
-
 respuesta:"Cada caso es diferente. Primero analizamos la información disponible para determinar las alternativas posibles."
-
 },
 
 
 {
-
 pregunta:"¿Cuánto tarda un proceso?",
-
 respuesta:"El tiempo depende del tipo de fraude, instituciones involucradas y complejidad del caso."
-
 },
 
 
 {
-
 pregunta:"¿Qué información necesito?",
-
 respuesta:"Transferencias, comprobantes, conversaciones y cualquier evidencia relacionada con el fraude."
-
 },
 
 
 {
-
 pregunta:"¿Atienden casos internacionales?",
-
 respuesta:"Sí, analizamos casos con componentes nacionales e internacionales."
-
 }
+
 
 
 ].map((faq,index)=>(
@@ -1780,9 +1960,8 @@ onClick={()=>abrirFaq(index)}
 </span>
 
 
+
 </button>
-
-
 
 
 
@@ -1802,8 +1981,6 @@ onClick={()=>abrirFaq(index)}
 
 
 
-
-
 </div>
 
 
@@ -1813,9 +1990,6 @@ onClick={()=>abrirFaq(index)}
 
 
 </div>
-
-
-
 
 
 
@@ -1829,23 +2003,25 @@ onClick={()=>abrirFaq(index)}
 
 
 
+{/* WHATSAPP FLOTANTE */}
+
 
 
 <a
 
-href="#"
+href="https://wa.me/5663820152"
 
-className="whatsapp-button"
+target="_blank"
+
+rel="noopener noreferrer"
+
+className="whatsapp-float"
 
 >
 
-
 <FaWhatsapp/>
 
-
 </a>
-
-
 
 
 
@@ -1858,7 +2034,6 @@ className="whatsapp-button"
 
 
 }
-
 
 
 export default Servicios;

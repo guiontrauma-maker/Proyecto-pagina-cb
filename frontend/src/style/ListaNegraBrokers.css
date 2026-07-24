@@ -1,87 +1,168 @@
-/* =====================================
-   LISTA NEGRA DE BROKERS
-===================================== */
-
-
-/* RESET */
+/*====================================
+    LISTA NEGRA DE BROKERS
+====================================*/
 
 .lista-brokers{
 
     width:100%;
+
     overflow:hidden;
 
-    font-family:Arial, Helvetica, sans-serif;
-
-    color:#1b1b1b;
+    background:#f7f9fc;
 
 }
 
 
-/* =====================================
-   HERO
-===================================== */
 
+/*====================================
+    HERO
+====================================*/
 
 .broker-hero{
 
-    min-height:430px;
+    padding:150px 8% 70px;
 
-    background:#0B2340;
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+.hero-contenido{
+
+    max-width:850px;
+
+}
+
+
+
+.hero-contenido h1{
+
+    font-size:52px;
+
+    color:#020602;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+
+
+.hero-contenido p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#5f6b7a;
+
+}
+
+
+
+
+
+/*====================================
+    BUSCADOR
+====================================*/
+
+.buscador-section{
+
+    padding:10px 8% 50px;
+
+    text-align:center;
+
+}
+
+
+
+.buscador-section h2{
+
+    color:#223d23;
+
+    margin-bottom:25px;
+
+    font-size:30px;
+
+}
+
+
+
+.buscador-box{
+
+    max-width:750px;
+
+    margin:auto;
 
     display:flex;
 
     align-items:center;
 
-    padding:100px 8%;
+    background:#fff;
 
-}
+    border-radius:12px;
 
+    padding:0 20px;
 
-.broker-hero div{
+    height:65px;
 
-    max-width:750px;
-
-}
-
-
-
-.broker-hero h1{
-
-    color:white;
-
-    font-size:48px;
-
-    margin-bottom:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 
 }
 
 
 
-.broker-hero p{
+.icon-search{
 
-    color:#e8edf2;
+    color:#008060;
 
-    font-size:20px;
-
-    line-height:1.6;
-
-    margin-bottom:35px;
+    font-size:22px;
 
 }
 
 
 
-.broker-hero button{
+.buscador-box input{
 
-    background:#22c55e;
+    flex:1;
 
-    color:white;
+    height:100%;
 
     border:none;
 
+    outline:none;
+
+    padding-left:15px;
+
+    font-size:17px;
+
+    background:none;
+
+}
+
+
+
+.reportar-btn{
+
+    margin-top:30px;
+
     padding:15px 35px;
 
-    border-radius:30px;
+    border:none;
+
+    border-radius:10px;
+
+    background:#008060;
+
+    color:white;
 
     font-size:16px;
 
@@ -95,73 +176,19 @@
 
 
 
-.broker-hero button:hover{
+.reportar-btn:hover{
 
-    transform:translateY(-3px);
-
-}
-
-
-
-/* =====================================
-   BUSCADOR
-===================================== */
-
-
-.buscador-brokers{
-
-    padding:70px 8% 30px;
-
-    text-align:center;
+    background:#00a86b;
 
 }
 
 
 
-.buscador-brokers h2{
-
-    color:#0B2340;
-
-    font-size:32px;
-
-    margin-bottom:25px;
-
-}
 
 
-
-.buscador-brokers input{
-
-    width:70%;
-
-    max-width:650px;
-
-    padding:18px 25px;
-
-    border:1px solid #ddd;
-
-    border-radius:12px;
-
-    font-size:16px;
-
-    outline:none;
-
-}
-
-
-
-.buscador-brokers input:focus{
-
-    border-color:#22c55e;
-
-}
-
-
-
-/* =====================================
-   FILTROS
-===================================== */
-
+/*====================================
+    FILTROS
+====================================*/
 
 .filtros-brokers{
 
@@ -169,9 +196,11 @@
 
     justify-content:center;
 
-    gap:20px;
+    gap:18px;
 
-    padding:30px 8%;
+    margin-bottom:50px;
+
+    flex-wrap:wrap;
 
 }
 
@@ -179,17 +208,17 @@
 
 .filtros-brokers button{
 
-    padding:12px 30px;
+    padding:13px 28px;
 
     border:none;
 
-    border-radius:25px;
+    border-radius:30px;
 
     cursor:pointer;
 
-    background:#eee;
+    background:#e8ecef;
 
-    font-weight:bold;
+    font-weight:600;
 
     transition:.3s;
 
@@ -199,7 +228,7 @@
 
 .filtros-brokers button:hover{
 
-    background:#22c55e;
+    background:#51715f;
 
     color:white;
 
@@ -209,28 +238,26 @@
 
 .filtros-brokers .activo{
 
-    background:#0B2340;
+    background:#295137;
 
     color:white;
 
 }
-
-
-
-/* =====================================
-   TARJETAS
-===================================== */
-
+/*====================================
+    TARJETAS
+====================================*/
 
 .tarjetas-brokers{
 
-    padding:40px 8% 80px;
+    width:84%;
+
+    margin:0 auto 90px;
 
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:25px;
+    gap:28px;
 
 }
 
@@ -238,15 +265,19 @@
 
 .broker-card{
 
+    position:relative;
+
+    overflow:hidden;
+
     background:white;
 
     border-radius:18px;
 
-    padding:30px;
+    padding:28px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    min-height:250px;
 
-    border-left:6px solid #22c55e;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 
     transition:.3s;
 
@@ -256,184 +287,242 @@
 
 .broker-card:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
+
+    box-shadow:0 16px 30px rgba(0,0,0,.14);
 
 }
 
 
+
+/*====================================
+    FRANJA LATERAL
+====================================*/
+
+.broker-card.lista::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:#d62828;
+
+}
+
+
+
+.broker-card.precaucion::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:#d4a017;
+
+}
+
+
+
+/*====================================
+    ESTADO
+====================================*/
+
+.estado-broker{
+
+    margin-bottom:16px;
+
+}
+
+
+
+.badge-lista{
+
+    background:#ffe3e3;
+
+    color:#c1121f;
+
+    padding:7px 16px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+
+.badge-precaucion{
+
+    background:#fff5d8;
+
+    color:#b77900;
+
+    padding:7px 16px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+
+/*====================================
+    NOMBRE DEL BROKER
+====================================*/
 
 .broker-card h3{
 
     color:#0B2340;
 
-    font-size:22px;
+    font-size:21px;
+
+    font-weight:500;
+
+    margin-bottom:8px;
+
+}
+
+
+
+/*====================================
+    CATEGORÍA
+====================================*/
+
+.broker-card h4{
+
+    color:#008060;
 
     margin-bottom:15px;
 
+    font-size:15px;
+
+    font-weight:600;
+
 }
 
 
 
-.broker-card span{
+/*====================================
+    FECHA
+====================================*/
 
-    display:inline-block;
+.fecha-reporte{
 
-    background:#f1f5f9;
+    color:#666;
 
-    padding:8px 15px;
-
-    border-radius:20px;
+    margin-bottom:15px;
 
     font-size:14px;
 
-    margin-bottom:20px;
+}
+
+
+
+.fecha-reporte strong{
+
+    color:#0B2340;
 
 }
 
 
+
+/*====================================
+    DESCRIPCIÓN
+====================================*/
 
 .broker-card p{
 
-    font-size:15px;
-
-}
-
-
-
-/* LISTA NEGRA */
-
-
-.broker-card.lista{
-
-    border-color:#dc2626;
-
-}
-
-
-
-.broker-card.lista span{
-
-    background:#fee2e2;
-
-    color:#991b1b;
-
-}
-
-
-
-/* PRECAUCION */
-
-
-.broker-card.precaucion{
-
-    border-color:#f59e0b;
-
-}
-
-
-
-.broker-card.precaucion span{
-
-    background:#fef3c7;
-
-    color:#92400e;
-
-}
-
-
-
-
-/* =====================================
-   FAQ
-===================================== */
-
-
-.faq-brokers{
-
-    background:#f7f9fb;
-
-    padding:80px 8%;
-
-}
-
-
-
-.faq-brokers h2{
-
-    text-align:center;
-
-    color:#0B2340;
-
-    font-size:34px;
-
-    margin-bottom:40px;
-
-}
-
-
-
-.faq-brokers article{
-
-    background:white;
-
-    padding:25px;
-
-    margin-bottom:20px;
-
-    border-radius:12px;
-
-}
-
-
-
-.faq-brokers h3{
-
-    color:#0B2340;
-
-    margin-bottom:10px;
-
-}
-
-
-
-.faq-brokers p{
+    color:#555;
 
     line-height:1.6;
 
+    font-size:14px;
+
 }
 
 
 
-/* =====================================
-   FORMULARIO FINAL
-===================================== */
+/*====================================
+    RESPONSIVE TARJETAS
+====================================*/
 
+@media(max-width:992px){
+
+    .tarjetas-brokers{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .tarjetas-brokers{
+
+        width:92%;
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/*====================================
+    FORMULARIO
+====================================*/
 
 .reporte-broker{
 
-    margin:80px 8%;
+    width:70%;
+
+    margin:0 auto 100px;
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:.95fr 1.05fr;
 
     border-radius:20px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.12);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    background:white;
 
 }
 
-
+/* TARJETA IZQUIERDA */
 
 .reporte-info{
 
-    background:#0B2340;
+    background:#253f2c;
 
     color:white;
 
-    padding:50px;
+    padding:55px 45px;
 
 }
 
@@ -449,58 +538,61 @@
 
 
 
-.reporte-info p{
+.reporte-info > p{
 
-    line-height:1.7;
+    line-height:1.8;
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 
-}
-
-
-
-.reporte-info button{
-
-    background:#22c55e;
-
-    border:none;
-
-    color:white;
-
-    padding:15px 25px;
-
-    border-radius:25px;
-
-    cursor:pointer;
+    color:rgba(255,255,255,.92);
 
 }
 
 
 
-.formulario-broker{
-
-    background:white;
-
-    padding:50px;
+.info-item{
 
     display:flex;
 
-    flex-direction:column;
+    align-items:flex-start;
 
-    gap:15px;
+    gap:18px;
+
+    margin-bottom:28px;
 
 }
 
 
 
-.formulario-broker input,
-.formulario-broker textarea{
+.info-item svg{
 
-    padding:15px;
+    font-size:28px;
 
-    border:1px solid #ddd;
+    margin-top:5px;
 
-    border-radius:10px;
+    color:#D8F8EA;
+
+    flex-shrink:0;
+
+}
+
+
+
+.info-item h4{
+
+    margin-bottom:6px;
+
+    font-size:18px;
+
+}
+
+
+
+.info-item p{
+
+    color:rgba(255,255,255,.9);
+
+    line-height:1.6;
 
     font-size:15px;
 
@@ -508,11 +600,101 @@
 
 
 
+.linea-directa{
+
+    margin-top:45px;
+
+    border-top:1px solid rgba(255,255,255,.25);
+
+    padding-top:25px;
+
+}
+
+
+
+.linea-directa p{
+
+    font-size:14px;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+
+.linea-directa h3{
+
+    font-size:32px;
+
+    margin:8px 0;
+
+}
+
+
+
+.linea-directa span{
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+
+/* FORMULARIO */
+
+.formulario-broker{
+
+    padding:55px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+.formulario-broker input,
+
 .formulario-broker textarea{
 
-    height:120px;
+    width:100%;
 
-    resize:none;
+    border:1px solid #d8d8d8;
+
+    border-radius:10px;
+
+    padding:16px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+
+
+.formulario-broker input:focus,
+
+.formulario-broker textarea:focus{
+
+    border-color:#008060;
+
+}
+
+
+
+.formulario-broker textarea{
+
+    min-height:170px;
+
+    resize:vertical;
 
 }
 
@@ -520,19 +702,31 @@
 
 .formulario-broker button{
 
-    background:#22c55e;
+    background:#81a17f;
 
     color:white;
 
     border:none;
 
-    padding:15px;
+    border-radius:10px;
 
-    border-radius:25px;
+    padding:16px;
+
+    font-size:16px;
 
     font-weight:bold;
 
     cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.formulario-broker button:hover{
+
+    background:#00a86b;
 
 }
 
@@ -540,102 +734,326 @@
 
 .formulario-broker small{
 
-    color:#666;
+    color:#8d8d8d;
 
-    margin-top:10px;
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+/*====================================
+    FAQ
+====================================*/
+
+.faq-brokers{
+
+    width:78%;
+
+    margin:0 auto 90px;
 
 }
 
 
 
+.faq-brokers h2{
 
-/* =====================================
-   RESPONSIVE
-===================================== */
+    text-align:center;
 
-
-@media(max-width:900px){
-
-
-.broker-hero{
-
-    padding:90px 6%;
-
-}
-
-
-
-.broker-hero h1{
+    color:#0B2340;
 
     font-size:36px;
 
-}
-
-
-
-.tarjetas-brokers{
-
-    grid-template-columns:1fr;
+    margin-bottom:40px;
 
 }
 
 
+
+.faq-brokers details{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    margin-bottom:18px;
+
+    border:1px solid #e5e5e5;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+
+
+.faq-brokers details:hover{
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.faq-brokers summary{
+
+    list-style:none;
+
+    cursor:pointer;
+
+    padding:22px 28px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#0B2340;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+
+
+.faq-brokers summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+
+
+.faq-brokers summary::after{
+
+    content:"+";
+
+    position:absolute;
+
+    right:28px;
+
+    top:18px;
+
+    font-size:30px;
+
+    color:#008060;
+
+    transition:.3s;
+
+}
+
+
+
+.faq-brokers details[open] summary{
+
+    background:#008060;
+
+    color:#fff;
+
+}
+
+
+
+.faq-brokers details[open] summary::after{
+
+    content:"−";
+
+    color:#fff;
+
+}
+
+
+
+.faq-brokers details p{
+
+    padding:25px 28px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    background:#fff;
+
+}
+/*====================================
+    BOTON FLOTANTE WHATSAPP
+====================================*/
+
+.whatsapp-float{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:34px;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+
+
+.whatsapp-float:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*====================================
+    RESPONSIVE
+====================================*/
+
+@media(max-width:992px){
 
 .reporte-broker{
 
     grid-template-columns:1fr;
 
-    margin:50px 6%;
-
 }
-
-
-.buscador-brokers input{
-
-    width:100%;
-
-}
-
 
 }
 
 
 
-@media(max-width:600px){
+@media(max-width:768px){
 
+.hero-contenido h1{
 
-.filtros-brokers{
-
-    flex-direction:column;
-
-    align-items:center;
+    font-size:38px;
 
 }
 
-
-
-.filtros-brokers button{
-
-    width:220px;
-
-}
-
-
-
-.broker-hero p{
+.hero-contenido p{
 
     font-size:17px;
 
 }
 
+.buscador-box{
 
-
-.reporte-info,
-.formulario-broker{
-
-    padding:30px;
+    height:58px;
 
 }
 
+.tarjetas-brokers{
+
+    width:92%;
+
+}
+
+.faq-brokers{
+
+    width:92%;
+
+}
+
+.reporte-broker{
+
+    width:92%;
+
+}
+
+.reporte-info{
+
+    padding:40px 30px;
+
+}
+
+.formulario-broker{
+
+    padding:35px 25px;
+
+}
+
+.linea-directa h3{
+
+    font-size:28px;
+
+}
+
+}
+
+
+
+@media(max-width:480px){
+
+.hero-contenido h1{
+
+    font-size:32px;
+
+}
+
+.hero-contenido p{
+
+    font-size:16px;
+
+}
+
+.filtros-brokers{
+
+    gap:12px;
+
+}
+
+.filtros-brokers button{
+
+    width:100%;
+
+}
+
+.buscador-box{
+
+    padding:0 15px;
+
+}
+
+.reporte-info h2{
+
+    font-size:28px;
+
+}
+
+.linea-directa h3{
+
+    font-size:24px;
+
+}
+
+.whatsapp-float{
+
+    width:58px;
+
+    height:58px;
+
+    font-size:30px;
+
+}
 
 }

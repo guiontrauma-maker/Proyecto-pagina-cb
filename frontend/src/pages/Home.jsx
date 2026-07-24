@@ -1,336 +1,398 @@
-import { 
-    FaUser, 
-    FaEnvelope, 
-    FaPhoneAlt, 
-    FaDollarSign, 
-    FaLock, 
+import {
+    FaUser,
+    FaEnvelope,
+    FaDollarSign,
+    FaLock,
     FaStar,
-    FaWhatsapp 
+    FaWhatsapp
 } from "react-icons/fa";
-
-
-import SobreNosotros from "../components/SobreNosotros";
-import Proceso from "../components/Proceso";
-import ServiciosHome from "../components/ServiciosHome";
-import PorqueElegirnos from "../components/PorqueElegirnos";
-import Testimonios from "../components/Testimonios";
-import FAQ from "../components/FAQ";
 
 
 import {
     PhoneInput
-} from 'react-international-phone';
+} from "react-international-phone";
 
 
-import 'react-international-phone/style.css';
+import "react-international-phone/style.css";
 
 
+import AreasPractica from "../components/AreasPractica";
+import Proceso from "../components/Proceso";
+import PorqueElegirnos from "../components/PorqueElegirnos";
+import Testimonios from "../components/Testimonios";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 
-function Home() {
+import "../style/Home.css";
 
 
-    return (
 
+function Home(){
 
-        <main>
 
+return(
 
-            <section className="hero">
 
+<main>
 
-                <div className="hero-text">
 
 
-                    <h1 className="hero-title">
+{/* HERO */}
 
-                        ¿FUISTE VÍCTIMA DE UNA ESTAFA?
 
-                    </h1>
+<section className="home-hero">
 
 
 
-                    <h2 className="hero-subtitle">
+<div className="hero-content">
 
-                        RECUPERE SUS PÉRDIDAS
 
-                    </h2>
+<h1>
 
+¿FUISTE VÍCTIMA DE UNA ESTAFA?
 
+</h1>
 
-                    <p>
 
-                        Actúa ahora antes de que sea tarde.
-                        Expertos en rastreo de activos digitales,
-                        SPEI, brokers no regulados y estafas en línea.
-                        Tecnología avanzada y estrategias inteligentes
-                        para recuperar lo que te corresponde.
 
-                    </p>
+<h2>
 
+RECUPERE SUS PÉRDIDAS
 
+</h2>
 
-                    <h3 className="hero-free">
 
-                        ¡CONSULTA GRATUITA HOY MISMO!
 
-                    </h3>
+<p>
 
+Ayudamos a personas afectadas por fraudes financieros,
+estafas digitales y pérdidas patrimoniales mediante
+estrategias de investigación y recuperación.
 
+</p>
 
 
-                    <div className="hero-info">
 
+<h3>
 
+CONSULTA GRATUITA HOY MISMO
 
-                        <div className="rating-card">
+</h3>
 
 
-                            <div className="stars">
 
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
 
-                            </div>
+<div className="hero-stats">
 
 
-                            <h4>
 
-                                4.9
+<div className="stat-box">
 
-                            </h4>
+<div className="stars">
 
+<FaStar/>
+<FaStar/>
+<FaStar/>
+<FaStar/>
+<FaStar/>
 
-                            <p>
+</div>
 
-                                Basado en +500 reseñas
+<strong>
+4.9
+</strong>
 
-                            </p>
-                        </div>
-                        <div className="money-card">
+<p>
+Basado en +500 casos
+</p>
 
+</div>
 
-                            <FaDollarSign className="money-icon"/>
 
 
-                            <h4>
 
-                                +$50 M
+<div className="stat-box">
 
-                            </h4>
+<strong>
++$50 M
+</strong>
 
+<p>
+Recuperados para víctimas
+</p>
 
-                            <p>
 
-                                Recuperados para víctimas
+</div>
 
-                            </p>
 
 
-                        </div>
+</div>
 
-                    </div>
 
-                </div>
-                <form className="contact-form">
+</div>
 
 
 
-                    <h2>
 
-                        RECUPERE SUS PÉRDIDAS
 
-                    </h2>
 
+{/* FORMULARIO */}
 
 
-                    <p>
+<form className="home-form">
 
-                        Solicite una revisión de caso sin costo hoy mismo.
 
-                    </p>
+<h2>
 
+RECUPERE SUS PÉRDIDAS
 
+</h2>
 
 
+<p>
 
-                    <div className="input-group">
+Solicite una evaluación gratuita de su caso.
 
+</p>
 
-                        <FaUser />
 
 
-                        <input
-                            type="text"
-                            placeholder="Nombre completo"
-                        />
 
+<div className="form-input">
 
-                    </div>
 
+<FaUser/>
 
 
+<input
 
+type="text"
 
+placeholder="Nombre completo"
 
-                    <div className="input-group">
+/>
 
 
-                        <FaEnvelope />
+</div>
 
 
-                        <input
-                            type="email"
-                            placeholder="Correo electrónico"
-                        />
 
 
-                    </div>
 
+<div className="form-input">
 
 
+<FaEnvelope/>
 
 
+<input
 
+type="email"
 
-                    <div className="phone-row">
+placeholder="Correo electrónico"
 
+/>
 
-                        <PhoneInput
-                            defaultCountry="mx"
-                        />
 
+</div>
 
-                    </div>
 
 
 
 
+<div className="form-phone">
 
 
+<PhoneInput
 
-                    <div className="input-group">
+defaultCountry="mx"
 
+/>
 
-                        <FaDollarSign />
+</div>
 
 
-                        <input
-                            type="number"
-                            placeholder="Monto aproximado (USD)"
-                        />
 
 
-                    </div>
 
+<div className="form-input">
 
 
+<FaDollarSign/>
 
 
+<input
 
+type="number"
 
+placeholder="Monto aproximado perdido"
 
-                    <details className="comments-box">
+/>
 
 
-                        <summary>
+</div>
 
-                            Agregar comentarios adicionales (Opcional)
 
-                        </summary>
 
 
 
-                        <textarea
 
-                            placeholder="Describa brevemente su caso"
+<textarea
 
-                        />
+placeholder="Describa brevemente su caso (opcional)"
 
+></textarea>
 
-                    </details>
 
 
 
 
 
+<button>
 
+Solicitar evaluación gratuita
 
-                    <button type="submit">
+</button>
 
-                        Solicitar Evaluación Gratuita
 
-                    </button>
 
 
 
 
+<small>
 
+<FaLock/>
 
+ Información protegida
 
-                    <small className="secure">
+</small>
 
-                        <FaLock /> Información encriptada
 
-                    </small>
 
 
+</form>
 
 
-                </form>
 
 
+</section>
 
-            </section>
 
 
 
 
 
-            <ServiciosHome />
+{/* SECCIONES */}
 
-            <Proceso />
 
-            <PorqueElegirnos />
 
-            <Testimonios />
+<AreasPractica />
 
-            <FAQ />
 
+<Proceso />
 
 
+<PorqueElegirnos />
 
 
+<Testimonios />
 
-            <a
 
-                className="whatsapp-button"
+<FAQ />
 
-                href="https://wa.me/5663820152"
 
-                target="_blank"
 
-                rel="noopener noreferrer"
 
-            >
 
-                <FaWhatsapp />
 
-            </a>
+{/* MEDIOS */}
 
 
+<section className="medios">
 
 
+<h2>
 
-        </main>
+Visto en medios de prestigio
 
+</h2>
 
-    );
+
+<div className="medios-grid">
+
+
+<div>
+
+Medio 1
+
+</div>
+
+
+<div>
+
+Medio 2
+
+</div>
+
+
+<div>
+
+Medio 3
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<Footer />
+
+
+
+
+
+
+
+
+{/* WHATSAPP */}
+
+
+
+<a
+
+className="whatsapp-button"
+
+href="https://wa.me/5663820152"
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+>
+
+<FaWhatsapp/>
+
+</a>
+
+
+
+
+</main>
+
+
+);
+
 
 }
-
 
 
 export default Home;

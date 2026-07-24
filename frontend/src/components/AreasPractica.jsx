@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 import {
     FaUniversity,
     FaLaptopCode,
@@ -14,179 +15,199 @@ import {
 function AreasPractica(){
 
 
-    const areas = [
+const areas = [
 
 
-        {
-            icon:<FaUniversity />,
-            titulo:"Fraudes Bancarios",
-            texto:
-            "Analizamos operaciones no reconocidas, transferencias fraudulentas y situaciones relacionadas con SPEI y banca digital.",
-            ruta:"/servicios/fraudes-bancarios",
-            color:"verde"
-        },
+{
+icon:<FaUniversity />,
+titulo:"Fraude Bancario",
+texto:
+"Analizamos cargos no reconocidos, transferencias SPEI y operaciones bancarias fraudulentas para buscar alternativas de recuperación.",
+ruta:"/servicios/fraudes-bancarios"
+},
 
 
-        {
-            icon:<FaLaptopCode />,
-            titulo:"Fraudes Digitales",
-            texto:
-            "Investigamos engaños realizados mediante plataformas digitales, redes sociales y medios electrónicos.",
-            ruta:"/servicios/fraudes-digitales",
-            color:"verde-claro"
-        },
 
+{
+icon:<FaLaptopCode />,
+titulo:"Fraudes Digitales",
+texto:
+"Atendemos engaños realizados mediante internet, plataformas digitales, redes sociales y medios electrónicos.",
+ruta:"/servicios/fraudes-digitales"
+},
 
-        {
-            icon:<FaUserShield />,
-            titulo:"Robo de Identidad",
-            texto:
-            "Evaluamos casos donde información personal es utilizada para generar afectaciones económicas.",
-            ruta:"/servicios/robo-identidad",
-            color:"verde-azul"
-        },
 
 
-        {
-            icon:<FaChartLine />,
-            titulo:"Estafas de Inversión",
-            texto:
-            "Analizamos oportunidades financieras falsas, brokers fraudulentos y pérdidas patrimoniales.",
-            ruta:"/servicios/estafas-inversion",
-            color:"verde-oliva"
-        },
+{
+icon:<FaUserShield />,
+titulo:"Robo de Identidad",
+texto:
+"Investigamos el uso indebido de información personal para generar créditos, cuentas u operaciones no autorizadas.",
+ruta:"/servicios/robo-identidad"
+},
 
 
-        {
-            icon:<FaHeart />,
-            titulo:"Estafas Románticas",
-            texto:
-            "Investigamos fraudes sentimentales donde la confianza personal es utilizada para obtener recursos.",
-            ruta:"/servicios/estafas-romanticas",
-            color:"verde-profundo"
-        },
 
+{
+icon:<FaChartLine />,
+titulo:"Estafas de Inversión",
+texto:
+"Evaluamos pérdidas relacionadas con brokers fraudulentos, inversiones falsas y plataformas financieras engañosas.",
+ruta:"/servicios/estafas-inversion"
+},
 
-        {
-            icon:<FaUsers />,
-            titulo:"Estafas Piramidales",
-            texto:
-            "Atendemos casos de esquemas Ponzi y fraudes colectivos que afectan a múltiples personas.",
-            ruta:"/servicios/estafas-piramidales",
-            color:"verde-suave"
-        }
 
 
-    ];
+{
+icon:<FaHeart />,
+titulo:"Estafas Románticas",
+texto:
+"Analizamos fraudes donde la confianza emocional es utilizada para obtener dinero o beneficios económicos.",
+ruta:"/servicios/estafas-romanticas"
+},
 
 
 
-    return(
+{
+icon:<FaUsers />,
+titulo:"Estafas Piramidales",
+texto:
+"Representamos casos relacionados con esquemas Ponzi, inversiones colectivas fraudulentas y fraudes masivos.",
+ruta:"/servicios/estafas-piramidales"
+}
 
 
-        <section className="areas-practica">
 
+];
 
-            <div className="areas-header">
 
 
-                <h2>
-                    Áreas de práctica
-                </h2>
 
 
-                <p>
-                    Soluciones especializadas para diferentes
-                    tipos de fraude financiero.
-                </p>
+return(
 
 
-            </div>
+<section className="areas-practica">
 
 
 
+<div className="areas-header">
 
 
-            <div className="areas-grid">
+<h2>
 
+Áreas de práctica
 
+</h2>
 
-                {
-                    areas.map((area,index)=>(
 
 
-                        <article
-                        className={`area-card ${area.color}`}
-                        key={index}
-                        >
+<p>
 
+Soluciones especializadas para diferentes tipos de fraude financiero.
 
+</p>
 
-                            <div className="area-icon">
 
-                                {area.icon}
+</div>
 
-                            </div>
 
 
 
 
-                            <div className="area-content">
 
 
-                                <h3>
+<div className="areas-grid">
 
-                                    {area.titulo}
 
-                                </h3>
+{
 
+areas.map((area,index)=>(
 
 
-                                <p>
 
-                                    {area.texto}
+<article
 
-                                </p>
+className="area-card"
 
+key={index}
 
+>
 
-                                <Link
-                                to={area.ruta}
-                                className="area-link"
-                                >
 
-                                    Ver detalles →
 
-                                </Link>
 
+<div className="area-icon">
 
+{area.icon}
 
-                            </div>
+</div>
 
 
 
-                        </article>
 
 
+<h3>
 
-                    ))
-                }
+{area.titulo}
 
+</h3>
 
 
 
-            </div>
 
 
+<p>
 
-        </section>
+{area.texto}
 
+</p>
 
-    );
+
+
+
+
+<Link
+
+to={area.ruta}
+
+className="area-link"
+
+>
+
+Ver detalles →
+
+</Link>
+
+
+
+
+
+</article>
+
+
+
+))
 
 
 }
 
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+);
+
+
+}
 
 
 export default AreasPractica;

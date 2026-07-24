@@ -37,8 +37,8 @@
 
 .logo-image{
 
-    width:55px;
-    height:55px;
+    width:75px;
+    height:75px;
 
     overflow:hidden;
 
@@ -60,7 +60,7 @@
 
 .logo{
 
-    color:#0B2340;
+    color:#17291a;
 
     font-size:18px;
 
@@ -96,7 +96,7 @@
 
 .navbar-links a{
 
-    color:#008060;
+    color:#c0cfcb;
 
     text-decoration:none;
 
@@ -188,7 +188,7 @@
 
 .recursos-titulo:hover{
 
-    color:#00a86b;
+    color:#7cb07e;
 
 }
 
@@ -206,7 +206,7 @@
 
     width:230px;
 
-    background:#a2c6a6;
+    background:#fcfcfc;
 
     border-radius:10px;
 
@@ -257,7 +257,7 @@
 
 .submenu-recursos a:hover{
 
-    background:#008060;
+    background:#d6e1da;
 
     color:white;
 

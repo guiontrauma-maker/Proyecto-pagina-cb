@@ -1,186 +1,169 @@
+import {
+    FaShieldAlt,
+    FaBalanceScale,
+    FaSearch,
+    FaHandshake
+} from "react-icons/fa";
+
+
+
 function PorqueElegirnos(){
 
-    return(
 
-        <section className="porque">
+const ventajas=[
 
 
-            <div className="porque-header">
+{
+icon:<FaShieldAlt />,
+titulo:"Experiencia especializada",
+texto:
+"Nos enfocamos en casos de fraude financiero, digital y recuperación patrimonial."
+},
 
 
-                <h2>
-                    ¿Por qué elegirnos?
-                </h2>
 
+{
+icon:<FaBalanceScale />,
+titulo:"Estrategia personalizada",
+texto:
+"Analizamos cada situación para definir la mejor ruta de acción según las características del caso."
+},
 
-                <p>
 
-                    Nuestro compromiso es brindar orientación profesional,
-                    confidencial y personalizada para cada situación.
 
-                </p>
+{
+icon:<FaSearch />,
+titulo:"Investigación y análisis",
+texto:
+"Revisamos información, movimientos y evidencias para comprender el origen del fraude."
+},
 
 
-            </div>
 
+{
+icon:<FaHandshake />,
+titulo:"Acompañamiento continuo",
+texto:
+"Brindamos seguimiento durante cada etapa del proceso con comunicación constante."
+}
 
 
-            <div className="estadisticas">
 
+];
 
-                <div className="estadistica">
 
-                    <h3>
-                        +500
-                    </h3>
 
-                    <p>
-                        Casos analizados
-                    </p>
 
-                </div>
 
+return(
 
 
-                <div className="estadistica">
+<section className="porque">
 
-                    <h3>
-                        95%
-                    </h3>
 
-                    <p>
-                        Clientes satisfechos
-                    </p>
 
-                </div>
+<div className="porque-header">
 
 
+<h2>
 
-                <div className="estadistica">
+¿Por qué elegirnos?
 
-                    <h3>
-                        24/7
-                    </h3>
+</h2>
 
-                    <p>
-                        Atención inicial
-                    </p>
 
-                </div>
 
+<p>
 
+Contamos con un enfoque especializado para ayudar a personas afectadas por fraudes financieros y patrimoniales.
 
-                <div className="estadistica">
+</p>
 
-                    <h3>
-                        5+
-                    </h3>
 
-                    <p>
-                        Áreas especializadas
-                    </p>
+</div>
 
-                </div>
 
 
-            </div>
 
 
 
 
+<div className="porque-grid">
 
-            <div className="ventajas-grid">
 
 
-                <div className="ventaja-card">
+{
 
+ventajas.map((item,index)=>(
 
-                    <h3>
-                        Confidencialidad
-                    </h3>
 
 
-                    <p>
+<article
 
-                        Tratamos cada caso con privacidad,
-                        cuidando la información proporcionada.
+className="porque-card"
 
-                    </p>
+key={index}
 
+>
 
-                </div>
 
 
 
+<div className="porque-icon">
 
-                <div className="ventaja-card">
 
+{item.icon}
 
-                    <h3>
-                        Atención personalizada
-                    </h3>
 
+</div>
 
-                    <p>
 
-                        Cada situación es diferente y requiere
-                        un análisis individual.
 
-                    </p>
 
 
-                </div>
+<h3>
 
+{item.titulo}
 
+</h3>
 
 
 
-                <div className="ventaja-card">
 
 
-                    <h3>
-                        Acompañamiento
-                    </h3>
+<p>
 
+{item.texto}
 
-                    <p>
+</p>
 
-                        Te orientamos durante el proceso
-                        y explicamos las opciones disponibles.
 
-                    </p>
 
 
-                </div>
 
+</article>
 
 
 
-                <div className="ventaja-card">
+))
 
 
-                    <h3>
-                        Experiencia especializada
-                    </h3>
+}
 
 
-                    <p>
 
-                        Analizamos distintos tipos de fraude
-                        financiero y digital.
 
-                    </p>
+</div>
 
 
-                </div>
 
 
-            </div>
 
+</section>
 
-        </section>
 
-    );
+);
+
 
 }
 

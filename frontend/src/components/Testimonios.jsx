@@ -1,121 +1,173 @@
+import {
+    FaQuoteLeft,
+    FaUserCircle
+} from "react-icons/fa";
+
+
+
 function Testimonios(){
 
-    return(
 
-        <section className="testimonios">
+const testimonios=[
 
 
-            <div className="testimonios-header">
-
-                <h2>
-                    Experiencias de nuestros usuarios
-                </h2>
-
-                <p>
-                    Conoce ejemplos de cómo una orientación adecuada
-                    puede ayudar a comprender una situación de fraude
-                    y definir los siguientes pasos.
-                </p>
-
-            </div>
+{
+nombre:"Carlos M.",
+caso:"Fraude Bancario",
+texto:
+"Me orientaron desde el primer momento y pude entender las opciones que tenía para recuperar mi dinero."
+},
 
 
 
-            <div className="testimonios-grid">
+{
+nombre:"Laura G.",
+caso:"Estafa de Inversión",
+texto:
+"El análisis del caso fue claro y profesional. Recibí acompañamiento durante todo el proceso."
+},
 
 
-                <div className="testimonio-card">
+
+{
+nombre:"Miguel R.",
+caso:"Fraude Digital",
+texto:
+"Me ayudaron a organizar las pruebas y comprender los pasos necesarios después de la estafa."
+}
 
 
-                    <div className="testimonio-icon">
 
-                        01
-
-                    </div>
-
-
-                    <p>
-
-                        "Recibí información clara sobre mi situación
-                        y pude organizar los documentos necesarios
-                        para continuar con el proceso."
-
-                    </p>
-
-
-                    <h3>
-                        Usuario verificado
-                    </h3>
-
-
-                </div>
+];
 
 
 
 
-                <div className="testimonio-card">
+
+return(
 
 
-                    <div className="testimonio-icon">
-
-                        02
-
-                    </div>
-
-
-                    <p>
-
-                        "La orientación me permitió identificar señales
-                        de alerta y comprender las acciones que podía
-                        realizar después del fraude."
-
-                    </p>
-
-
-                    <h3>
-                        Usuario verificado
-                    </h3>
-
-
-                </div>
+<section className="testimonios">
 
 
 
-
-                <div className="testimonio-card">
-
-
-                    <div className="testimonio-icon">
-
-                        03
-
-                    </div>
+<div className="testimonios-header">
 
 
-                    <p>
+<h2>
 
-                        "El acompañamiento ayudó a evaluar mi caso
-                        y conocer las alternativas disponibles."
+Experiencias de nuestros usuarios
 
-                    </p>
-
-
-                    <h3>
-                        Usuario verificado
-                    </h3>
+</h2>
 
 
-                </div>
+
+<p>
+
+Personas que recibieron orientación y acompañamiento en situaciones de fraude financiero.
+
+</p>
 
 
-            </div>
+</div>
 
 
-        </section>
 
-    );
+
+
+
+
+<div className="testimonios-grid">
+
+
+
+{
+
+testimonios.map((item,index)=>(
+
+
+
+<article
+
+className="testimonio-card"
+
+key={index}
+
+>
+
+
+
+
+<div className="testimonio-icon">
+
+<FaUserCircle/>
+
+</div>
+
+
+
+
+
+<FaQuoteLeft className="quote-icon"/>
+
+
+
+
+
+<p>
+
+{item.texto}
+
+</p>
+
+
+
+
+
+<h3>
+
+{item.nombre}
+
+</h3>
+
+
+
+<span>
+
+{item.caso}
+
+</span>
+
+
+
+
+
+</article>
+
+
+
+))
+
 
 }
+
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+);
+
+
+}
+
 
 
 export default Testimonios;

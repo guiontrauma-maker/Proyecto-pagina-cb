@@ -1,0 +1,860 @@
+/* ==========================================
+   RESET PAGINA
+========================================== */
+
+
+.estafas-romanticas-page{
+
+    width:100%;
+
+    background:#ffffff;
+
+    color:#1f2937;
+
+}
+
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+
+.romanticas-hero{
+
+    padding:120px 8% 90px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        180deg,
+        #fff1f8,
+        #ffffff
+    );
+
+}
+
+
+
+.etiqueta-romantica{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#fbcfe8;
+
+    color:#db2777;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.romanticas-hero h1{
+
+    font-size:52px;
+
+    color:#111827;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.romanticas-hero p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#64748b;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+
+
+.romanticas-hero a{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    background:#cf5cb8;
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+
+/* ==========================================
+   TITULOS GENERALES
+========================================== */
+
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+
+
+.section-header h2{
+
+    font-size:38px;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.section-header p{
+
+    color:#64748b;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   COMO FUNCIONA
+========================================== */
+
+
+.como-funciona{
+
+    padding:80px 8%;
+
+}
+
+
+
+.tarjetas-engano{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.tarjetas-engano article{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+
+
+.icon-card{
+
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#fce7f3;
+
+    color:#db2777;
+
+    font-size:25px;
+
+}
+
+
+
+.tarjetas-engano h3{
+
+    margin:20px 0 15px;
+
+    color:#111827;
+
+}
+
+
+
+.tarjetas-engano p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+/* ==========================================
+   ESTRATEGIA
+========================================== */
+
+
+.estrategia-fraude{
+
+    padding:80px 8%;
+
+    background:#f9fafb;
+
+}
+
+
+
+.estrategia-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.estrategia-grid article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+}
+
+
+
+.estrategia-icon{
+
+    color:#db2777;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* ==========================================
+   PORQUE ELEGIRNOS
+========================================== */
+
+
+.porque-testimonio{
+
+    padding:90px 8%;
+
+}
+
+
+
+.porque-dentro{
+
+    text-align:center;
+
+}
+
+
+
+.porque-dentro h2{
+
+    font-size:40px;
+
+    color:#111827;
+
+}
+
+
+
+.subtitulo-porque{
+
+    max-width:750px;
+
+    margin:20px auto 45px;
+
+    color:#64748b;
+
+}
+
+
+
+.porque-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.porque-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px 25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.porque-icon{
+
+    width:55px;
+
+    height:55px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fce7f3;
+
+    color:#db2777;
+
+    font-size:25px;
+
+}
+
+
+
+.porque-card h3{
+
+    margin:20px 0;
+
+    color:#111827;
+
+}
+
+
+
+.porque-card p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   COMENTARIO CLIENTE ROSA PASTEL
+========================================== */
+
+
+.comentario-cliente{
+
+    margin-top:60px;
+
+    padding:45px;
+
+    background:#fdf2f8;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    border:1px solid #fbcfe8;
+
+}
+
+
+
+.comilla{
+
+    color:#db2777;
+
+    font-size:35px;
+
+}
+
+
+
+.comentario-cliente p{
+
+    max-width:850px;
+
+    margin:25px auto;
+
+    font-size:18px;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+}
+
+
+
+.comentario-cliente strong{
+
+    display:block;
+
+    font-size:21px;
+
+    color:#111827;
+
+}
+
+
+
+.comentario-cliente span{
+
+    color:#9ca3af;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   FAQ
+========================================== */
+
+
+.faq-romanticas{
+
+    padding:80px 8%;
+
+}
+
+
+
+.faq-list{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+
+.faq-item{
+
+    margin-bottom:15px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    border:1px solid #fbcfe8;
+
+}
+
+
+
+.faq-item button{
+
+    width:100%;
+
+    padding:20px;
+
+    background:white;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+
+
+.faq-item button span{
+
+    color:#db2777;
+
+    font-size:22px;
+
+}
+
+
+
+.faq-respuesta{
+
+    padding:0 20px 20px;
+
+    color:#64748b;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   CASO DE EXITO
+========================================== */
+
+
+.caso-exito-grid{
+
+    margin:80px 8%;
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:35px;
+
+    align-items:center;
+
+}
+
+
+
+
+
+.resultado-caso{
+
+    background:#fdf2f8;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.resultado-caso svg{
+
+    color:#16a34a;
+
+    font-size:35px;
+
+}
+
+
+
+.resultado-caso h3{
+
+    color:#111827;
+
+}
+
+
+
+.resultado-caso strong{
+
+    display:block;
+
+    font-size:38px;
+
+    color:#111827;
+
+}
+
+
+
+.resultado-caso span{
+
+    color:#db2777;
+
+}
+
+
+
+
+
+.historia-caso{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.historia-caso h2{
+
+    color:#111827;
+
+}
+
+
+
+.historia-caso h3{
+
+    color:#db2777;
+
+    margin-top:25px;
+
+}
+
+
+
+.historia-caso p{
+
+    color:#64748b;
+
+    line-height:1.7;
+
+}
+
+
+
+.historia-caso a{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    color:#0f766e;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   SERVICIOS RELACIONADOS
+========================================== */
+
+
+.servicios-relacionados{
+
+    padding:70px 8%;
+
+    background:#f9fafb;
+
+    text-align:center;
+
+}
+
+
+
+.relacionados-grid{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+.relacionados-grid a{
+
+    width:170px;
+
+    padding:20px;
+
+    background:#e5e7eb;
+
+    border-radius:15px;
+
+    text-decoration:none;
+
+    color:#6b7280;
+
+}
+
+
+
+.relacionados-grid svg{
+
+    display:block;
+
+    margin:auto auto 10px;
+
+    font-size:25px;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   WHATSAPP
+========================================== */
+
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    z-index:999;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.tarjetas-engano,
+.estrategia-grid,
+.porque-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.caso-exito-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.relacionados-grid{
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.romanticas-hero h1{
+
+    font-size:38px;
+
+}
+
+
+}

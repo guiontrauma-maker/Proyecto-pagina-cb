@@ -1,158 +1,220 @@
 import { useState } from "react";
 
+import {
+    FaChevronDown
+} from "react-icons/fa";
+
+
 
 function FAQ(){
 
 
-    const preguntas = [
+const preguntas=[
 
-        {
 
-            pregunta:"¿Qué información necesito para solicitar ayuda?",
+{
+pregunta:"¿Puedo recuperar mi dinero después de una estafa?",
+respuesta:
+"Depende de cada caso. Analizamos la información disponible, movimientos, documentos y evidencias para determinar las posibles acciones."
+},
 
-            respuesta:"Datos relacionados con el caso, comprobantes, conversaciones, movimientos financieros o cualquier información disponible."
 
-        },
 
+{
+pregunta:"¿Qué tipos de fraude atienden?",
+respuesta:
+"Atendemos casos relacionados con fraudes bancarios, digitales, robo de identidad, inversiones falsas, brokers fraudulentos y esquemas piramidales."
+},
 
-        {
 
-            pregunta:"¿Pueden ayudarme si el fraude ocurrió hace tiempo?",
 
-            respuesta:"Cada situación se analiza individualmente considerando la información disponible y las características del caso."
+{
+pregunta:"¿Qué información necesito para iniciar una evaluación?",
+respuesta:
+"Generalmente solicitamos comprobantes de pago, conversaciones, contratos, transferencias, datos de la plataforma o empresa involucrada y cualquier evidencia disponible."
+},
 
-        },
 
 
-        {
+{
+pregunta:"¿La evaluación inicial tiene costo?",
+respuesta:
+"Realizamos una revisión inicial para conocer su situación y determinar las posibles alternativas de solución."
+},
 
-            pregunta:"¿La asesoría tiene costo?",
 
-            respuesta:"Depende del tipo de atención requerida y del análisis necesario para cada situación."
 
-        },
+{
+pregunta:"¿Cuánto tiempo tarda un proceso de recuperación?",
+respuesta:
+"El tiempo depende de la complejidad del caso, la cantidad de evidencia disponible y las acciones necesarias para avanzar."
+}
 
 
-        {
 
-            pregunta:"¿Qué tipos de fraude atienden?",
+];
 
-            respuesta:"Fraudes bancarios, digitales, robo de identidad, estafas de inversión, románticas y esquemas piramidales."
 
-        },
 
 
-        {
 
-            pregunta:"¿Cómo puedo contactar al equipo?",
+const [activo,setActivo]=useState(null);
 
-            respuesta:"Puedes responder el formulario de contacto o comunicarte directamente mediante WhatsApp para poder contactar con uno de nuestros asesores."
 
-        },
 
 
-        {
 
-            pregunta:"¿Qué documentos debo preparar?",
+function abrirPregunta(index){
 
-            respuesta:"Identificación, comprobantes de pago, capturas de conversaciones, correos, contratos o cualquier evidencia relacionada."
 
-        }
+setActivo(
 
+activo === index ? null : index
 
-    ];
+);
 
-
-
-    const [activo,setActivo] = useState(null);
-
-
-
-    return(
-
-        <section className="faq">
-
-
-            <h2>
-                Preguntas frecuentes
-            </h2>
-
-
-
-            <div className="faq-container">
-
-
-                {
-                    preguntas.map((item,index)=>(
-
-
-                        <div 
-                            className="faq-item"
-                            key={index}
-                        >
-
-
-                            <button
-
-                                className="faq-question"
-
-                                onClick={()=>{
-
-                                    setActivo(
-                                        activo === index ? null : index
-                                    )
-
-                                }}
-
-                            >
-
-                                {item.pregunta}
-
-
-                                <span>
-
-                                    {activo === index ? "-" : "+"}
-
-                                </span>
-
-
-                            </button>
-
-
-
-                            {
-                                activo === index && (
-
-                                    <div className="faq-answer">
-
-                                        <p>
-                                            {item.respuesta}
-                                        </p>
-
-                                    </div>
-
-                                )
-                            }
-
-
-
-                        </div>
-
-
-                    ))
-                }
-
-
-
-            </div>
-
-
-
-        </section>
-
-    );
 
 }
+
+
+
+
+
+return(
+
+
+<section className="faq">
+
+
+
+<div className="faq-header">
+
+
+<h2>
+
+Preguntas frecuentes
+
+</h2>
+
+
+<p>
+
+Resolvemos las dudas más comunes antes de iniciar una evaluación.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div className="faq-container">
+
+
+
+{
+
+preguntas.map((item,index)=>(
+
+
+
+<div
+
+className="faq-item"
+
+key={index}
+
+>
+
+
+
+
+<button
+
+className="faq-question"
+
+onClick={()=>abrirPregunta(index)}
+
+>
+
+
+
+<span>
+
+{item.pregunta}
+
+</span>
+
+
+
+<FaChevronDown
+
+className={activo===index ? "rotate" : ""}
+
+/>
+
+
+
+</button>
+
+
+
+
+
+
+
+{
+
+activo===index && (
+
+<div className="faq-answer">
+
+<p>
+
+{item.respuesta}
+
+</p>
+
+</div>
+
+)
+
+}
+
+
+
+
+</div>
+
+
+
+))
+
+
+}
+
+
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+);
+
+
+}
+
 
 
 export default FAQ;

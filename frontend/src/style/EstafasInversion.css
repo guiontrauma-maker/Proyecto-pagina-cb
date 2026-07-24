@@ -1,0 +1,798 @@
+/* ==========================================
+   ESTAFAS DE INVERSION
+   TEMA NARANJA / DORADO
+========================================== */
+
+
+.ei-page{
+
+    width:100%;
+
+    background:#ffffff;
+
+    color:#111827;
+
+}
+
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+
+.ei-hero{
+
+    padding:120px 8% 90px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        180deg,
+        #fff7ed,
+        #ffffff
+    );
+
+}
+
+
+
+.ei-etiqueta{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#ffedd5;
+
+    color:#c2410c;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+.ei-etiqueta svg{
+
+    color:#ea580c;
+
+}
+
+
+
+.ei-hero h1{
+
+    margin-top:25px;
+
+    font-size:50px;
+
+    line-height:1.2;
+
+    color:#111827;
+
+}
+
+
+
+.ei-hero p{
+
+    max-width:800px;
+
+    margin:25px auto;
+
+    color:#64748b;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+
+
+.ei-hero a{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:15px 35px;
+
+    border-radius:30px;
+
+    background:#0f766e;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+
+
+
+
+/* ==========================================
+   TITULOS
+========================================== */
+
+
+.ei-titulo{
+
+    max-width:850px;
+
+    text-align:center;
+
+    margin:0 auto 50px;
+
+}
+
+
+
+.ei-titulo h2{
+
+    color:#111827;
+
+    font-size:38px;
+
+}
+
+
+
+.ei-titulo p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+
+.ei-seccion{
+
+    padding:90px 8%;
+
+}
+
+
+
+.ei-fondo{
+
+    background:#fffaf5;
+
+}
+
+
+
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+
+.ei-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.ei-grid.cuatro{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+
+.ei-card{
+
+    background:white;
+
+    padding:35px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    border:1px solid #fed7aa;
+
+    box-shadow:
+
+    0 10px 25px rgba(234,88,12,.10);
+
+}
+
+
+
+.ei-card h3{
+
+    margin:20px 0 12px;
+
+    color:#c2410c;
+
+}
+
+
+
+.ei-card p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* ICONOS */
+
+
+.ei-icono{
+
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:16px;
+
+    background:#ffedd5;
+
+    color:#ea580c;
+
+    font-size:28px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   TESTIMONIO
+========================================== */
+
+
+.ei-testimonio{
+
+    margin-top:60px;
+
+    background:#fff7ed;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    border:1px solid #fed7aa;
+
+}
+
+
+
+.ei-testimonio svg{
+
+    color:#ea580c;
+
+    font-size:35px;
+
+}
+
+
+
+.ei-testimonio p{
+
+    max-width:850px;
+
+    margin:25px auto;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    font-style:italic;
+
+}
+
+
+
+.ei-testimonio strong{
+
+    display:block;
+
+    font-size:20px;
+
+}
+
+
+
+.ei-testimonio span{
+
+    color:#64748b;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   FAQ
+========================================== */
+
+
+.ei-faq{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+
+.ei-faq-item{
+
+    border:1px solid #fed7aa;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+}
+
+
+
+.ei-faq-item button{
+
+    width:100%;
+
+    padding:20px;
+
+    background:white;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+
+.ei-faq-item span{
+
+    color:#ea580c;
+
+    font-size:22px;
+
+}
+
+
+
+.ei-faq-respuesta{
+
+    padding:20px;
+
+    background:#fff7ed;
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   CASO DE EXITO
+========================================== */
+
+
+.ei-caso{
+
+    margin:80px 8%;
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:35px;
+
+}
+
+
+
+.ei-resultado{
+
+    background:#ffedd5;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.ei-resultado svg{
+
+    color:#ea580c;
+
+    font-size:40px;
+
+}
+
+
+
+.ei-resultado h3{
+
+    color:#c2410c;
+
+}
+
+
+
+.ei-resultado strong{
+
+    display:block;
+
+    font-size:40px;
+
+    color:#111827;
+
+    margin:20px 0;
+
+}
+
+
+
+.ei-resultado p{
+
+    color:#64748b;
+
+}
+
+
+
+
+
+
+
+
+.ei-historia{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.ei-historia h2{
+
+    color:#111827;
+
+}
+
+
+
+.ei-historia h3{
+
+    color:#c2410c;
+
+}
+
+
+
+.ei-historia p{
+
+    color:#64748b;
+
+    line-height:1.7;
+
+}
+
+
+
+.ei-historia a{
+
+    color:#0f766e;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   EVALUACION
+========================================== */
+
+
+.ei-evaluacion{
+
+    padding:70px 8%;
+
+    background:#fffaf5;
+
+    text-align:center;
+
+}
+
+
+
+.ei-evaluacion h2{
+
+    color:#111827;
+
+}
+
+
+
+.ei-evaluacion p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#64748b;
+
+}
+
+
+
+.ei-beneficios{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+
+
+.ei-beneficios div{
+
+    background:white;
+
+    padding:20px 30px;
+
+    border-radius:15px;
+
+    color:#c2410c;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   SERVICIOS RELACIONADOS
+========================================== */
+
+
+.ei-relacionados{
+
+    padding:70px 8%;
+
+    background:#f8fafc;
+
+    text-align:center;
+
+}
+
+
+
+.ei-relacionados-grid{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+.ei-relacionados-grid a{
+
+    width:150px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:#e5e7eb;
+
+    color:#64748b;
+
+    text-decoration:none;
+
+}
+
+
+
+.ei-relacionados-grid svg{
+
+    display:block;
+
+    margin:0 auto 10px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   WHATSAPP
+========================================== */
+
+
+.ei-whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    z-index:999;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:1000px){
+
+
+.ei-grid,
+
+.ei-grid.cuatro{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.ei-caso{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.ei-hero h1{
+
+    font-size:38px;
+
+}
+
+
+
+.ei-beneficios{
+
+    flex-direction:column;
+
+}
+
+
+}
