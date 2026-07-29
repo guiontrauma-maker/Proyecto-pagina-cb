@@ -1,0 +1,354 @@
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    width: 100%;
+    background: #ffffff;
+    color: #0B2340;
+
+    border-top: 1px solid #e8edf1;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.footer-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1.3fr 1fr 1.3fr;
+
+    gap: 65px;
+
+    align-items: stretch;
+
+    padding: 60px 0 55px;
+}
+
+
+/* =========================================================
+   COLUMNAS
+   ========================================================= */
+
+.footer-column {
+    min-width: 0;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footer-logo {
+    display: block;
+
+    width: 150px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 16px;
+}
+
+
+.footer-brand p {
+    max-width: 260px;
+
+    margin: 0;
+
+    color: #667482;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TITULOS
+   ========================================================= */
+
+.footer-column h3 {
+    margin: 3px 0 20px;
+
+    color: #0B2340;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LISTAS
+   ========================================================= */
+
+.footer-column ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.footer-column li {
+    margin-bottom: 11px;
+}
+
+
+.footer-column li:last-child {
+    margin-bottom: 0;
+}
+
+
+.footer-column li a {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #667482;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+
+.footer-column li a:hover {
+    color: #176B52;
+}
+
+
+/* =========================================================
+   ICONOS DE ENLACES
+   ========================================================= */
+
+.footer-column li a svg {
+    flex-shrink: 0;
+
+    color: #176B52;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-bottom: 17px;
+}
+
+
+.footer-contact-item svg {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: #176B52;
+
+    font-size: 15px;
+}
+
+
+.footer-contact-item p,
+.footer-contact-item a {
+    margin: 0;
+
+    color: #667482;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.footer-contact-item a:hover {
+    color: #176B52;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+   ========================================================= */
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid #e8edf1;
+
+    padding: 20px 0;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    text-align: center;
+
+    color: #87929c;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr;
+
+        gap: 45px 35px;
+    }
+
+
+    .footer-brand {
+        grid-column: span 3;
+    }
+
+
+    .footer-brand p {
+        max-width: 400px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .footer-container {
+        width: 88%;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 30px;
+
+        padding: 50px 0 45px;
+    }
+
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .footer-container {
+        width: 88%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 32px;
+
+        padding: 45px 0 40px;
+    }
+
+
+    .footer-column {
+        width: 100%;
+
+        height: auto;
+    }
+
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+
+    .footer-logo {
+        width: 135px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .footer-brand p {
+        max-width: 100%;
+
+        font-size: 14px;
+    }
+
+
+    .footer-column h3 {
+        margin-bottom: 16px;
+
+        font-size: 16px;
+    }
+
+
+    .footer-column li {
+        margin-bottom: 10px;
+    }
+
+
+    .footer-column li a {
+        font-size: 14px;
+    }
+
+
+    .footer-contact-item {
+        margin-bottom: 15px;
+    }
+
+
+    .footer-bottom {
+        width: 88%;
+
+        padding: 18px 0;
+    }
+
+
+    .footer-bottom p {
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+}

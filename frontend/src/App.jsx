@@ -1,7 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    useLocation
+} from "react-router-dom";
+
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 
 import Home from "./pages/Home";
 import Nosotros from "./pages/Nosotros";
@@ -9,6 +16,7 @@ import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes";
 import ListaNegraBrokers from "./pages/ListaNegraBrokers";
+
 
 import FraudesBancarios from "./pages/servicios/FraudesBancarios";
 import FraudesDigitales from "./pages/servicios/FraudesDigitales";
@@ -18,18 +26,35 @@ import EstafasRomanticas from "./pages/servicios/EstafasRomanticas";
 import EstafasPiramidales from "./pages/servicios/EstafasPiramidales";
 
 
-function App() {
+import LoginAdministrador from "./pages/LoginAdministrador";
+import PanelAdministrador from "./pages/PanelAdministrador";
+
+
+function AppContent() {
+
+    const location =
+        useLocation();
+
+
+    const adminRoute =
+        location.pathname ===
+            "/admin-login" ||
+
+        location.pathname.startsWith(
+            "/panel-administrador"
+        );
+
 
     return (
 
-        <BrowserRouter>
+        <>
 
-
-            <Navbar />
+            {!adminRoute && <Navbar />}
 
 
             <Routes>
 
+                {/* PÁGINAS PÚBLICAS */}
 
                 <Route
                     path="/"
@@ -83,14 +108,19 @@ function App() {
                     path="/servicios/estafas-piramidales"
                     element={<EstafasPiramidales />}
                 />
-                <Route 
-path="/lista-negra-brokers" 
-element={<ListaNegraBrokers />}
-/>
-<Route 
-    path="/preguntas-frecuentes" 
-    element={<PreguntasFrecuentes />} 
-    />
+
+
+                <Route
+                    path="/lista-negra-brokers"
+                    element={<ListaNegraBrokers />}
+                />
+
+
+                <Route
+                    path="/preguntas-frecuentes"
+                    element={<PreguntasFrecuentes />}
+                />
+
 
                 <Route
                     path="/contacto"
@@ -98,11 +128,42 @@ element={<ListaNegraBrokers />}
                 />
 
 
+                {/* ADMINISTRACIÓN */}
+
+                <Route
+                    path="/admin-login"
+                    element={
+                        <LoginAdministrador />
+                    }
+                />
+
+
+                <Route
+                    path="/panel-administrador"
+                    element={
+                        <PanelAdministrador />
+                    }
+                />
+
             </Routes>
 
 
-            <Footer />
+            {!adminRoute && <Footer />}
 
+        </>
+
+    );
+
+}
+
+
+function App() {
+
+    return (
+
+        <BrowserRouter>
+
+            <AppContent />
 
         </BrowserRouter>
 

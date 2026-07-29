@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
     FaPhoneAlt,
@@ -21,9 +21,109 @@ import "react-international-phone/style.css";
 import "../style/Contacto.css";
 
 
-function Contacto(){
+function Contacto() {
 
-    return(
+    const [nombre, setNombre] = useState("");
+    const [correo, setCorreo] = useState("");
+    const [telefono, setTelefono] = useState("");
+    const [tipoFraude, setTipoFraude] = useState("");
+    const [monto, setMonto] = useState("");
+    const [descripcion, setDescripcion] = useState("");
+
+    const [enviando, setEnviando] = useState(false);
+
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault();
+
+        if (enviando) {
+            return;
+        }
+
+        setEnviando(true);
+
+        try {
+
+            const respuesta = await fetch(
+                "http://localhost:5000/api/evaluaciones",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        fullName: nombre,
+
+                        email: correo,
+
+                        phone: telefono,
+
+                        fraudType: tipoFraude,
+
+                        amount: monto,
+
+                        currency: "USD",
+
+                        description: descripcion
+
+                    })
+                }
+            );
+
+
+            const datos = await respuesta.json();
+
+
+            if (!respuesta.ok) {
+
+                throw new Error(
+                    datos.message ||
+                    "No se pudo enviar la solicitud."
+                );
+
+            }
+
+
+            alert(
+                "Solicitud enviada correctamente. Nos pondremos en contacto contigo."
+            );
+
+
+            // Limpiar formulario
+
+            setNombre("");
+            setCorreo("");
+            setTelefono("");
+            setTipoFraude("");
+            setMonto("");
+            setDescripcion("");
+
+
+        } catch (error) {
+
+            console.error(
+                "Error al enviar formulario:",
+                error
+            );
+
+            alert(
+                "No se pudo enviar la solicitud. Verifica que el servidor esté funcionando."
+            );
+
+        } finally {
+
+            setEnviando(false);
+
+        }
+
+    };
+
+
+    return (
 
         <>
 
@@ -58,143 +158,114 @@ function Contacto(){
 
         {/* CONTENIDO PRINCIPAL */}
 
-
         <section className="contact-section">
-
 
 
             {/* COLUMNA IZQUIERDA */}
 
-
             <div className="contact-info">
 
 
-
                 <div className="contact-card">
-
 
                     <h3>
                         Información de contacto
                     </h3>
 
 
-
                     <div className="contact-item">
 
-                        <FaPhoneAlt/>
+                        <FaPhoneAlt />
 
                         <p>
                             Teléfono
-                            <br/>
+                            <br />
                             5663820152
                         </p>
 
                     </div>
 
 
-
-
                     <div className="contact-item">
 
-                        <FaEnvelope/>
+                        <FaEnvelope />
 
                         <p>
                             Correo electrónico
-                            <br/>
+                            <br />
                             recuperacionasistente@gmail.com
                         </p>
 
                     </div>
 
 
-
-
                     <div className="contact-item">
 
-                        <FaMapMarkerAlt/>
+                        <FaMapMarkerAlt />
 
                         <p>
                             Dirección
-                            <br/>
-                           Av. Insurgentes Sur 1431 , interior Piso14 Oficina 01, Colonia Insurgentes Mixcoac, C.P. 03920, Benito Juárez, Ciudad de México
+                            <br />
+                            Av. Insurgentes Sur 1431,
+                            interior Piso14 Oficina 01,
+                            Colonia Insurgentes Mixcoac,
+                            C.P. 03920, Benito Juárez,
+                            Ciudad de México
                         </p>
 
                     </div>
 
-
                 </div>
 
 
-
-
-
-
-
                 <div className="contact-card">
-
 
                     <h3>
                         Horario de atención
                     </h3>
 
 
-
                     <div className="contact-item">
 
-
-                        <FaClock/>
-
+                        <FaClock />
 
                         <p>
 
                             Lunes a viernes
-                            <br/>
+                            <br />
                             9:00 AM - 6:00 PM
 
-                            <br/>
-                            <br/>
+                            <br />
+                            <br />
 
                             Sábados y Domingos
-                            <br/>
+                            <br />
                             Cerrado
 
                         </p>
 
-
                     </div>
-
 
                 </div>
 
 
-
-
-
-
-
                 <div className="contact-card">
-
 
                     <h3>
                         Preguntas frecuentes
                     </h3>
 
 
-
                     <div className="contact-item">
 
-
-                        <FaQuestionCircle/>
-
+                        <FaQuestionCircle />
 
                         <p>
                             Consulta las dudas más comunes
                             sobre nuestro proceso.
                         </p>
 
-
                     </div>
-
 
 
                     <a href="/preguntas-frecuentes">
@@ -203,9 +274,7 @@ function Contacto(){
 
                     </a>
 
-
                 </div>
-
 
 
             </div>
@@ -214,22 +283,12 @@ function Contacto(){
 
 
 
-
-
-
-
             {/* COLUMNA DERECHA */}
-
-
 
             <div className="contact-right">
 
 
-
-
-
                 <div className="contact-form">
-
 
                     <h2>
                         Solicita orientación
@@ -241,136 +300,107 @@ function Contacto(){
                     </p>
 
 
-
-
-                    <form>
-
+                    <form onSubmit={handleSubmit}>
 
 
                         <input
-
                             type="text"
-
                             placeholder="Nombre completo"
-
+                            value={nombre}
+                            onChange={(e) => setNombre(e.target.value)}
+                            required
                         />
-
-
-
 
 
                         <input
-
                             type="email"
-
                             placeholder="Correo electrónico"
-
+                            value={correo}
+                            onChange={(e) => setCorreo(e.target.value)}
+                            required
                         />
-
-
-
-
 
 
                         <PhoneInput
-
                             defaultCountry="mx"
-
                             placeholder="Número telefónico"
-
+                            value={telefono}
+                            onChange={(phone) => setTelefono(phone)}
                         />
 
 
-
-
-
-
-
-                        <select defaultValue="">
-
+                        <select
+                            value={tipoFraude}
+                            onChange={(e) => setTipoFraude(e.target.value)}
+                            required
+                        >
 
                             <option value="" disabled>
-
                                 Selecciona tipo de fraude
-
                             </option>
 
-
-                            <option>
+                            <option value="Fraude financiero">
                                 Fraude financiero
                             </option>
 
-
-                            <option>
+                            <option value="Fraude digital">
                                 Fraude digital
                             </option>
 
-
-                            <option>
+                            <option value="Robo de identidad">
                                 Robo de identidad
                             </option>
 
-
-                            <option>
+                            <option value="Estafa de inversión">
                                 Estafa de inversión
                             </option>
 
-
-                            <option>
-                                Otro
+                            <option value="Estafa romántica">
+                                Estafa romántica
                             </option>
 
+                            <option value="Estafa piramidal">
+                                Estafa piramidal
+                            </option>
+
+                            <option value="Otro">
+                                Otro
+                            </option>
 
                         </select>
 
 
-
-
-
-
-
                         <input
-
                             type="number"
-
                             placeholder="Monto estimado de pérdida"
-
+                            value={monto}
+                            onChange={(e) => setMonto(e.target.value)}
                         />
-
-
-
-
-
 
 
                         <textarea
-
                             placeholder="Cuéntanos brevemente qué ocurrió (opcional)"
-
+                            value={descripcion}
+                            onChange={(e) => setDescripcion(e.target.value)}
                         />
 
 
+                        <button
+                            type="submit"
+                            disabled={enviando}
+                        >
 
-
-
-
-
-                        <button type="submit">
-
-                            Enviar solicitud
+                            {enviando
+                                ? "Enviando..."
+                                : "Enviar solicitud"
+                            }
 
                         </button>
 
 
-
-
                     </form>
 
-
-
                 </div>
-
-
 
 
 
@@ -378,86 +408,58 @@ function Contacto(){
 
                 {/* TARJETAS DE CONFIANZA */}
 
-
-
                 <div className="trust-cards">
-
 
 
                     <div className="trust-card">
 
-
-                        <FaLock className="trust-icon"/>
-
+                        <FaLock className="trust-icon" />
 
                         <h3>
                             100% Confidencial
                         </h3>
 
-
                         <p>
                             Secreto profesional garantizado
                         </p>
 
-
                     </div>
-
-
-
-
 
 
                     <div className="trust-card">
 
-
-                        <FaBolt className="trust-icon"/>
-
+                        <FaBolt className="trust-icon" />
 
                         <h3>
                             Respuesta Rápida
                         </h3>
 
-
                         <p>
                             Máximo 24 horas
                         </p>
 
-
                     </div>
-
-
-
-
-
 
 
                     <div className="trust-card">
 
-
-                        <FaBalanceScale className="trust-icon"/>
-
+                        <FaBalanceScale className="trust-icon" />
 
                         <h3>
                             Abogados Certificados
                         </h3>
 
-
                         <p>
                             Cédulas profesionales vigentes
                         </p>
 
-
                     </div>
-
 
 
                 </div>
 
 
-
-
             </div>
-
 
 
         </section>
@@ -466,24 +468,15 @@ function Contacto(){
 
 
 
-
-
-
-
         {/* MAPA */}
-
-
 
         <section className="map-section">
 
-
             <div className="map-card">
-
 
                 <h2>
                     Nuestra ubicación
                 </h2>
-
 
 
                 <iframe
@@ -495,7 +488,7 @@ function Contacto(){
                     height="400"
 
                     style={{
-                        border:0
+                        border: 0
                     }}
 
                     loading="lazy"
@@ -505,9 +498,7 @@ function Contacto(){
                 ></iframe>
 
 
-
             </div>
-
 
         </section>
 
@@ -515,12 +506,7 @@ function Contacto(){
 
 
 
-
-
-
         {/* WHATSAPP */}
-
-
 
         <a
 
@@ -534,10 +520,9 @@ function Contacto(){
 
         >
 
-            <FaWhatsapp/>
+            <FaWhatsapp />
 
         </a>
-
 
 
         </>

@@ -33,13 +33,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* =========================================================
-   COLORES
-========================================================= */
-
 :root {
-
     --green-dark: #1f6b3a;
     --green: #438d59;
     --green-soft: #dfeee3;
@@ -55,12 +49,11 @@ body {
     --border: #e1e5e2;
 
     --shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-
 }
 
 
 /* =========================================================
-   TITULOS GENERALES
+   TITULOS
 ========================================================= */
 
 .section-header {
@@ -103,14 +96,10 @@ body {
     grid-template-columns: 1.08fr 0.92fr;
 
     align-items: center;
-
     gap: 65px;
 
     background: #ffffff;
 }
-
-
-/* TEXTO */
 
 .hero-text {
     min-width: 0;
@@ -122,7 +111,6 @@ body {
     gap: 8px;
 
     padding: 8px 15px;
-
     margin-bottom: 22px;
 
     border-radius: 30px;
@@ -139,7 +127,6 @@ body {
     font-size: 15px;
 }
 
-
 .hero-title {
     margin: 0 0 18px;
 
@@ -148,10 +135,8 @@ body {
     font-size: clamp(36px, 4.5vw, 54px);
 
     line-height: 1.08;
-
     font-weight: 700;
 }
-
 
 .hero-subtitle {
     margin: 0 0 24px;
@@ -161,10 +146,8 @@ body {
     font-size: clamp(22px, 3vw, 30px);
 
     line-height: 1.2;
-
     font-weight: 700;
 }
-
 
 .hero-text > p {
     max-width: 650px;
@@ -174,10 +157,8 @@ body {
     color: var(--gray);
 
     font-size: 17px;
-
     line-height: 1.8;
 }
-
 
 .hero-free {
     margin: 0 0 30px;
@@ -185,20 +166,18 @@ body {
     color: var(--green);
 
     font-size: 23px;
-
     font-weight: 700;
 }
 
 
 /* =========================================================
-   ESTADISTICAS HERO
+   ESTADISTICAS
 ========================================================= */
 
 .hero-info {
     display: flex;
     align-items: stretch;
     gap: 16px;
-
     flex-wrap: wrap;
 }
 
@@ -209,7 +188,6 @@ body {
     background: #ffffff;
 
     border: 1px solid var(--border);
-
     border-radius: 15px;
 
     padding: 20px 23px;
@@ -236,7 +214,6 @@ body {
     gap: 4px;
 
     color: #d4a92c;
-
     font-size: 18px;
 }
 
@@ -247,7 +224,6 @@ body {
     color: var(--green-dark);
 
     font-size: 34px;
-
     line-height: 1;
 }
 
@@ -258,7 +234,6 @@ body {
     color: var(--gray);
 
     font-size: 14px;
-
     line-height: 1.5;
 }
 
@@ -266,7 +241,6 @@ body {
     flex-shrink: 0;
 
     color: var(--green);
-
     font-size: 38px;
 }
 
@@ -281,7 +255,6 @@ body {
     background: #ffffff;
 
     border: 2px solid #8ab894;
-
     border-radius: 18px;
 
     padding: 30px;
@@ -297,7 +270,6 @@ body {
     color: var(--green-dark);
 
     font-size: 29px;
-
     line-height: 1.2;
 }
 
@@ -309,12 +281,11 @@ body {
     color: var(--gray);
 
     font-size: 15px;
-
     line-height: 1.6;
 }
 
 
-/* CAMPOS */
+/* CAMPOS INDIVIDUALES */
 
 .input-group {
     width: 100%;
@@ -327,11 +298,9 @@ body {
     gap: 11px;
 
     padding: 0 16px;
-
     margin-bottom: 15px;
 
     border: 1px solid #d7ddd9;
-
     border-radius: 10px;
 
     background: #ffffff;
@@ -339,7 +308,6 @@ body {
 
 .input-group:focus-within {
     border-color: #79a984;
-
     box-shadow: 0 0 0 3px rgba(67, 141, 89, .10);
 }
 
@@ -347,7 +315,6 @@ body {
     flex-shrink: 0;
 
     color: var(--green);
-
     font-size: 19px;
 }
 
@@ -367,11 +334,12 @@ body {
 }
 
 
-/* TELEFONO */
+/* =========================================================
+   TELEFONO
+========================================================= */
 
 .phone-row {
     width: 100%;
-
     margin-bottom: 15px;
 }
 
@@ -381,6 +349,7 @@ body {
 
 .phone-row .react-international-phone-input-container {
     width: 100%;
+    display: flex;
 }
 
 .phone-row .react-international-phone-input {
@@ -390,11 +359,15 @@ body {
 
     border: 1px solid #d7ddd9 !important;
 
-    border-radius: 10px !important;
+    border-left: none !important;
+
+    border-radius: 0 10px 10px 0 !important;
 
     font-size: 15px !important;
 
     box-shadow: none !important;
+
+    outline: none !important;
 }
 
 .phone-row .react-international-phone-country-selector-button {
@@ -407,6 +380,8 @@ body {
     border-radius: 10px 0 0 10px !important;
 
     background: #ffffff !important;
+
+    box-shadow: none !important;
 }
 
 .phone-row .react-international-phone-input-container:focus-within
@@ -417,7 +392,9 @@ body {
 }
 
 
-/* COMENTARIOS */
+/* =========================================================
+   COMENTARIOS
+========================================================= */
 
 .comments-box {
     margin-bottom: 18px;
@@ -429,7 +406,6 @@ body {
     color: var(--gray-dark);
 
     font-size: 14px;
-
     font-weight: 600;
 }
 
@@ -445,7 +421,6 @@ body {
     resize: vertical;
 
     border: 1px solid #d7ddd9;
-
     border-radius: 10px;
 
     outline: none;
@@ -468,7 +443,6 @@ body {
     min-height: 53px;
 
     border: none;
-
     border-radius: 10px;
 
     background: var(--green-dark);
@@ -476,7 +450,6 @@ body {
     color: #ffffff;
 
     font-size: 16px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -487,9 +460,6 @@ body {
 .contact-form button:hover {
     background: #174f2b;
 }
-
-
-/* SEGURIDAD */
 
 .secure {
     display: flex;
@@ -534,7 +504,6 @@ body {
     color: #666666;
 
     font-size: 21px;
-
     font-weight: 700;
 }
 
@@ -559,7 +528,6 @@ body {
     color: #727272;
 
     font-size: 20px;
-
     font-weight: 700;
 
     border-right: 1px solid #d2d2d2;
@@ -575,7 +543,7 @@ body {
 
 
 /* =========================================================
-   AREAS DE PRACTICA
+   AREAS
 ========================================================= */
 
 .areas-practica {
@@ -603,7 +571,6 @@ body {
     background: #ffffff;
 
     border: 1px solid #e3e8e4;
-
     border-radius: 17px;
 
     box-shadow: var(--shadow);
@@ -668,7 +635,6 @@ body {
     color: var(--green-dark);
 
     font-size: 21px;
-
     line-height: 1.3;
 }
 
@@ -678,7 +644,6 @@ body {
     color: var(--gray);
 
     font-size: 15px;
-
     line-height: 1.75;
 }
 
@@ -692,7 +657,6 @@ body {
     color: var(--green-dark);
 
     font-size: 14px;
-
     font-weight: 700;
 }
 
@@ -764,12 +728,8 @@ body {
     z-index: 2;
 }
 
-.timeline-circle.first-step {
-    background: var(--green-dark);
-
-    border-color: var(--green-dark);
-
-    color: #ffffff;
+.timeline-circle svg {
+    color: var(--green-dark);
 }
 
 .timeline-line {
@@ -784,7 +744,6 @@ body {
     position: relative;
 
     flex: 1;
-
     min-width: 0;
 
     margin-bottom: 35px;
@@ -794,7 +753,6 @@ body {
     background: #ffffff;
 
     border: 1px solid #e3e8e4;
-
     border-radius: 15px;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, .06);
@@ -808,7 +766,6 @@ body {
     color: #7c9982;
 
     font-size: 12px;
-
     font-weight: 700;
 }
 
@@ -826,7 +783,6 @@ body {
     color: var(--gray);
 
     font-size: 15px;
-
     line-height: 1.7;
 }
 
@@ -850,7 +806,6 @@ body {
     background: rgba(216, 236, 220, .75);
 
     border: 1px solid #c6ddcb;
-
     border-radius: 15px;
 }
 
@@ -876,7 +831,6 @@ body {
     color: #617064;
 
     font-size: 14px;
-
     line-height: 1.7;
 }
 
@@ -914,7 +868,6 @@ body {
     background: #ffffff;
 
     border: 1px solid #e2e8e4;
-
     border-radius: 16px;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, .06);
@@ -928,25 +881,44 @@ body {
     box-shadow: 0 17px 32px rgba(0, 0, 0, .09);
 }
 
-.razon-number {
-    display: inline-flex;
+.razon-icon {
+    width: 48px;
+    height: 48px;
 
-    width: 38px;
-    height: 38px;
+    display: flex;
 
     justify-content: center;
     align-items: center;
 
-    margin-bottom: 22px;
+    margin-bottom: 15px;
 
-    border-radius: 50%;
+    border-radius: 13px;
 
     background: #e2efe5;
 
     color: var(--green-dark);
 
-    font-size: 13px;
+    font-size: 21px;
+}
 
+.razon-number {
+    display: inline-flex;
+
+    width: 32px;
+    height: 32px;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 50%;
+
+    background: #eef5ef;
+
+    color: var(--green-dark);
+
+    font-size: 12px;
     font-weight: 700;
 }
 
@@ -956,7 +928,6 @@ body {
     color: var(--black);
 
     font-size: 19px;
-
     line-height: 1.35;
 }
 
@@ -966,7 +937,6 @@ body {
     color: var(--gray);
 
     font-size: 14px;
-
     line-height: 1.75;
 }
 
@@ -993,7 +963,7 @@ body {
 
 .alertas-box {
     width: 100%;
-    max-width: 1050px;
+    max-width: 1100px;
 
     margin: 0 auto;
 
@@ -1016,7 +986,6 @@ body {
     color: #5f5f5f;
 
     font-size: 14px;
-
     font-weight: 600;
 }
 
@@ -1027,7 +996,7 @@ body {
 .alerta-row {
     display: grid;
 
-    grid-template-columns: 1.3fr 1fr .8fr;
+    grid-template-columns: 1.25fr 1.05fr .8fr .85fr;
 
     align-items: center;
 
@@ -1041,7 +1010,7 @@ body {
 }
 
 .alerta-row > div {
-    padding: 12px 20px;
+    padding: 12px 18px;
 }
 
 .alerta-head {
@@ -1054,36 +1023,44 @@ body {
     font-weight: 700;
 }
 
+
+/* ESTADOS */
+
 .estado {
     display: inline-flex;
 
     align-items: center;
+    justify-content: center;
 
-    padding: 6px 10px;
+    padding: 6px 12px;
 
     border-radius: 20px;
 
     font-size: 12px;
-
     font-weight: 700;
+
+    white-space: nowrap;
 }
 
-.estado.activo {
-    background: #eeeeee;
+.estado.lista-negra {
+    background: #fbe2e2;
 
-    color: #5f5f5f;
+    color: #b42323;
+
+    border: 1px solid #efb5b5;
 }
 
-.estado.investigacion {
-    background: #e8e8e8;
+.estado.precaucion {
+    background: #fff1cc;
 
-    color: #666666;
+    color: #9a6900;
+
+    border: 1px solid #efd58c;
 }
 
 
 /* =========================================================
    TESTIMONIOS
-   SOLO AQUÍ SE UTILIZA TIPOGRAFÍA DIFERENTE
 ========================================================= */
 
 .testimonios {
@@ -1113,12 +1090,9 @@ body {
     background: #ffffff;
 
     border: 1px solid #e0e6e2;
-
     border-radius: 17px;
 
     box-shadow: var(--shadow);
-
-    /* SOLO ESTA ZONA */
 
     font-family: Georgia, "Times New Roman", serif;
 }
@@ -1141,7 +1115,6 @@ body {
     color: #555555;
 
     font-size: 16px;
-
     line-height: 1.8;
 
     font-style: italic;
@@ -1169,7 +1142,6 @@ body {
     color: #5d7563;
 
     font-size: 14px;
-
     font-weight: 700;
 }
 
@@ -1209,7 +1181,6 @@ body {
     overflow: hidden;
 
     border: 1px solid #e0e5e2;
-
     border-radius: 12px;
 
     background: #ffffff;
@@ -1231,11 +1202,12 @@ body {
 
     gap: 20px;
 
-    border: none;
+    border: none !important;
+    outline: none !important;
 
-    background: #ffffff;
+    background: #ffffff !important;
 
-    color: #5c5c5c;
+    color: #171717 !important;
 
     text-align: left;
 
@@ -1244,16 +1216,30 @@ body {
     font-weight: 600;
 
     cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.faq-question span {
+    color: #171717 !important;
 }
 
 .faq-question:hover {
-    background: #f7f9f8;
+    background: #f7f9f8 !important;
+    color: #171717 !important;
+}
+
+.faq-question:focus,
+.faq-question:active {
+    color: #171717 !important;
+    background: #ffffff !important;
 }
 
 .faq-question svg {
     flex-shrink: 0;
 
-    color: var(--green-dark);
+    color: var(--green-dark) !important;
 
     font-size: 14px;
 
@@ -1265,7 +1251,7 @@ body {
 }
 
 .faq-open .faq-question {
-    color: var(--green-dark);
+    color: #171717 !important;
 }
 
 .faq-answer {
@@ -1280,7 +1266,6 @@ body {
     color: #6a6a6a;
 
     font-size: 14px;
-
     line-height: 1.8;
 }
 
@@ -1297,13 +1282,24 @@ body {
 
     padding: 28px 35px;
 
+    display: block;
+
     text-align: center;
 
     background: rgba(220, 239, 224, .75);
 
     border: 1px solid #c5ddca;
-
     border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.faq-contact:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .07);
 }
 
 .faq-contact > svg {
@@ -1328,7 +1324,6 @@ body {
     color: #667067;
 
     font-size: 14px;
-
     line-height: 1.6;
 }
 
@@ -1348,10 +1343,11 @@ body {
     color: #ffffff;
 
     font-size: 14px;
-
     font-weight: 700;
+}
 
-    transition: .25s ease;
+.faq-button svg {
+    color: #ffffff;
 }
 
 .faq-button:hover {
@@ -1385,11 +1381,15 @@ body {
 
     overflow: hidden;
 
+    display: block;
+
     border-radius: 18px;
 
     background: var(--green-dark);
 
     box-shadow: 0 18px 38px rgba(0, 0, 0, .12);
+
+    cursor: pointer;
 }
 
 .final-cta-text {
@@ -1436,17 +1436,12 @@ body {
     color: var(--green-dark);
 
     font-size: 14px;
-
     font-weight: 700;
-
-    transition: .25s ease;
-}
-
-.final-cta-button:hover {
-    background: #edf4ee;
 }
 
 .final-cta-button svg {
+    color: var(--green-dark);
+
     font-size: 17px;
 }
 
@@ -1530,6 +1525,13 @@ body {
         margin: 0 auto;
     }
 
+    .alertas-box {
+        overflow-x: auto;
+    }
+
+    .alertas-table {
+        min-width: 850px;
+    }
 }
 
 
@@ -1552,14 +1554,6 @@ body {
         border-top: 1px solid #d2d2d2;
 
         padding-top: 20px;
-    }
-
-    .alertas-box {
-        overflow-x: auto;
-    }
-
-    .alertas-table {
-        min-width: 700px;
     }
 
 }
@@ -1615,7 +1609,6 @@ body {
         min-width: 0;
     }
 
-
     .contact-form {
         padding: 24px 18px;
 
@@ -1625,7 +1618,6 @@ body {
     .contact-form h2 {
         font-size: 25px;
     }
-
 
     .medios {
         padding: 35px 20px;
@@ -1644,7 +1636,6 @@ body {
 
         border-right: none;
     }
-
 
     .areas-practica,
     .proceso,
@@ -1667,7 +1658,6 @@ body {
         font-size: 15px;
     }
 
-
     .areas-grid {
         grid-template-columns: 1fr;
 
@@ -1679,7 +1669,6 @@ body {
 
         padding: 27px 23px;
     }
-
 
     .timeline-item {
         gap: 15px;
@@ -1712,13 +1701,11 @@ body {
         font-size: 14px;
     }
 
-
     .case-review {
         padding: 22px;
 
         align-items: flex-start;
     }
-
 
     .razones-grid {
         grid-template-columns: 1fr;
@@ -1732,7 +1719,6 @@ body {
         padding: 27px 23px;
     }
 
-
     .testimonios-grid {
         grid-template-columns: 1fr;
     }
@@ -1742,7 +1728,6 @@ body {
 
         max-width: none;
     }
-
 
     .faq-question {
         min-height: 58px;
@@ -1759,7 +1744,6 @@ body {
     .faq-contact {
         padding: 25px 20px;
     }
-
 
     .final-cta {
         padding: 40px 20px 65px;

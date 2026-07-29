@@ -1,51 +1,42 @@
-/*=========================================
-NOSOTROS
-=========================================*/
+/* =========================================
+   NOSOTROS
+========================================= */
 
 .nosotros{
 
+    width:100%;
+    overflow-x:hidden;
     background:#ffffff;
+    color:#222222;
 
 }
 
 
-
-/*=========================================
-HERO
-=========================================*/
-
+/* =========================================
+   HERO
+========================================= */
 
 .nosotros-hero{
 
-    max-width:1250px;
-
+    width:min(1250px,92%);
     margin:0 auto;
 
-    padding:130px 8% 100px;
+    padding:135px 0 100px;
 
     display:grid;
-
     grid-template-columns:1fr 1fr;
 
     align-items:center;
 
-    gap:80px;
+    gap:70px;
 
 }
-
-
-
-/*=========================================
-INFORMACIÓN
-=========================================*/
 
 
 .nosotros-info{
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
 
 }
@@ -54,38 +45,33 @@ INFORMACIÓN
 .nosotros-badge{
 
     display:flex;
-
     align-items:center;
 
     gap:10px;
 
+    margin-bottom:20px;
+
     color:var(--primary-green);
 
     font-size:14px;
-
     font-weight:600;
 
 }
 
 
-
 .badge-icon{
 
-    color:var(--primary-green);
-
-    font-size:18px;
-
     width:18px;
-
     height:18px;
+
+    color:var(--primary-green);
 
 }
 
 
-
 .nosotros-titulo{
 
-    font-size:58px;
+    font-size:48px;
 
     line-height:1.15;
 
@@ -94,22 +80,9 @@ INFORMACIÓN
 }
 
 
+/* CONOCE GRUPO SSM */
 
 .titulo-negro{
-
-    color:#111111;
-
-    font-weight:800;
-
-}
-
-
-
-.titulo-verde-frase{
-
-    display:block;
-
-    margin-top:10px;
 
     color:var(--primary-green);
 
@@ -118,47 +91,57 @@ INFORMACIÓN
 }
 
 
+/* TU PUNTO DE DEFENSA */
 
-.nosotros-info p{
+.titulo-verde-frase{
 
-    max-width:620px;
+    display:block;
 
-    color:#5E5E5E;
+    margin-top:10px;
 
-    font-size:18px;
+    color:#111111;
 
-    line-height:1.9;
+    font-weight:800;
 
 }
 
 
+.nosotros-info > p{
 
-/*=========================================
-IMAGEN
-=========================================*/
+    max-width:600px;
 
+    margin:0;
+
+    color:#5e5e5e;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================
+   IMAGEN HERO
+========================================= */
 
 .nosotros-imagen{
 
     position:relative;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
 }
 
 
-
 .nosotros-imagen img{
 
     width:100%;
+    max-width:600px;
 
-    max-width:650px;
-
-    height:560px;
+    height:540px;
 
     object-fit:cover;
 
@@ -169,81 +152,74 @@ IMAGEN
 }
 
 
-
 .nosotros-imagen span{
 
     position:absolute;
 
     left:50%;
-
     bottom:28px;
 
     transform:translateX(-50%);
 
-    width:85%;
+    width:82%;
 
     text-align:center;
 
-    color:rgba(255,255,255,.85);
+    color:rgba(255,255,255,.9);
 
-    font-size:15px;
+    font-size:14px;
 
-    letter-spacing:2px;
+    letter-spacing:1.5px;
 
     text-transform:uppercase;
 
     font-weight:600;
 
-    text-shadow:0 2px 10px rgba(0,0,0,.65);
+    text-shadow:0 2px 10px rgba(0,0,0,.7);
 
 }
 
 
-
-/*=========================================
-MISIÓN - VISIÓN - VALORES
-=========================================*/
-
+/* =========================================
+   NUESTRA ESENCIA
+========================================= */
 
 .mision-section{
 
-    max-width:1200px;
+    width:min(1200px,92%);
 
     margin:0 auto;
 
-    padding:90px 8%;
+    padding:90px 0 105px;
 
 }
-
 
 
 .mision-header{
 
     text-align:center;
 
-    margin-bottom:60px;
+    margin:0 auto 55px;
 
 }
-
 
 
 .mision-header h2{
 
-    font-size:44px;
+    margin:0 0 18px;
 
     color:#111111;
 
-    margin-bottom:18px;
+    font-size:44px;
 
 }
-
 
 
 .mision-header p{
 
     max-width:720px;
 
-    margin:auto;
+    margin:0 auto;
 
     color:#666666;
 
@@ -252,7 +228,6 @@ MISIÓN - VISIÓN - VALORES
     line-height:1.8;
 
 }
-
 
 
 .mision-grid{
@@ -266,12 +241,13 @@ MISIÓN - VISIÓN - VALORES
 }
 
 
-
 .mision-card{
 
-    background:#ffffff;
+    min-height:390px;
 
-    padding:40px 35px;
+    padding:38px 34px;
+
+    background:#ffffff;
 
     border-radius:22px;
 
@@ -279,61 +255,95 @@ MISIÓN - VISIÓN - VALORES
 
     box-shadow:0 12px 35px rgba(0,0,0,.08);
 
+    display:flex;
+
+    flex-direction:column;
+
     transition:.3s ease;
 
 }
 
 
-
 .mision-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-7px);
 
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
+    box-shadow:0 18px 42px rgba(0,0,0,.12);
 
 }
 
+
+/* ICONOS */
+
+.mision-icon{
+
+    width:58px;
+    height:58px;
+
+    margin-bottom:22px;
+
+    border-radius:50%;
+
+    background:#e4f0e7;
+
+    color:var(--primary-green);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+
+}
 
 
 .mision-card h3{
 
+    margin:0 0 17px;
+
     color:var(--primary-green);
 
-    font-size:28px;
-
-    margin-bottom:20px;
+    font-size:27px;
 
 }
 
 
-
 .mision-card p{
+
+    margin:0 0 15px;
 
     color:#555555;
 
     font-size:16px;
 
-    line-height:1.9;
+    line-height:1.85;
 
 }
 
 
+.mision-card p:last-child{
 
-/*=========================================
-PROCESO DE EVALUACIÓN
-=========================================*/
+    margin-bottom:0;
 
+}
+
+
+/* =========================================
+   CÓMO FUNCIONA NUESTRA EVALUACIÓN
+========================================= */
 
 .proceso-section{
 
-    max-width:1200px;
+    width:min(1200px,92%);
 
     margin:0 auto;
 
-    padding:90px 8%;
+    padding:95px 0 110px;
+
+    background:#ffffff;
 
 }
-
 
 
 .proceso-header{
@@ -345,24 +355,22 @@ PROCESO DE EVALUACIÓN
 }
 
 
-
 .proceso-header h2{
 
-    font-size:44px;
+    margin:0 0 18px;
 
     color:#111111;
 
-    margin-bottom:18px;
+    font-size:44px;
 
 }
-
 
 
 .proceso-header p{
 
     max-width:720px;
 
-    margin:auto;
+    margin:0 auto;
 
     color:#666666;
 
@@ -373,20 +381,15 @@ PROCESO DE EVALUACIÓN
 }
 
 
-
-/* TIMELINE */
-
-
 .proceso-timeline{
 
     position:relative;
 
     max-width:850px;
 
-    margin:auto;
+    margin:0 auto;
 
 }
-
 
 
 .proceso-timeline::before{
@@ -395,7 +398,7 @@ PROCESO DE EVALUACIÓN
 
     position:absolute;
 
-    left:28px;
+    left:29px;
 
     top:0;
 
@@ -403,10 +406,9 @@ PROCESO DE EVALUACIÓN
 
     height:100%;
 
-    background:#dcdcdc;
+    background:#d9dedb;
 
 }
-
 
 
 .proceso-item{
@@ -422,12 +424,19 @@ PROCESO DE EVALUACIÓN
 }
 
 
+.proceso-item:last-child{
+
+    margin-bottom:0;
+
+}
+
 
 .proceso-numero{
 
     width:58px;
-
     height:58px;
+
+    flex:0 0 58px;
 
     border-radius:50%;
 
@@ -440,19 +449,15 @@ PROCESO DE EVALUACIÓN
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    font-size:18px;
+    font-size:17px;
 
     font-weight:700;
 
     z-index:2;
 
-    flex-shrink:0;
-
 }
-
 
 
 .proceso-item.activo .proceso-numero{
@@ -464,60 +469,54 @@ PROCESO DE EVALUACIÓN
 }
 
 
-
 .proceso-contenido{
 
-    padding:8px 0 0;
+    padding-top:5px;
 
     flex:1;
 
 }
 
 
-
 .proceso-contenido h3{
 
-    font-size:26px;
+    margin:0 0 13px;
 
     color:#111111;
 
-    margin-bottom:15px;
+    font-size:25px;
 
 }
-
 
 
 .proceso-contenido p{
 
-    color:#555555;
+    max-width:620px;
 
-    line-height:1.8;
+    margin:0;
+
+    color:#555555;
 
     font-size:16px;
 
-    max-width:600px;
+    line-height:1.8;
 
 }
-
 
 
 .proceso-contenido span{
 
     display:inline-block;
 
+    margin-bottom:8px;
+
     color:var(--primary-green);
 
-    font-size:14px;
+    font-size:13px;
 
-    font-weight:600;
-
-    margin-bottom:10px;
+    font-weight:700;
 
 }
-
-
-
-/* OPCIONAL */
 
 
 .proceso-item.opcional .proceso-numero{
@@ -527,27 +526,621 @@ PROCESO DE EVALUACIÓN
 }
 
 
+/* =========================================
+   POR QUÉ ELEGIRNOS
+========================================= */
 
-.proceso-item.opcional{
+.porque-section{
 
-    opacity:1;
+    width:100%;
+
+    padding:90px 5% 100px;
+
+    background:#286d3d;
 
 }
-/*=========================================
-RESPONSIVE GENERAL
-=========================================*/
 
 
-@media(max-width:992px){
+.porque-header{
 
+    max-width:760px;
+
+    margin:0 auto 50px;
+
+    text-align:center;
+
+}
+
+
+.porque-header h2{
+
+    margin:0 0 18px;
+
+    color:#ffffff;
+
+    font-size:44px;
+
+}
+
+
+.porque-header p{
+
+    margin:0;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+.porque-grid{
+
+    width:min(1200px,100%);
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+
+/* TARJETAS CON VERDE DIFERENTE */
+
+.porque-card{
+
+    min-height:255px;
+
+    padding:32px 27px;
+
+    background:#347c4a;
+
+    border:1px solid rgba(220,240,225,.32);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    transition:.3s ease;
+
+}
+
+
+.porque-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(255,255,255,.5);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.16);
+
+}
+
+
+/* ICONOS BLANCOS */
+
+.porque-icon{
+
+    width:55px;
+    height:55px;
+
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:23px;
+
+}
+
+
+.porque-card h3{
+
+    margin:0 0 15px;
+
+    color:#ffffff;
+
+    font-size:21px;
+
+}
+
+
+.porque-card p{
+
+    margin:0;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.formulario-section{
+
+    width:100%;
+
+    padding:90px 5% 110px;
+
+    background:#ffffff;
+
+}
+
+
+.formulario-contenedor{
+
+    width:min(1200px,100%);
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+
+/* IZQUIERDA */
+
+.formulario-info{
+
+    background:#0b3316;
+
+    padding:50px;
+
+    color:#ffffff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.formulario-info h2{
+
+    margin:0 0 20px;
+
+    color:#ffffff;
+
+    font-size:38px;
+
+    line-height:1.2;
+
+}
+
+
+.formulario-info > p{
+
+    margin:0 0 35px;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+
+.formulario-beneficio{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+
+.formulario-beneficio svg{
+
+    flex-shrink:0;
+
+    color:#5CBF67;
+
+    font-size:25px;
+
+}
+
+
+.formulario-beneficio span{
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+
+.formulario-contacto{
+
+    margin-top:35px;
+
+}
+
+
+.formulario-contacto small{
+
+    color:#ffffff;
+
+    font-size:13px;
+
+}
+
+
+.formulario-contacto h3{
+
+    margin:8px 0;
+
+    color:#5CBF67;
+
+    font-size:28px;
+
+}
+
+
+.formulario-contacto p{
+
+    margin:0;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+}
+
+
+/* =========================================
+   FORMULARIO DERECHA
+========================================= */
+
+.formulario-card{
+
+    max-width:none;
+
+    margin:0;
+
+    padding:50px;
+
+    background:#ffffff;
+
+    border:none;
+
+    border-radius:0;
+
+    box-shadow:none;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+
+.formulario-card h2{
+
+    grid-column:1 / -1;
+
+    margin:0;
+
+    color:var(--primary-green);
+
+    font-size:30px;
+
+}
+
+
+.formulario-card > p{
+
+    grid-column:1 / -1;
+
+    margin:0 0 5px;
+
+    color:#666666;
+
+    line-height:1.7;
+
+}
+
+
+.input-group{
+
+    width:100%;
+
+}
+
+
+.input-group input,
+.input-group select,
+.comments-box textarea{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    border:1px solid #dddddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:#ffffff;
+
+    color:#333333;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    transition:.3s ease;
+
+}
+
+
+.input-group input{
+
+    height:52px;
+
+    padding:0 17px;
+
+}
+
+
+.input-group select{
+
+    height:52px;
+
+    padding:0 17px;
+
+    cursor:pointer;
+
+}
+
+
+.comments-box{
+
+    grid-column:1 / -1;
+
+}
+
+
+.comments-box textarea{
+
+    min-height:145px;
+
+    padding:15px 17px;
+
+    resize:vertical;
+
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+.comments-box textarea:focus{
+
+    border-color:var(--primary-green);
+
+    box-shadow:0 0 0 3px rgba(0,150,90,.10);
+
+}
+
+
+.formulario-card button{
+
+    grid-column:1 / -1;
+
+    min-height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary-green);
+
+    color:#ffffff;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+.formulario-card button:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.92;
+
+}
+
+
+.secure{
+
+    grid-column:1 / -1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    color:#666666;
+
+    font-size:13px;
+
+}
+
+
+.secure svg{
+
+    color:var(--primary-green);
+
+}
+
+
+/* =========================================
+   WHATSAPP
+========================================= */
+
+.whatsapp-button{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:90px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    z-index:999;
+
+    transition:.3s ease;
+
+}
+
+
+.whatsapp-button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1100px){
+
+    .nosotros-hero{
+
+        gap:45px;
+
+    }
+
+
+    .titulo-verde{
+
+        font-size:47px;
+
+    }
+
+
+    .titulo-negro{
+
+        font-size:40px;
+
+    }
+
+
+    .mision-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .mision-card{
+
+        min-height:360px;
+
+    }
+
+
+    .porque-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET PEQUEÑA
+========================================= */
+
+@media(max-width:850px){
 
     .nosotros-hero{
 
         grid-template-columns:1fr;
 
-        gap:60px;
-
         text-align:center;
+
+        padding:120px 0 80px;
 
     }
 
@@ -559,123 +1152,189 @@ RESPONSIVE GENERAL
     }
 
 
-    .mision-grid{
+    .nosotros-info > p{
 
-        grid-template-columns:1fr;
-
-    }
-
-
-}
-
-
-
-
-@media(max-width:768px){
-
-
-    .nosotros{
-
-        padding-top:20px;
-
-    }
-
-
-    .nosotros-hero{
-
-        padding:110px 25px 70px;
-
-        gap:45px;
-
-    }
-
-
-    .nosotros-titulo{
-
-        font-size:40px;
-
-    }
-
-
-    .nosotros-info p{
-
-        font-size:16px;
+        max-width:680px;
 
     }
 
 
     .nosotros-imagen img{
 
-        height:380px;
+        height:450px;
+
+    }
+
+
+    .formulario-contenedor{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media(max-width:768px){
+
+    .nosotros{
+
+        padding-top:15px;
+
+    }
+
+
+    .nosotros-hero{
+
+        width:calc(100% - 36px);
+
+        padding:105px 0 65px;
+
+        gap:40px;
+
+    }
+
+
+    .titulo-verde{
+
+        font-size:36px;
+
+    }
+
+
+    .titulo-negro{
+
+        font-size:31px;
+
+        line-height:1.2;
+
+    }
+
+
+    .nosotros-info > p{
+
+        font-size:16px;
+
+        line-height:1.75;
+
+    }
+
+
+    .nosotros-imagen img{
+
+        height:360px;
+
+        border-radius:20px;
 
     }
 
 
     .nosotros-imagen span{
 
-        font-size:13px;
+        width:88%;
+
+        font-size:11px;
 
         letter-spacing:1px;
 
     }
 
 
+    .mision-section,
+    .proceso-section{
 
-    .mision-section{
+        width:calc(100% - 36px);
 
-        padding:70px 25px;
-
-    }
-
-
-    .mision-header h2{
-
-        font-size:34px;
+        padding:70px 0 80px;
 
     }
 
 
-    .mision-header p{
+    .mision-header,
+    .proceso-header{
+
+        margin-bottom:40px;
+
+    }
+
+
+    .mision-header h2,
+    .proceso-header h2{
+
+        font-size:32px;
+
+    }
+
+
+    .mision-header p,
+    .proceso-header p{
 
         font-size:16px;
+
+        line-height:1.7;
+
+    }
+
+
+    .mision-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
 
     }
 
 
     .mision-card{
 
-        padding:32px 25px;
+        min-height:auto;
+
+        padding:30px 26px;
 
     }
 
 
+    .mision-card h3{
 
-    .proceso-section{
-
-        padding:70px 25px;
-
-    }
-
-
-    .proceso-header h2{
-
-        font-size:34px;
+        font-size:25px;
 
     }
 
 
-    .proceso-header p{
+    .mision-card p{
 
-        font-size:16px;
+        font-size:15px;
+
+        line-height:1.75;
+
+    }
+
+
+    /* PROCESO */
+
+    .proceso-timeline{
+
+        width:100%;
+
+    }
+
+
+    .proceso-timeline::before{
+
+        left:24px;
 
     }
 
 
     .proceso-item{
 
-        gap:20px;
+        gap:18px;
 
-        margin-bottom:40px;
+        margin-bottom:42px;
 
     }
 
@@ -683,24 +1342,18 @@ RESPONSIVE GENERAL
     .proceso-numero{
 
         width:48px;
-
         height:48px;
 
-        font-size:15px;
+        flex-basis:48px;
 
-    }
-
-
-    .proceso-timeline::before{
-
-        left:23px;
+        font-size:14px;
 
     }
 
 
     .proceso-contenido{
 
-        padding:25px 20px;
+        padding-top:3px;
 
     }
 
@@ -712,190 +1365,27 @@ RESPONSIVE GENERAL
     }
 
 
-}
+    .proceso-contenido p{
 
+        font-size:15px;
 
-
-
-/*=========================================
-POR QUÉ ELEGIRNOS
-=========================================*/
-
-
-.porque-section{
-
-    width:100%;
-
-    padding:70px 8%;
-
-    background:#297743;
-
-}
-
-
-
-.porque-header{
-
-    text-align:center;
-
-    max-width:750px;
-
-    margin:0 auto 45px;
-
-}
-
-
-
-.porque-header h2{
-
-    font-size:44px;
-
-    color:#fffcfc !important;
-
-    margin-bottom:18px;
-
-}
-
-
-
-.porque-header p{
-
-    color:#ffffff !important;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-
-
-
-/* TARJETAS */
-
-
-.porque-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-    max-width:1200px;
-
-    margin:auto;
-
-}
-
-
-
-.porque-card{
-
-    background:#297743;
-
-    padding:32px 28px;
-
-    border-radius:20px;
-
-    min-height:240px;
-
-
-    border:1px solid rgba(215, 207, 207, 0.55);
-
-
-    box-shadow:
-
-    inset 0 2px 8px rgba(78, 110, 79, 0.649),
-
-    0 8px 20px rgba(0,0,0,.08);
-
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-
-    transition:.3s ease;
-
-}
-
-
-
-.porque-card:hover{
-
-    transform:translateY(-6px);
-
-
-    box-shadow:
-
-    inset 0 2px 10px rgba(255,255,255,.5),
-
-    0 12px 25px rgba(0,0,0,.12);
-
-}
-
-
-
-.porque-card h3{
-
-    color:#ffffff;
-
-    font-size:23px;
-
-    margin-bottom:18px;
-
-}
-
-
-
-.porque-card p{
-
-    color:#ffffff;
-
-    font-size:16px;
-
-    line-height:1.8;
-
-    margin:0;
-
-}
-
-
-
-/*=========================================
-RESPONSIVE POR QUÉ ELEGIRNOS
-=========================================*/
-
-
-@media(max-width:1100px){
-
-
-    .porque-grid{
-
-        grid-template-columns:repeat(2,1fr);
+        line-height:1.7;
 
     }
 
 
-}
-
-
-
-@media(max-width:768px){
-
+    /* POR QUÉ */
 
     .porque-section{
 
-        padding:70px 25px;
+        padding:70px 18px 80px;
 
     }
 
 
     .porque-header h2{
 
-        font-size:34px;
+        font-size:32px;
 
     }
 
@@ -911,6 +1401,8 @@ RESPONSIVE POR QUÉ ELEGIRNOS
 
         grid-template-columns:1fr;
 
+        gap:18px;
+
     }
 
 
@@ -918,338 +1410,548 @@ RESPONSIVE POR QUÉ ELEGIRNOS
 
         min-height:auto;
 
-        padding:30px 25px;
+        padding:28px 25px;
 
     }
-}
-/*=========================================
-FORMULARIO DE EVALUACIÓN
-=========================================*/
 
 
-.formulario-section{
+    /* FORMULARIO */
 
-    width:100%;
-
-    padding:90px 8% 120px;
-
-    background:#ffffff;
-
-}
-
-
-
-.formulario-header{
-
-    text-align:center;
-
-    max-width:750px;
-
-    margin:0 auto 45px;
-
-}
-
-
-
-.formulario-header h2{
-
-    font-size:44px;
-
-    color:#111111;
-
-    margin-bottom:18px;
-
-}
-
-
-
-.formulario-header p{
-
-    color:#666666;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-/* CONTENEDOR DEL FORMULARIO */
-.formulario-card{
-    max-width:850px;
-    margin:auto;
-    padding:45px;
-    background:#ffffff;
-    border-radius:24px;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-.formulario-grupo{
-    display:flex;
-    flex-direction:column;
-}
-.formulario-grupo:nth-child(5){
-    grid-column:1 / -1;
-}
-.formulario-grupo label{
-    color:#111111;
-    font-size:15px;
-    font-weight:600;
-    margin-bottom:10px;
-}
-.formulario-grupo input,
-.formulario-grupo select,
-.formulario-grupo textarea{
-    width:100%;
-    padding:15px 18px;
-    border:1px solid #dddddd;
-    border-radius:12px;
-    font-size:15px;
-    color:#333333;
-    outline:none;
-    transition:.3s ease;
-    font-family:inherit;
-}
-.formulario-grupo textarea{
-    min-height:150px;
-    resize:none;
-}
-.formulario-grupo input:focus,
-.formulario-grupo select:focus,
-.formulario-grupo textarea:focus{
-    border-color:var(--primary-green);
-    box-shadow:0 0 0 3px rgba(0,150,90,.12);
-}
-/* BOTÓN */
-.formulario-card button{
-    grid-column:1 / -1;
-    background:var(--primary-green);
-    color:#ffffff;
-    border:none;
-    padding:16px;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s ease;
-}
-.formulario-card button:hover{
-
-    transform:translateY(-3px);
-
-    opacity:.9;
-
-}
-/*=========================================
-RESPONSIVE FORMULARIO
-=========================================*/
-@media(max-width:768px){
     .formulario-section{
-        padding:70px 25px 90px;
+
+        padding:70px 18px 90px;
 
     }
-    .formulario-header h2{
-        font-size:34px;
-    }
-    .formulario-header p{
-        font-size:16px;
-    }
-    .formulario-card{
-        grid-template-columns:1fr;
-        padding:30px 25px;
 
-    }
-    .formulario-grupo:nth-child(5){
-        grid-column:auto;
-    }
-}
-/*=========================================
-FORMULARIO DE EVALUACIÓN
-=========================================*/
 
-.formulario-card select{
-
-    width:100%;
-
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
-    padding:17px 14px;
-
-    font-size:15px;
-
-    color:#333333;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-}
-.formulario-contenedor{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    background:#ffffff;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
-
-}
-/*=========================================
-INFORMACIÓN IZQUIERDA
-=========================================*/
-.formulario-info{
-    background:#0b3316;
-    padding:50px;
-    color:#ffffff;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-.formulario-info h2{
-    color:#ffffff;
-    font-size:38px;
-    line-height:1.2;
-    margin-bottom:20px;
-}
-.formulario-info > p{
-    color:#ffffff;
-    font-size:16px;
-    line-height:1.7;
-    margin-bottom:35px;
-}
-/* BENEFICIOS */
-.formulario-beneficio{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:25px;
-}
-.formulario-beneficio svg{
-    color:#5CBF67;
-    font-size:25px;
-}
-.formulario-beneficio span{
-    color:#ffffff;
-    font-size:16px;
-    font-weight:600px;
-}
-
-/* CONTACTO */
-.formulario-contacto{
-    margin-top:35px;
-}
-.formulario-contacto small{
-    color:#ffffff;
-    font-size:13px;
-}
-.formulario-contacto h3{
-    color:#5CBF67;
-    font-size:28px;
-    margin:8px 0;
-}
-.formulario-contacto p{
-    color:#ffffff;
-    font-size:16px;
-
-}
-/*=========================================
-FORMULARIO DERECHA
-=========================================*/
-.formulario-contenedor .contact-form{
-    border:none;
-    border-radius:0;
-    box-shadow:none;
-    padding:50px;
-}
-.formulario-contenedor .contact-form h2{
-    color:var(--primary-green);
-}
-.formulario-contenedor .contact-form > p{
-    color:#666666;
-}
-/*=========================================
-RESPONSIVE
-=========================================*/
-@media(max-width:900px){
-    .formulario-contenedor{
-        grid-template-columns:1fr;
-    }
     .formulario-info{
-        padding:40px 30px;
+
+        padding:38px 28px;
+
     }
-    .formulario-contenedor .contact-form{
-        padding:35px 30px;
-    }
-}
-@media(max-width:768px){
-    .formulario-section{
-        padding:70px 25px 90px;
-    }
+
+
     .formulario-info h2{
-        font-size:32px;
+
+        font-size:31px;
+
     }
-}
-/*=========================================
-BOTÓN WHATSAPP
-=========================================*/
 
-.whatsapp-button{
 
-    position:fixed;
+    .formulario-contenedor .contact-form{
 
-    right:30px;
+        padding:32px 25px;
 
-    bottom:90px;
+        grid-template-columns:1fr;
 
-    width:60px;
+    }
 
-    height:60px;
 
-    border-radius:50%;
+    .formulario-card h2,
+    .formulario-card > p,
+    .comments-box,
+    .formulario-card button,
+    .secure{
 
-    background:#25D366;
+        grid-column:auto;
 
-    color:#ffffff;
+    }
 
-    display:flex;
 
-    align-items:center;
+    .formulario-card h2{
 
-    justify-content:center;
+        font-size:27px;
 
-    font-size:32px;
+    }
 
-    text-decoration:none;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-    z-index:999;
-
-    transition:.3s ease;
-}
-.whatsapp-button:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 15px 30px rgba(0,0,0,.35);
-}
-@media(max-width:768px){
     .whatsapp-button{
 
         width:55px;
-
         height:55px;
 
         right:20px;
-
         bottom:75px;
 
         font-size:28px;
 
     }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
+
+@media(max-width:380px){
+
+    .nosotros-hero{
+
+        width:calc(100% - 28px);
+
+    }
+
+
+    .titulo-verde{
+
+        font-size:32px;
+
+    }
+
+
+    .titulo-negro{
+
+        font-size:28px;
+
+    }
+
+
+    .mision-section,
+    .proceso-section{
+
+        width:calc(100% - 28px);
+
+    }
+
+
+    .porque-section{
+
+        padding-left:14px;
+        padding-right:14px;
+
+    }
+
+
+    .formulario-section{
+
+        padding-left:14px;
+        padding-right:14px;
+
+    }
+
+}
+/* =========================================================
+   CORRECCIÓN FINAL DEL FORMULARIO
+   ========================================================= */
+
+/* CONTENEDOR PRINCIPAL */
+
+.formulario-contenedor .contact-form.formulario-card {
+
+    width:100%;
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    padding:50px;
+
+    background:#ffffff;
+
+    border:none;
+    border-radius:0;
+
+    box-shadow:none;
+
+}
+
+
+/* TITULO */
+
+.formulario-contenedor .contact-form h2 {
+
+    margin:0 0 5px;
+
+    color:#1f6b3a;
+
+    font-size:32px;
+
+    line-height:1.2;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.formulario-contenedor .contact-form > p {
+
+    margin:0 0 18px;
+
+    color:#666666;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.formulario-contenedor .contact-form .input-group {
+
+    width:100%;
+
+    margin:0;
+
+    padding:0;
+
+    display:block;
+
+    box-sizing:border-box;
+
+}
+
+
+/* INPUTS */
+
+.formulario-contenedor .contact-form .input-group input {
+
+    display:block;
+
+    width:100%;
+
+    min-height:58px;
+
+    box-sizing:border-box;
+
+    padding:16px 18px;
+
+    margin:0;
+
+    border:1px solid #d9dfda;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    color:#333333;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    outline:none;
+
+    box-shadow:none;
+
+}
+
+
+/* SELECT */
+
+.formulario-contenedor .contact-form .input-group select {
+
+    display:block;
+
+    width:100%;
+
+    min-height:58px;
+
+    box-sizing:border-box;
+
+    padding:16px 18px;
+
+    margin:0;
+
+    border:1px solid #d9dfda;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    color:#333333;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    outline:none;
+
+    box-shadow:none;
+
+}
+
+
+/* QUITAR RECUADROS INTERNOS AL ENFOCAR */
+
+.formulario-contenedor .contact-form .input-group input:focus,
+.formulario-contenedor .contact-form .input-group select:focus {
+
+    border-color:#2f7d4a;
+
+    outline:none;
+
+    box-shadow:0 0 0 3px rgba(47,125,74,.10);
+
+}
+
+
+/* =========================================================
+   NOMBRE + CORREO MÁS LARGOS
+   ========================================================= */
+
+.formulario-contenedor .contact-form .input-group:nth-of-type(1),
+.formulario-contenedor .contact-form .input-group:nth-of-type(2) {
+
+    width:100%;
+
+}
+
+
+/* =========================================================
+   TELEFONO + TIPO DE FRAUDE
+   ========================================================= */
+
+.formulario-contenedor .contact-form .input-group:nth-of-type(3),
+.formulario-contenedor .contact-form .input-group:nth-of-type(4) {
+
+    width:100%;
+
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.formulario-contenedor .contact-form .comments-box {
+
+    width:100%;
+
+    margin:8px 0 0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+.formulario-contenedor .contact-form .comments-box textarea {
+
+    display:block;
+
+    width:100%;
+
+    min-height:150px;
+
+    box-sizing:border-box;
+
+    padding:17px 18px;
+
+    margin:0;
+
+    border:1px solid #d9dfda;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    color:#333333;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    resize:vertical;
+
+    outline:none;
+
+    box-shadow:none;
+
+}
+
+
+.formulario-contenedor .contact-form .comments-box textarea:focus {
+
+    border-color:#2f7d4a;
+
+    outline:none;
+
+    box-shadow:0 0 0 3px rgba(47,125,74,.10);
+
+}
+
+
+/* =========================================================
+   BOTÓN SOLICITAR EVALUACIÓN
+   ========================================================= */
+
+.formulario-contenedor .contact-form button {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    min-height:56px;
+
+    margin:8px 0 0;
+
+    padding:15px 22px;
+
+    background:#2f7d4a !important;
+
+    color:#ffffff !important;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+    box-shadow:none;
+
+    transition:transform .25s ease,
+               background .25s ease,
+               box-shadow .25s ease;
+
+}
+
+
+/* QUE SIEMPRE SE VEA */
+
+.formulario-contenedor .contact-form button:hover {
+
+    background:#25663c !important;
+
+    color:#ffffff !important;
+
+    opacity:1 !important;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(47,125,74,.20);
+
+}
+
+
+/* =========================================================
+   MENSAJE DE SEGURIDAD
+   ========================================================= */
+
+.formulario-contenedor .contact-form .secure {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    width:100%;
+
+    margin-top:12px;
+
+    color:#666666;
+
+    font-size:14px;
+
+    text-align:center;
+
+}
+
+
+.formulario-contenedor .contact-form .secure svg {
+
+    flex-shrink:0;
+
+    color:#666666;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width:900px) {
+
+    .formulario-contenedor .contact-form.formulario-card {
+
+        padding:40px 35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width:600px) {
+
+    .formulario-contenedor .contact-form.formulario-card {
+
+        padding:35px 25px;
+
+        gap:16px;
+
+    }
+
+
+    .formulario-contenedor .contact-form h2 {
+
+        font-size:28px;
+
+    }
+
+
+    .formulario-contenedor .contact-form > p {
+
+        font-size:15px;
+
+    }
+
+
+    .formulario-contenedor .contact-form .input-group input,
+    .formulario-contenedor .contact-form .input-group select {
+
+        min-height:56px;
+
+        padding:15px 16px;
+
+    }
+
+
+    .formulario-contenedor .contact-form .comments-box textarea {
+
+        min-height:140px;
+
+    }
+
+
+    .formulario-contenedor .contact-form button {
+
+        min-height:55px;
+
+    }
+
 }

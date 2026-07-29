@@ -1,3 +1,4 @@
+
 // src/pages/Servicios.jsx
 
 import { useState } from "react";
@@ -26,12 +27,22 @@ import {
 } from "react-icons/fa";
 
 
-function Servicios(){
+function Servicios() {
 
     const [faqActivo, setFaqActivo] = useState(null);
 
+    const [formulario, setFormulario] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        amount: "",
+        description: ""
+    });
 
-    const abrirFaq = (index)=>{
+    const [enviando, setEnviando] = useState(false);
+
+
+    const abrirFaq = (index) => {
 
         setFaqActivo(
             faqActivo === index ? null : index
@@ -40,1998 +51,1253 @@ function Servicios(){
     };
 
 
-return(
+    const manejarCambio = (e) => {
 
-<main className="servicios-page">
+        setFormulario({
+            ...formulario,
+            [e.target.name]: e.target.value
+        });
 
+    };
 
-{/* HERO */}
 
-<section className="servicios-hero">
+    const enviarFormulario = async (e) => {
 
+        e.preventDefault();
 
-<div className="servicios-hero-content">
+        if (enviando) return;
 
+        setEnviando(true);
 
-<h1>
+        try {
 
-<span className="titulo-pequeno">
+            const respuesta = await fetch(
+                "http://localhost:5000/api/evaluaciones",
+                {
+                    method: "POST",
 
-Nuestros Servicios:
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-</span>
+                    body: JSON.stringify({
+                        fullName: formulario.fullName,
+                        email: formulario.email,
+                        phone: formulario.phone,
+                        fraudType: "Evaluación desde Servicios",
+                        amount: formulario.amount,
+                        currency: "USD",
+                        description: formulario.description
+                    })
+                }
+            );
 
 
-<span className="titulo-principal">
+            const datos = await respuesta.json();
 
-EXPERTOS EN RECUPERACIÓN DE ACTIVOS
 
-</span>
+            if (!respuesta.ok) {
 
-</h1>
+                throw new Error(
+                    datos.message ||
+                    "Error al enviar la solicitud."
+                );
 
+            }
 
 
-<p>
+            alert(
+                "Solicitud enviada correctamente."
+            );
 
-Entendemos el impacto devastador del fraude financiero.
-Nuestro equipo combina estrategia legal, investigación
-financiera y tecnología forense para ayudarte a recuperar
-lo que te pertenece.
 
-</p>
+            setFormulario({
+                fullName: "",
+                email: "",
+                phone: "",
+                amount: "",
+                description: ""
+            });
 
 
+        } catch (error) {
 
-<div className="hero-buttons">
+            console.error(error);
 
+            alert(
+                "No fue posible enviar la solicitud. Intenta nuevamente."
+            );
 
-<a href="#areas-practica">
+        } finally {
 
-<button>
+            setEnviando(false);
 
-Explora nuestros servicios
+        }
 
-</button>
+    };
 
-</a>
 
+    return (
 
+        <main className="servicios-page">
 
-<a href="#testimonios">
 
-<button className="outline-btn">
+            {/* HERO */}
 
-Ver casos de éxito
+            <section className="servicios-hero">
 
-</button>
+                <div className="servicios-hero-content">
 
-</a>
+                    <h1>
 
+                        <span className="titulo-pequeno">
+                            Nuestros Servicios:
+                        </span>
 
-</div>
+                        <span className="titulo-principal">
+                            EXPERTOS EN RECUPERACIÓN DE ACTIVOS
+                        </span>
 
+                    </h1>
 
-</div>
 
+                    <p>
+                        Entendemos el impacto devastador del fraude financiero.
+                        Nuestro equipo combina estrategia legal, investigación
+                        financiera y tecnología forense para ayudarte a recuperar
+                        lo que te pertenece.
+                    </p>
 
-</section>
 
+                    <div className="hero-buttons">
 
+                        <a href="#areas-practica">
 
+                            <button>
+                                Explora nuestros servicios
+                            </button>
 
+                        </a>
 
-{/* RECONOCIDOS */}
 
-<section className="reconocidos-section">
+                        <a href="#testimonios">
 
+                            <button className="outline-btn">
+                                Ver casos de éxito
+                            </button>
 
-<h2>
+                        </a>
 
-Reconocidos por nuestra efectividad en
+                    </div>
 
-</h2>
+                </div>
 
+            </section>
 
 
-<div className="reconocidos-grid">
+            {/* RECONOCIDOS */}
 
+            <section className="reconocidos-section">
 
+                <h2>
+                    Reconocidos por nuestra efectividad en
+                </h2>
 
-<div>
 
-<FaBalanceScale/>
+                <div className="reconocidos-grid">
 
-<span>
+                    <div>
+                        <FaBalanceScale />
+                        <span>
+                            Tribunales Federales
+                        </span>
+                    </div>
 
-Tribunales Federales
 
-</span>
+                    <div>
+                        <FaGlobe />
+                        <span>
+                            Arbitraje Internacional
+                        </span>
+                    </div>
 
-</div>
 
+                    <div>
+                        <FaUniversity />
+                        <span>
+                            CONDUSEF
+                        </span>
+                    </div>
 
 
-<div>
+                    <div>
+                        <FaShieldAlt />
+                        <span>
+                            CyberForensics
+                        </span>
+                    </div>
 
-<FaGlobe/>
 
-<span>
+                    <div>
+                        <FaChartLine />
+                        <span>
+                            Recuperación Forex y CFDs
+                        </span>
+                    </div>
 
-Arbitraje Internacional
+                </div>
 
-</span>
+            </section>
 
-</div>
 
+            {/* AREAS DE PRACTICA */}
 
+            <section
+                className="areas-practica"
+                id="areas-practica"
+            >
 
-<div>
+                <div className="section-header">
 
-<FaUniversity/>
+                    <h2>
+                        Áreas de práctica
+                    </h2>
 
-<span>
+                    <p>
+                        Soluciones especializadas para distintos tipos de fraude financiero.
+                    </p>
 
-CONDUSEF
+                </div>
 
-</span>
 
-</div>
+                <div className="areas-grid">
 
 
+                    <article className="area-card fraude-bancario">
 
-<div>
+                        <div className="area-icon">
+                            <FaUniversity />
+                        </div>
 
-<FaShieldAlt/>
+                        <h3>
+                            Fraudes Bancarios
+                        </h3>
 
-<span>
+                        <p>
+                            Phishing, transferencias no reconocidas y operaciones
+                            bancarias fraudulentas.
+                        </p>
 
-CyberForensics
+                        <a href="/servicios/fraudes-bancarios">
+                            Ver detalles →
+                        </a>
 
-</span>
+                    </article>
 
-</div>
 
+                    <article className="area-card fraude-digital">
 
+                        <div className="area-icon">
+                            <FaLaptop />
+                        </div>
 
-<div>
+                        <h3>
+                            Fraudes Digitales
+                        </h3>
 
-<FaChartLine/>
+                        <p>
+                            Investigación de fraudes cometidos mediante plataformas
+                            digitales.
+                        </p>
 
-<span>
+                        <a href="/servicios/fraudes-digitales">
+                            Ver detalles →
+                        </a>
 
-Recuperación Forex y CFDs
+                    </article>
 
-</span>
 
-</div>
+                    <article className="area-card identidad">
 
+                        <div className="area-icon">
+                            <FaFingerprint />
+                        </div>
 
-</div>
+                        <h3>
+                            Robo de Identidad
+                        </h3>
 
+                        <p>
+                            Análisis y orientación ante uso indebido de información personal.
+                        </p>
 
-</section>
+                        <a href="/servicios/robo-identidad">
+                            Ver detalles →
+                        </a>
 
+                    </article>
 
 
+                    <article className="area-card forex">
 
+                        <div className="area-icon">
+                            <FaChartLine />
+                        </div>
 
+                        <h3>
+                            Estafas de Inversión
+                        </h3>
 
-{/* AREAS DE PRACTICA */}
+                        <p>
+                            Recuperación de activos relacionados con brokers fraudulentos,
+                            Forex y CFDs.
+                        </p>
 
+                        <a href="/servicios/estafas-inversion">
+                            Ver detalles →
+                        </a>
 
-<section 
-className="areas-practica"
-id="areas-practica"
->
+                    </article>
 
 
+                    <article className="area-card romanticas">
 
-<div className="section-header">
+                        <div className="area-icon">
+                            <FaHeart />
+                        </div>
 
+                        <h3>
+                            Estafas Románticas
+                        </h3>
 
-<h2>
+                        <p>
+                            Investigación de engaños sentimentales y redes internacionales.
+                        </p>
 
-Áreas de práctica
+                        <a href="/servicios/estafas-romanticas">
+                            Ver detalles →
+                        </a>
 
-</h2>
+                    </article>
 
 
+                    <article className="area-card piramidales">
 
-<p>
+                        <div className="area-icon">
+                            <FaUsers />
+                        </div>
 
-Soluciones especializadas para distintos tipos de fraude financiero.
+                        <h3>
+                            Esquemas Piramidales
+                        </h3>
 
-</p>
+                        <p>
+                            Acciones colectivas contra fraudes empresariales y Ponzi.
+                        </p>
 
+                        <a href="/servicios/estafas-piramidales">
+                            Ver detalles →
+                        </a>
 
-</div>
+                    </article>
 
 
+                </div>
 
+            </section>
 
 
-<div className="areas-grid">
+            {/* DETALLE FOREX */}
 
+            <section className="servicio-detalle">
 
+                <div className="detalle-left">
 
+                    <div className="titulo-servicio">
 
+                        <div className="icono-titulo forex-icono">
+                            <FaChartLine />
+                        </div>
 
-<article className="area-card fraude-bancario">
+                        <h2>
+                            Recuperación en Forex y CFDs
+                        </h2>
 
+                    </div>
 
-<div className="area-icon">
 
-<FaUniversity/>
+                    <div className="detalle-card forex-card">
 
-</div>
+                        <FaSearch />
 
+                        <h3>
+                            El Impacto
+                        </h3>
 
+                        <p>
+                            Los estafadores manipulan plataformas como MetaTrader
+                            para mostrar ganancias falsas. Cuando la víctima intenta
+                            retirar su dinero aparecen excusas, tarifas ocultas y
+                            finalmente desaparecen.
+                        </p>
 
-<h3>
+                    </div>
 
-Fraudes Bancarios
 
-</h3>
+                    <div className="detalle-card forex-card">
 
+                        <FaGavel />
 
+                        <h3>
+                            Nuestra Estrategia Legal
+                        </h3>
 
-<p>
+                        <ul>
 
-Phishing, transferencias no reconocidas y operaciones
-bancarias fraudulentas.
+                            <li>
+                                Rastreo corporativo de la entidad responsable.
+                            </li>
 
-</p>
+                            <li>
+                                Presión bancaria mediante normativas AML.
+                            </li>
 
+                            <li>
+                                Chargebacks estratégicos y documentación técnica.
+                            </li>
 
+                        </ul>
 
-<a href="/servicios/fraudes-bancarios">
+                    </div>
 
-Ver detalles →
+                </div>
 
-</a>
 
+                <div className="detalle-right">
 
-</article>
+                    <div className="caso-card">
 
+                        <FaCheckCircle />
 
+                        <h3>
+                            Caso de éxito
+                        </h3>
 
+                        <strong>
+                            $45,000 USD Recuperados
+                        </strong>
 
+                        <p>
+                            Recuperación mediante investigación financiera
+                            y estrategia internacional.
+                        </p>
 
+                    </div>
 
-<article className="area-card fraude-digital">
 
+                    <div className="mini-card">
 
-<div className="area-icon">
+                        <h3>
+                            Brokers en la mira
+                        </h3>
 
-<FaLaptop/>
+                        <p>
+                            OmegaPro, Warren Bowie & Smith y otros brokers
+                            no regulados.
+                        </p>
 
-</div>
+                    </div>
 
+                </div>
 
+            </section>
 
-<h3>
 
-Fraudes Digitales
+            {/* CRIPTOMONEDAS */}
 
-</h3>
+            <section className="servicio-detalle cripto-section">
 
+                <div className="detalle-left">
 
+                    <div className="titulo-servicio">
 
-<p>
+                        <div className="icono-titulo cripto-icono">
+                            <FaBitcoin />
+                        </div>
 
-Investigación de fraudes cometidos mediante plataformas
-digitales.
+                        <h2>
+                            Fraudes con Criptomonedas
+                        </h2>
 
-</p>
+                    </div>
 
 
+                    <div className="detalle-card cripto-card">
 
-<a href="/servicios/fraudes-digitales">
+                        <FaBitcoin />
 
-Ver detalles →
+                        <h3>
+                            El Desafío Técnico
+                        </h3>
 
-</a>
+                        <p>
+                            La blockchain permite rastrear movimientos digitales.
+                            Aunque parezca imposible recuperar activos, muchos
+                            fondos terminan pasando por exchanges regulados.
+                        </p>
 
+                    </div>
 
-</article>
 
+                    <div className="detalle-card cripto-card">
 
+                        <FaSearch />
 
+                        <h3>
+                            Rastreo y Congelamiento
+                        </h3>
 
+                        <ul>
 
+                            <li>
+                                Mapeo de transacciones blockchain.
+                            </li>
 
-<article className="area-card identidad">
+                            <li>
+                                Seguimiento de billeteras digitales.
+                            </li>
 
+                            <li>
+                                Solicitud de congelamiento de fondos.
+                            </li>
 
-<div className="area-icon">
+                        </ul>
 
-<FaFingerprint/>
+                    </div>
 
-</div>
+                </div>
 
 
+                <div className="detalle-right">
 
-<h3>
+                    <div className="caso-card">
 
-Robo de Identidad
+                        <h3>
+                            Resultado reciente
+                        </h3>
 
-</h3>
+                        <strong>
+                            3.5 BTC Recuperados
+                        </strong>
 
+                        <p>
+                            Localización de activos digitales mediante
+                            investigación blockchain.
+                        </p>
 
+                    </div>
 
-<p>
 
-Análisis y orientación ante uso indebido de información personal.
+                    <div className="mini-card colaboracion">
 
-</p>
+                        <FaShieldAlt />
 
+                        <p>
+                            Colaboramos con departamentos de cumplimiento
+                            de exchanges globales.
+                        </p>
 
+                    </div>
 
-<a href="/servicios/robo-identidad">
+                </div>
 
-Ver detalles →
+            </section>
 
-</a>
 
+            {/* ESQUEMAS PIRAMIDALES */}
 
-</article>
+            <section className="servicio-detalle">
 
+                <div className="detalle-left">
 
+                    <div className="titulo-servicio">
 
+                        <div className="icono-titulo ponzi-icono">
+                            <FaUsers />
+                        </div>
 
+                        <h2>
+                            Esquemas Piramidales (Ponzi)
+                        </h2>
 
+                    </div>
 
 
-<article className="area-card forex">
+                    <div className="detalle-card piramidal-card">
 
+                        <FaUsers />
 
-<div className="area-icon">
+                        <h3>
+                            La Traición de Confianza
+                        </h3>
 
-<FaChartLine/>
+                        <p>
+                            Estas estafas afectan patrimonio, relaciones familiares
+                            y generan conflictos legales entre afectados.
+                        </p>
 
-</div>
+                    </div>
 
 
+                    <div className="detalle-card piramidal-card">
 
-<h3>
+                        <FaGavel />
 
-Estafas de Inversión
+                        <h3>
+                            El Poder de la Acción Colectiva
+                        </h3>
 
-</h3>
+                        <ul>
 
+                            <li>
+                                Denuncias penales masivas.
+                            </li>
 
+                            <li>
+                                Aseguramiento de bienes.
+                            </li>
 
-<p>
+                            <li>
+                                Representación colectiva.
+                            </li>
 
-Recuperación de activos relacionados con brokers fraudulentos,
-Forex y CFDs.
+                        </ul>
 
-</p>
+                    </div>
 
+                </div>
 
 
-<a href="/servicios/estafas-inversion">
+                <div className="detalle-right">
 
-Ver detalles →
+                    <div className="caso-card">
 
-</a>
+                        <h3>
+                            Acción en curso
+                        </h3>
 
+                        <strong>
+                            +150 afectados representados
+                        </strong>
 
-</article>
+                        <p>
+                            Estrategias legales colectivas para recuperar
+                            patrimonio.
+                        </p>
 
+                    </div>
 
 
+                    <div className="mini-card">
 
+                        <FaBalanceScale />
 
+                        <p>
+                            Litigio Civil y Mercantil
+                        </p>
 
+                    </div>
 
-<article className="area-card romanticas">
+                </div>
 
+            </section>
 
-<div className="area-icon">
 
-<FaHeart/>
+            {/* OTRAS ESPECIALIDADES */}
 
-</div>
+            <section className="otras-especialidades">
 
+                <div className="section-header">
 
+                    <h2>
+                        Otras Áreas de Especialización
+                    </h2>
 
-<h3>
+                    <p>
+                        Estrategias adaptadas para diferentes tipos de fraude.
+                    </p>
 
-Estafas Románticas
+                </div>
 
-</h3>
 
+                <div className="especialidades-grid">
 
 
-<p>
+                    <article className="especialidad-card broker">
 
-Investigación de engaños sentimentales y redes internacionales.
+                        <FaBuilding />
 
-</p>
+                        <h3>
+                            Brokers Fraudulentos
+                        </h3>
 
+                        <p>
+                            Analizamos brokers sin regulación adecuada y
+                            desarrollamos estrategias de recuperación.
+                        </p>
 
+                        <a href="/servicios/estafas-inversion">
+                            Consultar sobre mi Broker →
+                        </a>
 
-<a href="/servicios/estafas-romanticas">
+                    </article>
 
-Ver detalles →
 
-</a>
+                    <article className="especialidad-card romantica">
 
+                        <FaHeart />
 
-</article>
+                        <h3>
+                            Estafas Románticas
+                        </h3>
 
+                        <p>
+                            Utilizamos investigación digital para identificar
+                            redes detrás de estos engaños.
+                        </p>
 
+                        <a href="/servicios/estafas-romanticas">
+                            Solicitar investigación →
+                        </a>
 
+                    </article>
 
 
+                    <article className="especialidad-card bancaria-grande">
 
+                        <FaUniversity />
 
-<article className="area-card piramidales">
+                        <h3>
+                            Fraude Bancario y SPEI
+                        </h3>
 
+                        <p>
+                            Atendemos phishing, vishing y cargos no reconocidos
+                            ante instituciones financieras.
+                        </p>
 
-<div className="area-icon">
 
-<FaUsers/>
+                        <div className="cargo-box">
 
-</div>
+                            <h4>
+                                Cargos No Reconocidos
+                            </h4>
 
+                            <p>
+                                Analizamos movimientos desconocidos y alternativas
+                                de reclamación.
+                            </p>
 
+                        </div>
 
-<h3>
 
-Esquemas Piramidales
+                        <a href="/contacto">
+                            Reportar ahora →
+                        </a>
 
-</h3>
+                    </article>
 
+                </div>
 
+            </section>
 
-<p>
 
-Acciones colectivas contra fraudes empresariales y Ponzi.
+            {/* COMO LUCHAMOS */}
 
-</p>
+            <section className="como-luchamos">
 
+                <div className="section-header">
 
+                    <h2>
+                        Cómo luchamos por ti
+                    </h2>
 
-<a href="/servicios/estafas-piramidales">
+                    <p>
+                        Un proceso diseñado para analizar, investigar y actuar.
+                    </p>
 
-Ver detalles →
+                </div>
 
-</a>
 
+                <div className="proceso-linea">
 
-</article>
 
+                    <div className="paso-proceso">
 
+                        <span>
+                            <FaSearch />
+                        </span>
 
+                        <div>
 
-</div>
+                            <h3>
+                                Evaluamos tu caso
+                            </h3>
 
+                            <p>
+                                Analizamos la información inicial y conocemos
+                                los detalles de tu situación.
+                            </p>
 
-</section>
-{/* DETALLE FOREX */}
+                        </div>
 
-<section className="servicio-detalle">
+                    </div>
 
 
-<div className="detalle-left">
+                    <div className="paso-proceso">
 
+                        <span>
+                            <FaShieldAlt />
+                        </span>
 
-<div className="titulo-servicio">
+                        <div>
 
-    <div className="icono-titulo forex-icono">
-        <FaChartLine/>
-    </div>
+                            <h3>
+                                Investigamos evidencia
+                            </h3>
 
-    <h2>
-        Recuperación en Forex y CFDs
-    </h2>
+                            <p>
+                                Revisamos documentos, movimientos y pruebas
+                                relacionadas con el fraude.
+                            </p>
 
-</div>
+                        </div>
 
+                    </div>
 
 
-<div className="detalle-card forex-card">
+                    <div className="paso-proceso">
 
+                        <span>
+                            <FaGavel />
+                        </span>
 
-<FaSearch/>
+                        <div>
 
+                            <h3>
+                                Definimos una estrategia
+                            </h3>
 
-<h3>
+                            <p>
+                                Seleccionamos las acciones legales y financieras
+                                más adecuadas.
+                            </p>
 
-El Impacto
+                        </div>
 
-</h3>
+                    </div>
 
 
-<p>
+                    <div className="paso-proceso">
 
-Los estafadores manipulan plataformas como MetaTrader
-para mostrar ganancias falsas. Cuando la víctima intenta
-retirar su dinero aparecen excusas, tarifas ocultas y
-finalmente desaparecen.
+                        <span>
+                            <FaCheckCircle />
+                        </span>
 
-</p>
+                        <div>
 
+                            <h3>
+                                Damos seguimiento
+                            </h3>
 
-</div>
+                            <p>
+                                Acompañamos el proceso hasta obtener resultados.
+                            </p>
 
+                        </div>
 
+                    </div>
 
+                </div>
 
 
-<div className="detalle-card forex-card">
+                <div className="garantia-box">
 
+                    <div className="garantia-icon">
+                        <FaCertificate />
+                    </div>
 
-<FaGavel/>
 
+                    <div>
 
-<h3>
+                        <h3>
+                            Garantía si no ganamos no cobramos
+                        </h3>
 
-Nuestra Estrategia Legal
+                        <p>
+                            Trabajamos enfocados en resultados y recuperación
+                            patrimonial.
+                        </p>
 
-</h3>
+                    </div>
 
 
+                    <a href="#formulario-servicios">
+                        Solicitar evaluación
+                    </a>
 
-<ul>
+                </div>
 
+            </section>
 
-<li>
 
-Rastreo corporativo de la entidad responsable.
+            {/* TESTIMONIOS */}
 
-</li>
+            <section
+                className="testimonios-servicios"
+                id="testimonios"
+            >
 
+                <div className="estadisticas-testimonios">
 
-<li>
+                    <span>
+                        Resultados comprobados
+                    </span>
 
-Presión bancaria mediante normativas AML.
+                    <span>
+                        +500 casos exitosos
+                    </span>
 
-</li>
+                </div>
 
 
-<li>
+                <div className="section-header">
 
-Chargebacks estratégicos y documentación técnica.
+                    <h2>
+                        Lo que Dicen Nuestros Clientes
+                    </h2>
 
-</li>
+                </div>
 
 
-</ul>
+                <div className="testimonios-grid">
 
 
-</div>
+                    <article className="testimonio-card">
 
+                        <div className="stars">
 
-</div>
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
 
+                        </div>
 
+                        <p>
+                            "Recibimos orientación clara y acompañamiento
+                            durante todo el proceso."
+                        </p>
 
+                        <strong>
+                            -Maria G., Guadalajara
+                        </strong>
 
+                    </article>
 
-<div className="detalle-right">
 
+                    <article className="testimonio-card">
 
+                        <div className="stars">
 
-<div className="caso-card">
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
 
+                        </div>
 
-<FaCheckCircle/>
+                        <p>
+                            "Nos ayudaron a entender las opciones disponibles
+                            para recuperar nuestro patrimonio."
+                        </p>
 
+                        <strong>
+                            -Alfonso T., Ciudad de México
+                        </strong>
 
-<h3>
+                    </article>
 
-Caso de éxito
 
-</h3>
+                    <article className="testimonio-card">
 
+                        <div className="stars">
 
-<strong>
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
 
-$45,000 USD Recuperados
+                        </div>
 
-</strong>
+                        <p>
+                            "El seguimiento profesional nos dio tranquilidad
+                            durante todo el procedimiento."
+                        </p>
 
+                        <strong>
+                            -David R., Puebla
+                        </strong>
 
-<p>
+                    </article>
 
-Recuperación mediante investigación financiera
-y estrategia internacional.
 
-</p>
+                </div>
 
+            </section>
 
-</div>
 
+            {/* FORMULARIO */}
 
+            <section
+                className="formulario-servicios"
+                id="formulario-servicios"
+            >
 
+                <div className="formulario-container">
 
 
-<div className="mini-card">
+                    <div className="formulario-info">
 
+                        <h2>
+                            Recupere su patrimonio
+                        </h2>
 
-<h3>
+                        <p>
+                            Cuéntenos su caso. Nuestro equipo analizará
+                            su situación y las alternativas disponibles
+                            para iniciar una estrategia de recuperación.
+                        </p>
 
-Brokers en la mira
 
-</h3>
+                        <div className="info-item">
 
+                            <FaShieldAlt />
 
-<p>
+                            <span>
+                                Evaluación confidencial de su caso.
+                            </span>
 
-OmegaPro, Warren Bowie & Smith y otros brokers
-no regulados.
+                        </div>
 
-</p>
 
+                        <div className="info-item">
 
-</div>
+                            <FaCheckCircle />
 
+                            <span>
+                                Estrategias personalizadas.
+                            </span>
 
-</div>
+                        </div>
 
+                    </div>
 
 
-</section>
+                    {/* FORMULARIO CONECTADO A MONGODB */}
 
+                    <div className="formulario-box">
 
+                        <form onSubmit={enviarFormulario}>
 
 
+                            <div className="form-row">
 
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    placeholder="Nombre completo"
+                                    value={formulario.fullName}
+                                    onChange={manejarCambio}
+                                    required
+                                />
 
 
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Correo electrónico"
+                                    value={formulario.email}
+                                    onChange={manejarCambio}
+                                    required
+                                />
 
+                            </div>
 
-{/* CRIPTOMONEDAS */}
 
+                            <div className="form-row">
 
-<section className="servicio-detalle cripto-section">
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Número telefónico"
+                                    value={formulario.phone}
+                                    onChange={manejarCambio}
+                                />
 
 
-<div className="detalle-left">
+                                <input
+                                    type="number"
+                                    name="amount"
+                                    placeholder="Monto estimado afectado"
+                                    value={formulario.amount}
+                                    onChange={manejarCambio}
+                                    min="0"
+                                />
 
+                            </div>
 
 
-<div className="titulo-servicio">
+                            <textarea
+                                name="description"
+                                placeholder="Comentario (opcional)"
+                                value={formulario.description}
+                                onChange={manejarCambio}
+                            ></textarea>
 
-    <div className="icono-titulo cripto-icono">
-        <FaBitcoin/>
-    </div>
 
-    <h2>
-        Fraudes con Criptomonedas
-    </h2>
+                            <button
+                                type="submit"
+                                disabled={enviando}
+                            >
 
-</div>
+                                {enviando
+                                    ? "Enviando..."
+                                    : "Enviar solicitud"
+                                }
 
+                            </button>
 
 
+                            <div className="seguridad">
 
+                                <FaLock />
 
-<div className="detalle-card cripto-card">
+                                <p>
+                                    Información encriptada y protegida.
+                                    Sus datos son tratados con estricta confidencialidad.
+                                </p>
 
+                            </div>
 
-<FaBitcoin/>
 
+                        </form>
 
-<h3>
+                    </div>
 
-El Desafío Técnico
 
-</h3>
+                </div>
 
+            </section>
 
 
-<p>
+            {/* FAQ */}
 
-La blockchain permite rastrear movimientos digitales.
-Aunque parezca imposible recuperar activos, muchos
-fondos terminan pasando por exchanges regulados.
+            <section className="faq-servicios">
 
-</p>
+                <div className="section-header">
 
+                    <h2>
+                        Preguntas frecuentes
+                    </h2>
 
-</div>
+                </div>
 
 
+                <div className="faq-list">
 
 
+                    {[
 
+                        {
+                            pregunta: "¿Pueden recuperar mi dinero?",
+                            respuesta: "Cada caso es diferente. Primero analizamos la información disponible para determinar las alternativas posibles."
+                        },
 
+                        {
+                            pregunta: "¿Cuánto tarda un proceso?",
+                            respuesta: "El tiempo depende del tipo de fraude, instituciones involucradas y complejidad del caso."
+                        },
 
-<div className="detalle-card cripto-card">
+                        {
+                            pregunta: "¿Qué información necesito?",
+                            respuesta: "Transferencias, comprobantes, conversaciones y cualquier evidencia relacionada con el fraude."
+                        },
 
+                        {
+                            pregunta: "¿Atienden casos internacionales?",
+                            respuesta: "Sí, analizamos casos con componentes nacionales e internacionales."
+                        }
 
-<FaSearch/>
+                    ].map((faq, index) => (
 
+                        <div
+                            className="faq-item"
+                            key={index}
+                        >
 
-<h3>
+                            <button
+                                type="button"
+                                onClick={() => abrirFaq(index)}
+                            >
 
-Rastreo y Congelamiento
+                                {faq.pregunta}
 
-</h3>
+                                <span>
+                                    {faqActivo === index ? "-" : "+"}
+                                </span>
 
+                            </button>
 
 
-<ul>
+                            {faqActivo === index && (
 
+                                <p>
+                                    {faq.respuesta}
+                                </p>
 
-<li>
+                            )}
 
-Mapeo de transacciones blockchain.
+                        </div>
 
-</li>
+                    ))}
 
 
-<li>
+                </div>
 
-Seguimiento de billeteras digitales.
+            </section>
 
-</li>
 
+            {/* WHATSAPP FLOTANTE */}
 
-<li>
+            <a
+                href="https://wa.me/5663820152"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-float"
+            >
 
-Solicitud de congelamiento de fondos.
+                <FaWhatsapp />
 
-</li>
+            </a>
 
 
-</ul>
+        </main>
 
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-<div className="detalle-right">
-
-
-
-<div className="caso-card">
-
-
-<h3>
-
-Resultado reciente
-
-</h3>
-
-
-
-<strong>
-
-3.5 BTC Recuperados
-
-</strong>
-
-
-
-<p>
-
-Localización de activos digitales mediante
-investigación blockchain.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div className="mini-card colaboracion">
-
-
-<FaShieldAlt/>
-
-
-<p>
-
-Colaboramos con departamentos de cumplimiento
-de exchanges globales.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-{/* ESQUEMAS PIRAMIDALES */}
-
-
-<section className="servicio-detalle">
-
-
-
-<div className="detalle-left">
-
-
-
-<div className="titulo-servicio">
-
-    <div className="icono-titulo ponzi-icono">
-        <FaUsers/>
-    </div>
-
-    <h2>
-        Esquemas Piramidales (Ponzi)
-    </h2>
-
-</div>
-
-
-
-
-
-
-
-<div className="detalle-card piramidal-card">
-
-
-<FaUsers/>
-
-
-<h3>
-
-La Traición de Confianza
-
-</h3>
-
-
-
-<p>
-
-Estas estafas afectan patrimonio, relaciones familiares
-y generan conflictos legales entre afectados.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div className="detalle-card piramidal-card">
-
-
-<FaGavel/>
-
-
-<h3>
-
-El Poder de la Acción Colectiva
-
-</h3>
-
-
-
-<ul>
-
-
-<li>
-
-Denuncias penales masivas.
-
-</li>
-
-
-<li>
-
-Aseguramiento de bienes.
-
-</li>
-
-
-<li>
-
-Representación colectiva.
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div className="detalle-right">
-
-
-
-<div className="caso-card">
-
-
-<h3>
-
-Acción en curso
-
-</h3>
-
-
-
-<strong>
-
-+150 afectados representados
-
-</strong>
-
-
-
-<p>
-
-Estrategias legales colectivas para recuperar
-patrimonio.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div className="mini-card">
-
-
-<FaBalanceScale/>
-
-
-<p>
-
-Litigio Civil y Mercantil
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-</section>
-
-{/* OTRAS ESPECIALIDADES */}
-
-
-<section className="otras-especialidades">
-
-
-
-<div className="section-header">
-
-
-<h2>
-
-Otras Áreas de Especialización
-
-</h2>
-
-
-
-<p>
-
-Estrategias adaptadas para diferentes tipos de fraude.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div className="especialidades-grid">
-
-
-
-
-
-<article className="especialidad-card broker">
-
-
-<FaBuilding/>
-
-
-<h3>
-
-Brokers Fraudulentos
-
-</h3>
-
-
-
-<p>
-
-Analizamos brokers sin regulación adecuada y
-desarrollamos estrategias de recuperación.
-
-</p>
-
-
-
-<a href="/servicios/estafas-inversion">
-
-Consultar sobre mi Broker →
-
-</a>
-
-
-</article>
-
-
-
-
-
-
-
-<article className="especialidad-card romantica">
-
-
-<FaHeart/>
-
-
-<h3>
-
-Estafas Románticas
-
-</h3>
-
-
-
-<p>
-
-Utilizamos investigación digital para identificar
-redes detrás de estos engaños.
-
-</p>
-
-
-
-<a href="/servicios/estafas-romanticas">
-
-Solicitar investigación →
-
-</a>
-
-
-</article>
-
-
-
-
-
-
-
-<article className="especialidad-card bancaria-grande">
-
-
-<FaUniversity/>
-
-
-<h3>
-
-Fraude Bancario y SPEI
-
-</h3>
-
-
-
-<p>
-
-Atendemos phishing, vishing y cargos no reconocidos
-ante instituciones financieras.
-
-</p>
-
-
-
-
-
-<div className="cargo-box">
-
-
-<h4>
-
-Cargos No Reconocidos
-
-</h4>
-
-
-
-<p>
-
-Analizamos movimientos desconocidos y alternativas
-de reclamación.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<a href="/contacto">
-
-Reportar ahora →
-
-</a>
-
-
-
-</article>
-
-
-
-
-</div>
-
-
-</section>
-{/* COMO LUCHAMOS */}
-
-<section className="como-luchamos">
-
-
-<div className="section-header">
-
-
-<h2>
-
-Cómo luchamos por ti
-
-</h2>
-
-
-
-<p>
-
-Un proceso diseñado para analizar, investigar y actuar.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div className="proceso-linea">
-
-
-
-<div className="paso-proceso">
-
-
-<span>
-
-<FaSearch/>
-
-</span>
-
-
-
-<div>
-
-<h3>
-
-Evaluamos tu caso
-
-</h3>
-
-
-
-<p>
-
-Analizamos la información inicial y conocemos
-los detalles de tu situación.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div className="paso-proceso">
-
-
-<span>
-
-<FaShieldAlt/>
-
-</span>
-
-
-
-<div>
-
-<h3>
-
-Investigamos evidencia
-
-</h3>
-
-
-
-<p>
-
-Revisamos documentos, movimientos y pruebas
-relacionadas con el fraude.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div className="paso-proceso">
-
-
-<span>
-
-<FaGavel/>
-
-</span>
-
-
-
-<div>
-
-<h3>
-
-Definimos una estrategia
-
-</h3>
-
-
-
-<p>
-
-Seleccionamos las acciones legales y financieras
-más adecuadas.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div className="paso-proceso">
-
-
-<span>
-
-<FaCheckCircle/>
-
-</span>
-
-
-
-<div>
-
-<h3>
-
-Damos seguimiento
-
-</h3>
-
-
-
-<p>
-
-Acompañamos el proceso hasta obtener resultados.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-<div className="garantia-box">
-
-
-<div className="garantia-icon">
-
-
-<FaCertificate/>
-
-
-</div>
-
-
-
-
-<div>
-
-
-<h3>
-
-Garantía si no ganamos no cobramos
-
-</h3>
-
-
-
-<p>
-
-Trabajamos enfocados en resultados y recuperación
-patrimonial.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<a href="#formulario-servicios">
-
-Solicitar evaluación
-
-</a>
-
-
-
-</div>
-
-
-
-</section>
-{/* TESTIMONIOS */}
-
-
-<section 
-className="testimonios-servicios"
-id="testimonios"
->
-
-
-
-<div className="estadisticas-testimonios">
-
-
-<span>
-Resultados comprobados
-</span>
-
-
-<span>
-+500 casos exitosos
-</span>
-
-
-</div>
-
-
-
-
-
-
-<div className="section-header">
-
-
-<h2>
-
-Lo que Dicen Nuestros Clientes
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-
-<div className="testimonios-grid">
-
-
-
-
-
-
-<article className="testimonio-card">
-
-
-<div className="stars">
-
-<FaStar/>
-<FaStar/>
-<FaStar/>
-<FaStar/>
-<FaStar/>
-
-</div>
-
-
-
-
-<p>
-
-"Recibimos orientación clara y acompañamiento
-durante todo el proceso."
-
-</p>
-
-
-
-
-<strong>
-
--Maria G., Guadalajara
-
-</strong>
-
-
-
-</article>
-
-
-
-
-
-
-
-
-<article className="testimonio-card">
-
-
-<div className="stars">
-
-<FaStar/>
-<FaStar/>
-<FaStar/>
-<FaStar/>
-<FaStar/>
-
-</div>
-
-
-
-
-<p>
-
-"Nos ayudaron a entender las opciones disponibles
-para recuperar nuestro patrimonio."
-
-</p>
-
-
-
-
-<strong>
-
--Alfonso T., Ciudad de México
-
-</strong>
-
-
-
-</article>
-
-
-
-
-
-
-
-
-<article className="testimonio-card">
-
-
-<div className="stars">
-
-<FaStar/>
-<FaStar/>
-<FaStar/>
-<FaStar/>
-<FaStar/>
-
-</div>
-
-
-
-
-<p>
-
-"El seguimiento profesional nos dio tranquilidad
-durante todo el procedimiento."
-
-</p>
-
-
-
-
-<strong>
-
--David R., Puebla
-
-</strong>
-
-
-
-</article>
-
-
-
-
-
-</div>
-
-
-
-
-</section>
-
-{/* FORMULARIO */}
-
-
-<section 
-className="formulario-servicios"
-id="formulario-servicios"
->
-
-
-
-<div className="formulario-container">
-
-
-
-
-
-<div className="formulario-info">
-
-
-
-<h2>
-
-Recupere su patrimonio
-
-</h2>
-
-
-
-
-<p>
-
-Cuéntenos su caso. Nuestro equipo analizará
-su situación y las alternativas disponibles
-para iniciar una estrategia de recuperación.
-
-</p>
-
-
-
-
-
-
-<div className="info-item">
-
-
-<FaShieldAlt/>
-
-
-<span>
-
-Evaluación confidencial de su caso.
-
-</span>
-
-
-</div>
-
-
-
-
-
-<div className="info-item">
-
-
-<FaCheckCircle/>
-
-
-<span>
-
-Estrategias personalizadas.
-
-</span>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div className="formulario-box">
-
-
-
-<form>
-
-
-
-<div className="form-row">
-
-
-
-<input
-
-type="text"
-
-placeholder="Nombre completo"
-
-/>
-
-
-
-
-
-<input
-
-type="email"
-
-placeholder="Correo electrónico"
-
-/>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div className="form-row">
-
-
-
-<input
-
-type="tel"
-
-placeholder="Número telefónico"
-
-/>
-
-
-
-
-
-<input
-
-type="number"
-
-placeholder="Monto estimado afectado"
-
-/>
-
-
-
-</div>
-
-
-
-
-
-
-
-<textarea
-
-placeholder="Comentario (opcional)"
-
-></textarea>
-
-
-
-
-
-
-
-<button>
-
-Enviar solicitud
-
-</button>
-
-
-
-
-
-
-
-<div className="seguridad">
-
-
-<FaLock/>
-
-
-<p>
-
-Información encriptada y protegida.
-Sus datos son tratados con estricta confidencialidad.
-
-</p>
-
-
-</div>
-
-
-
-</form>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-{/* FAQ */}
-
-
-<section className="faq-servicios">
-
-
-
-<div className="section-header">
-
-
-<h2>
-
-Preguntas frecuentes
-
-</h2>
-
-
-</div>
-
-
-
-
-
-<div className="faq-list">
-
-
-
-
-
-{[
-
-
-{
-pregunta:"¿Pueden recuperar mi dinero?",
-respuesta:"Cada caso es diferente. Primero analizamos la información disponible para determinar las alternativas posibles."
-},
-
-
-{
-pregunta:"¿Cuánto tarda un proceso?",
-respuesta:"El tiempo depende del tipo de fraude, instituciones involucradas y complejidad del caso."
-},
-
-
-{
-pregunta:"¿Qué información necesito?",
-respuesta:"Transferencias, comprobantes, conversaciones y cualquier evidencia relacionada con el fraude."
-},
-
-
-{
-pregunta:"¿Atienden casos internacionales?",
-respuesta:"Sí, analizamos casos con componentes nacionales e internacionales."
-}
-
-
-
-].map((faq,index)=>(
-
-
-
-<div 
-className="faq-item"
-key={index}
->
-
-
-
-<button
-
-onClick={()=>abrirFaq(index)}
-
->
-
-
-{faq.pregunta}
-
-
-
-<span>
-
-{faqActivo === index ? "-" : "+"}
-
-</span>
-
-
-
-</button>
-
-
-
-
-
-{faqActivo === index && (
-
-
-<p>
-
-{faq.respuesta}
-
-</p>
-
-
-)}
-
-
-
-</div>
-
-
-
-))}
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-{/* WHATSAPP FLOTANTE */}
-
-
-
-<a
-
-href="https://wa.me/5663820152"
-
-target="_blank"
-
-rel="noopener noreferrer"
-
-className="whatsapp-float"
-
->
-
-<FaWhatsapp/>
-
-</a>
-
-
-
-
-
-</main>
-
-
-);
-
+    );
 
 }
 

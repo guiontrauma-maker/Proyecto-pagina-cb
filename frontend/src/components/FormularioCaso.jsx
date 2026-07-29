@@ -1,3 +1,6 @@
+
+import { useState } from "react";
+
 import {
     FaUser,
     FaEnvelope,
@@ -12,196 +15,271 @@ import "react-international-phone/style.css";
 import "../style/FormularioCaso.css";
 
 
-function FormularioCaso(){
+function FormularioCaso() {
 
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [amount, setAmount] = useState("");
+    const [description, setDescription] = useState("");
 
-return (
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
 
-<section className="formulario-seccion">
 
+    const handleSubmit = async (event) => {
 
-<form className="contact-form">
+        event.preventDefault();
 
+        setMessage("");
+        setError("");
+        setLoading(true);
 
 
-<h2>
+        try {
 
-RECUPERE SUS PÉRDIDAS
+            const response = await fetch(
+                "http://localhost:5000/api/evaluaciones",
+                {
+                    method: "POST",
 
-</h2>
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
 
+                    body: JSON.stringify({
 
+                        fullName,
 
-<p>
+                        email,
 
-Solicite una revisión de caso sin costo hoy mismo.
+                        phone,
 
-</p>
+                        fraudType:
+                            "Evaluación general",
 
+                        amount:
+                            Number(amount) || 0,
 
+                        currency:
+                            "USD",
 
+                        description,
 
+                    }),
+                }
+            );
 
 
-<div className="input-group">
+            const data =
+                await response.json();
 
 
-<FaUser/>
+            if (!response.ok) {
 
+                throw new Error(
+                    data.message ||
+                    "No fue posible enviar la solicitud."
+                );
 
-<input
+            }
 
-type="text"
 
-placeholder="Nombre completo"
+            setMessage(
+                "Su solicitud fue enviada correctamente. Nos pondremos en contacto con usted."
+            );
 
-/>
 
+            setFullName("");
+            setEmail("");
+            setPhone("");
+            setAmount("");
+            setDescription("");
 
-</div>
 
+        } catch (error) {
 
+            console.error(
+                "Error enviando evaluación:",
+                error
+            );
 
+            setError(
+                error.message ||
+                "Ocurrió un error al enviar la solicitud."
+            );
 
 
+        } finally {
 
+            setLoading(false);
 
+        }
 
-<div className="input-group">
+    };
 
 
-<FaEnvelope/>
+    return (
 
+        <section className="formulario-seccion">
 
-<input
 
-type="email"
+            <form
+                className="contact-form"
+                onSubmit={handleSubmit}
+            >
 
-placeholder="Correo electrónico"
 
-/>
+                <h2>
+                    RECUPERE SUS PÉRDIDAS
+                </h2>
 
 
-</div>
+                <p>
+                    Solicite una revisión de caso sin costo hoy mismo.
+                </p>
 
 
+                <div className="input-group">
 
+                    <FaUser />
 
+                    <input
+                        type="text"
+                        placeholder="Nombre completo"
+                        value={fullName}
+                        onChange={(event) =>
+                            setFullName(
+                                event.target.value
+                            )
+                        }
+                        required
+                    />
 
+                </div>
 
 
+                <div className="input-group">
 
-<div className="phone-row">
+                    <FaEnvelope />
 
+                    <input
+                        type="email"
+                        placeholder="Correo electrónico"
+                        value={email}
+                        onChange={(event) =>
+                            setEmail(
+                                event.target.value
+                            )
+                        }
+                        required
+                    />
 
-<PhoneInput
+                </div>
 
-defaultCountry="mx"
 
-/>
+                <div className="phone-row">
 
+                    <PhoneInput
+                        defaultCountry="mx"
+                        value={phone}
+                        onChange={(value) =>
+                            setPhone(value)
+                        }
+                    />
 
-</div>
+                </div>
 
 
+                <div className="input-group">
 
+                    <FaDollarSign />
 
+                    <input
+                        type="number"
+                        placeholder="Monto aproximado (USD)"
+                        value={amount}
+                        onChange={(event) =>
+                            setAmount(
+                                event.target.value
+                            )
+                        }
+                        min="0"
+                    />
 
+                </div>
 
 
+                <details className="comments-box">
 
-<div className="input-group">
+                    <summary>
+                        Agregar comentarios adicionales (Opcional)
+                    </summary>
 
 
-<FaDollarSign/>
+                    <textarea
+                        placeholder="Describa brevemente su caso"
+                        value={description}
+                        onChange={(event) =>
+                            setDescription(
+                                event.target.value
+                            )
+                    }
+                    />
 
+                </details>
 
-<input
 
-type="number"
+                {error && (
 
-placeholder="Monto aproximado (USD)"
+                    <div className="form-error">
+                        {error}
+                    </div>
 
-/>
+                )}
 
 
-</div>
+                {message && (
 
+                    <div className="form-success">
+                        {message}
+                    </div>
 
+                )}
 
 
+                <button
+                    type="submit"
+                    disabled={loading}
+                >
 
+                    {loading
+                        ? "Enviando..."
+                        : "Solicitar Evaluación Gratuita"
+                    }
 
+                </button>
 
 
-<details className="comments-box">
+                <small className="secure">
 
+                    <FaLock />
 
-<summary>
+                    Información encriptada
 
-Agregar comentarios adicionales (Opcional)
+                </small>
 
-</summary>
 
+            </form>
 
 
+        </section>
 
-<textarea
-
-placeholder="Describa brevemente su caso"
-
-/>
-
-
-
-</details>
-
-
-
-
-
-
-
-
-<button type="submit">
-
-
-Solicitar Evaluación Gratuita
-
-
-</button>
-
-
-
-
-
-
-
-
-<small className="secure">
-
-
-<FaLock/>
-
-Información encriptada
-
-
-</small>
-
-
-
-
-
-</form>
-
-
-</section>
-
-
-)
-
+    );
 
 }
 
 
 export default FormularioCaso;
+
