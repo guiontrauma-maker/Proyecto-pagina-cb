@@ -1,0 +1,8 @@
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/empresaDB
+
+JWT_SECRET=ssm_clave_administrador_2026
+
+ADMIN_NAME=Administrador SSM
+ADMIN_EMAIL=admin@ssm.com
+ADMIN_PASSWORD=Admin12345
