@@ -29,7 +29,7 @@ function LoginAdministrador() {
 
 
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/admin/login`,
+                `${import.meta.env.VITE_API_URL}/auth/login`,
                 {
 
                     method: "POST",
@@ -137,6 +137,7 @@ function LoginAdministrador() {
 
 
 
+
                 <div className="admin-login-title">
 
 
@@ -151,6 +152,7 @@ function LoginAdministrador() {
 
 
                 </div>
+
 
 
 
@@ -173,7 +175,7 @@ function LoginAdministrador() {
 
                         value={email}
 
-                        onChange={(e)=>
+                        onChange={(e) =>
                             setEmail(
                                 e.target.value
                             )
@@ -184,6 +186,7 @@ function LoginAdministrador() {
                         required
 
                     />
+
 
 
 
@@ -199,7 +202,7 @@ function LoginAdministrador() {
 
                         value={password}
 
-                        onChange={(e)=>
+                        onChange={(e) =>
                             setPassword(
                                 e.target.value
                             )
@@ -214,6 +217,7 @@ function LoginAdministrador() {
 
 
 
+
                     {
                         error &&
 
@@ -224,6 +228,7 @@ function LoginAdministrador() {
                         </div>
 
                     }
+
 
 
 
