@@ -144,7 +144,7 @@ function Footer() {
                         <FaMapMarkerAlt />
 
                         <p>
-                            Dirección de la empresa
+                            Av.insurgentes sur 1431, interior piso 14 oficina 01, colonia Insurgentes Mixcoac cp 03920,Benuto Juarez, Ciudada de Mexico
                         </p>
 
                     </div>
@@ -155,7 +155,7 @@ function Footer() {
                         <FaEnvelope />
 
                         <a href="mailto:contacto@ssm.com">
-                            contacto@ssm.com
+                            recuperacionasistente@gmail.com
                         </a>
 
                     </div>

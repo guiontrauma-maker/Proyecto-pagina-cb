@@ -334,19 +334,19 @@ const alertas = [
 
 const testimonios = [
     {
-        nombre: "Cliente verificado",
+        nombre: "Cesar M.",
         texto: "Recibí orientación clara para entender qué había ocurrido con mi operación y cuáles eran mis alternativas.",
         estrellas: 5,
         recuperado: "$18,500 USD"
     },
     {
-        nombre: "Cliente verificado",
+        nombre: "Nathan C.",
         texto: "Desde el primer contacto me explicaron el proceso de forma sencilla y estuvieron pendientes de mi caso.",
         estrellas: 5,
         recuperado: "$27,000 USD"
     },
     {
-        nombre: "Cliente verificado",
+        nombre: "David M.",
         texto: "La revisión de mi situación me permitió entender mejor el fraude y tomar decisiones con mayor información.",
         estrellas: 5,
         recuperado: "$42,000 USD"
@@ -795,7 +795,7 @@ return (
             <div className="section-header">
 
                 <h2>
-                    ¿Por qué elegir a Interlex?
+                    ¿Por qué elegir a grupo SSM?
                 </h2>
 
                 <p>
