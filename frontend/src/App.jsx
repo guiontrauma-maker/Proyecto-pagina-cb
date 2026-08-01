@@ -36,14 +36,14 @@ function AppContent() {
         useLocation();
 
 
-    const adminRoute =
-        location.pathname ===
-            "/admin-login" ||
+   const adminRoute =
+    location.pathname.startsWith(
+        "/admin-login"
+    ) ||
 
-        location.pathname.startsWith(
-            "/panel-administrador"
-        );
-
+    location.pathname.startsWith(
+        "/panel-administrador"
+    );
 
     return (
 

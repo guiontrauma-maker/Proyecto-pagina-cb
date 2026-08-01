@@ -68,6 +68,11 @@ const casoSchema = new mongoose.Schema(
             default: "En revisión",
         },
 
+        deleted: {
+            type: Boolean,
+            default: false,
+        },
+
         lastUpdate: {
             type: Date,
             default: Date.now,
@@ -78,4 +83,7 @@ const casoSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Caso", casoSchema);
+module.exports = mongoose.model(
+    "Caso",
+    casoSchema
+);

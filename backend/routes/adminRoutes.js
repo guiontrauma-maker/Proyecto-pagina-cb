@@ -3,17 +3,20 @@ const express = require("express");
 const authMiddleware = require("../middleware/authMiddleware");
 
 const {
-getDashboard,
-getEvaluaciones,
-updateEvaluationStatus,
-convertEvaluationToCase,
-getCasos,
-updateCaseStatus,
-getAdvertencias,
-getMensajes,
-markMessageRead,
-deleteMessage
+    getDashboard,
+    getEvaluaciones,
+    updateEvaluationStatus,
+    convertEvaluationToCase,
+    getCasos,
+    updateCaseStatus,
+    deleteCase,
+    getCasosPapelera,
+    getAdvertencias,
+    getMensajes,
+    markMessageRead,
+    deleteMessage
 } = require("../controllers/adminController");
+
 
 const router = express.Router();
 
@@ -22,49 +25,64 @@ const router = express.Router();
 // =========================================================
 
 router.use(
-authMiddleware
+    authMiddleware
 );
+
 
 // =========================================================
 // DASHBOARD
 // =========================================================
 
 router.get(
-"/dashboard",
-getDashboard
+    "/dashboard",
+    getDashboard
 );
+
 
 // =========================================================
 // EVALUACIONES
 // =========================================================
 
 router.get(
-"/evaluaciones",
-getEvaluaciones
+    "/evaluaciones",
+    getEvaluaciones
 );
+
 
 router.put(
-"/evaluaciones/:id",
-updateEvaluationStatus
+    "/evaluaciones/:id",
+    updateEvaluationStatus
 );
 
+
 router.post(
-"/evaluaciones/:id/convertir",
-convertEvaluationToCase
+    "/evaluaciones/:id/convertir",
+    convertEvaluationToCase
 );
+
 
 // =========================================================
 // CASOS
 // =========================================================
 
 router.get(
-"/casos",
-getCasos
+    "/casos",
+    getCasos
 );
 
+
 router.put(
-"/casos/:id",
-updateCaseStatus
+    "/casos/:id",
+    updateCaseStatus
+);
+router.delete(
+    "/casos/:id",
+    deleteCase
+);
+
+router.get(
+    "/casos/papelera",
+    getCasosPapelera
 );
 
 // =========================================================
@@ -72,27 +90,31 @@ updateCaseStatus
 // =========================================================
 
 router.get(
-"/advertencias",
-getAdvertencias
+    "/advertencias",
+    getAdvertencias
 );
+
 
 // =========================================================
 // MENSAJES
 // =========================================================
 
 router.get(
-"/mensajes",
-getMensajes
+    "/mensajes",
+    getMensajes
 );
+
 
 router.put(
-"/mensajes/:id/leido",
-markMessageRead
+    "/mensajes/:id/leido",
+    markMessageRead
 );
 
+
 router.delete(
-"/mensajes/:id",
-deleteMessage
+    "/mensajes/:id",
+    deleteMessage
 );
+
 
 module.exports = router;

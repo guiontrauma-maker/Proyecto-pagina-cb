@@ -21,8 +21,7 @@ import "../style/PanelAdministrador.css";
 
 
 const API =
-    "http://localhost:5000/api";
-
+    import.meta.env.VITE_API_URL;
 
 function PanelAdministrador() {
 

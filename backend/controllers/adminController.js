@@ -270,6 +270,40 @@ const getCasos = async (req, res) => {
         });
     }
 };
+// =========================================================
+// CASOS EN PAPELERA
+// =========================================================
+
+const getCasosPapelera = async (req, res) => {
+    try {
+
+        const casos =
+            await Caso.find({
+                deleted: true
+            })
+            .sort({
+                createdAt: -1
+            });
+
+
+        res.status(200).json(casos);
+
+
+    } catch (error) {
+
+        console.error(
+            "Error obteniendo casos en papelera:",
+            error.message
+        );
+
+
+        res.status(500).json({
+            message:
+                "Error obteniendo casos en papelera."
+        });
+
+    }
+};
 
 
 // =========================================================
@@ -315,7 +349,63 @@ const updateCaseStatus = async (req, res) => {
     }
 };
 
+// =========================================================
+// ENVIAR CASO A PAPELERA
+// =========================================================
 
+const deleteCase = async (req, res) => {
+    try {
+
+        const caso =
+            await Caso.findByIdAndUpdate(
+                req.params.id,
+                {
+                    deleted: true,
+                    lastUpdate: new Date()
+                },
+                {
+                    new: true
+                }
+            );
+
+
+        if (!caso) {
+
+            return res.status(404).json({
+                message:
+                    "Caso no encontrado."
+            });
+
+        }
+
+
+        res.status(200).json({
+
+            message:
+                "Caso enviado a papelera correctamente.",
+
+            caso
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Error enviando caso a papelera:",
+            error.message
+        );
+
+
+        res.status(500).json({
+
+            message:
+                "Error enviando caso a papelera."
+
+        });
+
+    }
+};
 // =========================================================
 // ADVERTENCIAS
 // =========================================================
@@ -460,6 +550,8 @@ module.exports = {
     convertEvaluationToCase,
     getCasos,
     updateCaseStatus,
+    deleteCase,
+    getCasosPapelera,
     getAdvertencias,
     getMensajes,
     markMessageRead,
