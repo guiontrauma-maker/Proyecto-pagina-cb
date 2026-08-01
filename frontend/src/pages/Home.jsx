@@ -508,6 +508,47 @@ return (
                     />
 
                 </div>
+                <div className="input-group">
+
+    <FaExclamationTriangle />
+
+    <select
+        name="fraudType"
+        value={formulario.fraudType}
+        onChange={handleChange}
+        required
+    >
+        <option value="">
+            Selecciona el tipo de fraude
+        </option>
+
+        <option value="Fraude bancario">
+            Fraude bancario
+        </option>
+
+        <option value="Fraude digital">
+            Fraude digital
+        </option>
+
+        <option value="Robo de identidad">
+            Robo de identidad
+        </option>
+
+        <option value="Estafa de inversión">
+            Estafa de inversión
+        </option>
+
+        <option value="Estafa romántica">
+            Estafa romántica
+        </option>
+
+        <option value="Estafa piramidal">
+            Estafa piramidal
+        </option>
+
+    </select>
+
+</div>
 
                 <div className="input-group">
 
@@ -1098,15 +1139,13 @@ return (
 
         </section>
           <a
-
-    href="https://wa.me/566382152"
+    href="https://wa.me/5663820152"
     target="_blank"
     rel="noopener noreferrer"
     className="whatsapp-float"
 >
-    
-</a>
     <FaWhatsapp />
+</a>
     </main>
 );
 

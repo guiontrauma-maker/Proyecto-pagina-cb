@@ -339,58 +339,59 @@ body {
 ========================================================= */
 
 .phone-row {
-    width: 100%;
-    margin-bottom: 15px;
+    width:100%;
+    margin-bottom:15px;
 }
+
 
 .phone-row .react-international-phone {
-    width: 100%;
+    width:100%;
 }
+
 
 .phone-row .react-international-phone-input-container {
-    width: 100%;
-    display: flex;
+    width:100%;
+    display:flex;
+    align-items:center;
 }
 
-.phone-row .react-international-phone-input {
-    width: 100% !important;
-
-    height: 54px !important;
-
-    border: 1px solid #d7ddd9 !important;
-
-    border-left: none !important;
-
-    border-radius: 0 10px 10px 0 !important;
-
-    font-size: 15px !important;
-
-    box-shadow: none !important;
-
-    outline: none !important;
-}
 
 .phone-row .react-international-phone-country-selector-button {
-    height: 54px !important;
 
-    border: 1px solid #d7ddd9 !important;
+    height:54px !important;
 
-    border-right: none !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
 
-    border-radius: 10px 0 0 10px !important;
+    border:1px solid #d7ddd9 !important;
 
-    background: #ffffff !important;
+    border-right:none !important;
 
-    box-shadow: none !important;
+    border-radius:10px 0 0 10px !important;
+
+    background:#ffffff !important;
+
 }
 
-.phone-row .react-international-phone-input-container:focus-within
-.react-international-phone-input,
-.phone-row .react-international-phone-input-container:focus-within
-.react-international-phone-country-selector-button {
-    border-color: #79a984 !important;
-}
 
+.phone-row .react-international-phone-input {
+
+    height:54px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    padding:0 15px !important;
+
+    border:1px solid #d7ddd9 !important;
+
+    border-radius:0 10px 10px 0 !important;
+
+    font-size:15px !important;
+
+}
 
 /* =========================================================
    COMENTARIOS
@@ -1881,59 +1882,9 @@ body {
     opacity: .7;
     cursor: not-allowed;
 }
-/* =========================================================
-   WHATSAPP FLOTANTE
-========================================================= */
-
-.whatsapp-float {
-
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 60px;
-    height: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #25d366;
-
+.whatsapp-float svg {
+    width: 34px;
+    height: 34px;
+    display: block;
     color: #ffffff;
-
-    font-size: 34px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,.20);
-
-    z-index: 999;
-
-    transition: .25s ease;
-}
-
-
-.whatsapp-float:hover {
-
-    transform: translateY(-5px);
-
-}
-
-
-@media(max-width:600px){
-
-    .whatsapp-float {
-
-        width: 55px;
-        height: 55px;
-
-        right: 18px;
-        bottom: 18px;
-
-        font-size: 30px;
-
-    }
-
 }
