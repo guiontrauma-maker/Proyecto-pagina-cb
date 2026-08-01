@@ -2,29 +2,30 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
-FaUser,
-FaEnvelope,
-FaDollarSign,
-FaLock,
-FaStar,
-FaMoneyBillWave,
-FaExclamationTriangle,
-FaUniversity,
-FaLaptopCode,
-FaUserShield,
-FaChartLine,
-FaHeart,
-FaUsers,
-FaShieldAlt,
-FaCheckCircle,
-FaSearch,
-FaFileAlt,
-FaClipboardCheck,
-FaComments,
-FaGavel,
-FaArrowRight,
-FaChevronDown,
-FaRegNewspaper
+    FaUser,
+    FaEnvelope,
+    FaDollarSign,
+    FaLock,
+    FaStar,
+    FaMoneyBillWave,
+    FaExclamationTriangle,
+    FaUniversity,
+    FaLaptopCode,
+    FaUserShield,
+    FaChartLine,
+    FaHeart,
+    FaUsers,
+    FaShieldAlt,
+    FaCheckCircle,
+    FaSearch,
+    FaFileAlt,
+    FaClipboardCheck,
+    FaComments,
+    FaGavel,
+    FaArrowRight,
+    FaChevronDown,
+    FaRegNewspaper,
+    FaWhatsapp
 } from "react-icons/fa";
 
 import { PhoneInput } from "react-international-phone";
@@ -32,8 +33,7 @@ import "react-international-phone/style.css";
 
 function Home() {
 
-const [faqAbierta, setFaqAbierta] = useState(null);
-
+    const [faqAbierta, setFaqAbierta] = useState(null);
 // =========================================================
 // FORMULARIO DE EVALUACIÓN
 // =========================================================
@@ -1097,7 +1097,14 @@ return (
             </a>
 
         </section>
-
+          <a
+    href="https://wa.me/5663820152"
+    className="whatsapp-floating"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <FaWhatsapp />
+</a>
     </main>
 );
 
