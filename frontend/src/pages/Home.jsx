@@ -42,6 +42,7 @@ const [formulario, setFormulario] = useState({
     fullName: "",
     email: "",
     phone: "",
+    fraudType: "",
     amount: "",
     description: ""
 });
@@ -96,7 +97,7 @@ const handleSubmit = async (e) => {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/evaluaciones",
+    "https://proyecto-cris.onrender.com/api/evaluaciones",
             {
                 method: "POST",
 
@@ -116,7 +117,7 @@ const handleSubmit = async (e) => {
                         formulario.phone,
 
                     fraudType:
-                        "Evaluación general",
+    formulario.fraudType,
 
                     amount:
                         Number(formulario.amount) || 0,
@@ -147,13 +148,14 @@ const handleSubmit = async (e) => {
             "Tu solicitud fue enviada correctamente. Nos pondremos en contacto contigo."
         );
 
-        setFormulario({
-            fullName: "",
-            email: "",
-            phone: "",
-            amount: "",
-            description: ""
-        });
+       setFormulario({
+    fullName: "",
+    email: "",
+    phone: "",
+    fraudType: "",
+    amount: "",
+    description: ""
+});
 
     } catch (error) {
 
