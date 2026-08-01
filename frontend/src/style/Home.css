@@ -1888,3 +1888,54 @@ body {
     display: block;
     color: #ffffff;
 }
+/* Igualar altura teléfono con los demás campos */
+
+.phone-row,
+.phone-row .react-international-phone,
+.phone-row .react-international-phone-input-container,
+.phone-row .react-international-phone-input,
+.phone-row .react-international-phone-country-selector-button {
+
+    height: 54px !important;
+
+}
+
+
+.phone-row .react-international-phone-input-container {
+
+    display: flex !important;
+    align-items: center !important;
+
+}
+
+
+.phone-row .react-international-phone-country-selector-button {
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+}
+
+
+.phone-row .react-international-phone-input {
+
+    display: flex !important;
+    align-items: center !important;
+
+}
+.input-group select {
+
+    height: 54px !important;
+
+    flex: 1;
+
+    border: none !important;
+
+    outline: none !important;
+
+    background: transparent !important;
+
+    font-size: 15px;
+
+}
