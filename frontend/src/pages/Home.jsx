@@ -1098,13 +1098,15 @@ return (
 
         </section>
           <a
-    href="https://wa.me/5663820152"
-    className="whatsapp-floating"
+
+    href="https://wa.me/566382152"
     target="_blank"
     rel="noopener noreferrer"
+    className="whatsapp-float"
 >
-    <FaWhatsapp />
+    
 </a>
+    <FaWhatsapp />
     </main>
 );
 

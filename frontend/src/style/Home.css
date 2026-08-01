@@ -1824,3 +1824,116 @@ body {
     }
 
 }
+/* =========================================================
+   CORRECCIÓN FORMULARIO
+========================================================= */
+
+.contact-form {
+    overflow: hidden;
+}
+
+.contact-form input,
+.contact-form textarea {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.phone-row {
+    display: flex;
+}
+
+.phone-row .react-international-phone {
+    display: flex;
+    width: 100%;
+}
+
+.phone-row .react-international-phone-input-container {
+    width: 100%;
+}
+
+.phone-row .react-international-phone-input-container input {
+    background: #ffffff !important;
+}
+
+.phone-row .react-international-phone-input:focus {
+    border-color: #79a984 !important;
+}
+
+
+/* evita doble apariencia de caja en comentarios */
+.comments-box {
+    border: none;
+    background: transparent;
+}
+
+.comments-box textarea {
+    display: block;
+}
+
+
+/* botón evaluación */
+.contact-form button {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form button:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
+/* =========================================================
+   WHATSAPP FLOTANTE
+========================================================= */
+
+.whatsapp-float {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: #ffffff;
+
+    font-size: 34px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.20);
+
+    z-index: 999;
+
+    transition: .25s ease;
+}
+
+
+.whatsapp-float:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+@media(max-width:600px){
+
+    .whatsapp-float {
+
+        width: 55px;
+        height: 55px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 30px;
+
+    }
+
+}
