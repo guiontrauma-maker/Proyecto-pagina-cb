@@ -31,7 +31,8 @@ function Contacto() {
     const [descripcion, setDescripcion] = useState("");
 
     const [enviando, setEnviando] = useState(false);
-
+const [mensaje, setMensaje] = useState("");
+const [tipoMensaje, setTipoMensaje] = useState("");
 
     const handleSubmit = async (e) => {
 
@@ -90,10 +91,13 @@ console.log("Respuesta del servidor:", datos);
 
             }
 
+setMensaje(
+        "Solicitud enviada correctamente. Nos pondremos en contacto contigo."
+        );
 
-            alert(
-                "Solicitud enviada correctamente. Nos pondremos en contacto contigo."
-            );
+        setTipoMensaje("exito");
+
+        
 
 
             // Limpiar formulario
@@ -109,9 +113,12 @@ console.log("Respuesta del servidor:", datos);
 
         console.error("Error real:", error);
 
-            alert(
-                    "Error real: " + error.message
-                        );
+        setMensaje(
+                "No se pudo enviar la solicitud. Inténtalo nuevamente."
+                );
+
+                setTipoMensaje("error");
+        
 
                         
 }finally {
@@ -301,6 +308,12 @@ console.log("Respuesta del servidor:", datos);
 
 
                     <form onSubmit={handleSubmit}>
+                    {mensaje && (
+                            <div className={`mensaje-formulario ${tipoMensaje}`}>
+                                    {mensaje}
+                                        </div>
+                                        
+                    )}
 
 
                         <input
