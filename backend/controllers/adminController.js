@@ -183,44 +183,43 @@ const convertEvaluationToCase = async (req, res) => {
                 totalCases + 1
             ).padStart(5, "0")}`;
 
-        const newCase =
-            await Caso.create({
-                caseNumber,
+       const newCase =
+    await Caso.create({
+        caseNumber,
 
-                evaluationId:
-                    evaluation._id,
+        evaluationId:
+            evaluation._id,
 
-                fullName:
-                    evaluation.fullName,
+        fullName:
+            evaluation.fullName,
 
-                email:
-                    evaluation.email,
+        email:
+            evaluation.email,
 
-                phone:
-                    evaluation.phone,
+        phone:
+            evaluation.phone,
 
-                fraudType:
-                    evaluation.fraudType,
+        fraudType:
+            evaluation.fraudType,
 
-                amount:
-                    evaluation.amount,
+        amount:
+            evaluation.amount,
 
-                currency:
-                    evaluation.currency,
+        currency:
+            evaluation.currency,
 
-                description:
-    evaluation.description,
+        description:
+            evaluation.description || "",
 
-origin:
-    evaluation.origin,
+        origin:
+            evaluation.origin || "Panel Administrador",
 
-formSource:
-    evaluation.formSource,
+        formSource:
+            evaluation.formSource || "Evaluación",
 
-status:
-    "En revisión"
-            });
-
+        status:
+            "En revisión"
+    });
         evaluation.status = "Aprobada";
 
         await evaluation.save();
