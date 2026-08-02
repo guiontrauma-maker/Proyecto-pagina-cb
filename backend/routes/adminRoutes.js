@@ -6,6 +6,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 const {
     getDashboard,
+
     getEvaluaciones,
     updateEvaluationStatus,
     convertEvaluationToCase,
@@ -22,10 +23,12 @@ const {
     getMensajes,
     markMessageRead,
     deleteMessage
+
 } = require("../controllers/adminController");
 
+
 // =========================================================
-// TODAS LAS RUTAS DE ADMIN REQUIEREN AUTENTICACIÓN
+// TODAS LAS RUTAS ADMIN REQUIEREN TOKEN
 // =========================================================
 
 router.use(
@@ -65,30 +68,53 @@ router.post(
 );
 
 
-// CASOS PAPELERA
-router.get(
-    "/casos/papelera",
-    getCasosPapelera
-);
+// =========================================================
+// CASOS
+// =========================================================
 
 
-// CASOS ACTIVOS
+// Obtener casos activos
 router.get(
     "/casos",
     getCasos
 );
 
 
+// Obtener papelera
+router.get(
+    "/casos/papelera",
+    getCasosPapelera
+);
+
+
+// Cambiar estado del caso
 router.put(
     "/casos/:id",
     updateCaseStatus
 );
 
 
+// Mandar caso a papelera
 router.delete(
     "/casos/:id",
     deleteCase
 );
+
+
+// Restaurar caso de papelera
+router.put(
+    "/casos/:id/restaurar",
+    restoreCase
+);
+
+
+// Eliminar definitivamente
+router.delete(
+    "/casos/:id/eliminar-definitivo",
+    deleteCasePermanent
+);
+
+
 // =========================================================
 // ADVERTENCIAS
 // =========================================================
@@ -119,6 +145,7 @@ router.delete(
     "/mensajes/:id",
     deleteMessage
 );
+
 
 
 module.exports = router;
