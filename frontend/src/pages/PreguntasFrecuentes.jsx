@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { FaWhatsapp, FaCalendarAlt } from "react-icons/fa";
 
 import "../style/PreguntasFrecuentes.css";
@@ -192,20 +194,18 @@ function PreguntasFrecuentes(){
                             un análisis oportuno.
 
                         </p>
-                                                <button
-                            className="evaluation-btn"
-                            type="button"
-                        >
+                                      <Link
+    to="/contacto"
+    className="evaluation-btn"
+>
 
-                            <FaCalendarAlt />
+    <FaCalendarAlt />
 
-                            <span>
+    <span>
+        Solicitar Evaluación
+    </span>
 
-                                Solicitar Evaluación
-
-                            </span>
-
-                        </button>
+</Link>
 
 
                         <div className="confidential-box">

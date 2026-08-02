@@ -52,6 +52,9 @@ function PanelAdministrador() {
     const [dashboard, setDashboard] =
         useState(null);
 
+        const [vistaCasos, setVistaCasos] =
+    useState("activos");
+
 
     const [evaluaciones, setEvaluaciones] =
         useState([]);
@@ -59,6 +62,11 @@ function PanelAdministrador() {
 
     const [casos, setCasos] =
         useState([]);
+
+        const [casoSeleccionado, setCasoSeleccionado] = useState(null);
+
+        const [papelera, setPapelera] =
+    useState([]);
 
 
     const [advertencias, setAdvertencias] =
@@ -113,13 +121,14 @@ function PanelAdministrador() {
 
             setLoading(true);
 
-            await Promise.all([
-                loadDashboard(),
-                loadEvaluaciones(),
-                loadCasos(),
-                loadAdvertencias(),
-                loadMensajes(),
-            ]);
+           await Promise.all([
+    loadDashboard(),
+    loadEvaluaciones(),
+    loadCasos(),
+    loadPapelera(),
+    loadAdvertencias(),
+    loadMensajes(),
+]);
 
         } catch (error) {
 
@@ -200,31 +209,59 @@ function PanelAdministrador() {
 
     const loadCasos = async () => {
 
-        const response =
-            await fetch(
-                `${API}/admin/casos`,
-                {
-                    headers:
-                        authHeaders,
-                }
-            );
+    const response =
+        await fetch(
+            `${API}/admin/casos`,
+            {
+                headers:
+                    authHeaders,
+            }
+        );
 
 
-        const data =
-            await response.json();
+    const data =
+        await response.json();
 
 
-        if (!response.ok) {
-            throw new Error(
-                data.message
-            );
-        }
+    if (!response.ok) {
+        throw new Error(
+            data.message
+        );
+    }
 
 
-        setCasos(data);
+    setCasos(data);
 
-    };
+};
 
+
+
+const loadPapelera = async () => {
+
+    const response =
+        await fetch(
+            `${API}/admin/casos/papelera`,
+            {
+                headers:
+                    authHeaders,
+            }
+        );
+
+
+    const data =
+        await response.json();
+
+
+    if (!response.ok) {
+        throw new Error(
+            data.message
+        );
+    }
+
+
+    setPapelera(data);
+
+};
 
     const loadAdvertencias = async () => {
 
@@ -390,6 +427,94 @@ function PanelAdministrador() {
 
         };
 
+        const verCaso = (caso) => {
+    setCasoSeleccionado(caso);
+};
+
+
+const cerrarCaso = () => {
+    setCasoSeleccionado(null);
+};
+
+        const deleteCase = async (id) => {
+
+    const response = await fetch(
+        `${API}/admin/casos/${id}`,
+        {
+            method: "DELETE",
+            headers: authHeaders,
+        }
+    );
+
+    const data = await response.json();
+
+    console.log("Eliminar caso:", data);
+
+    if (!response.ok) {
+        alert(data.message);
+        return;
+    }
+
+    await loadCasos();
+    await loadPapelera();
+    await loadDashboard();
+
+};
+
+       const restoreCase = async (id) => {
+
+    const response = await fetch(
+        `${API}/admin/casos/${id}/restaurar`,
+        {
+            method: "PUT",
+            headers: authHeaders,
+        }
+    );
+
+
+
+    const data = await response.json();
+
+    console.log("Restaurar caso:", data);
+
+
+    if (!response.ok) {
+        alert(data.message);
+        return;
+    }
+
+
+    await loadCasos();
+    await loadPapelera();
+    await loadDashboard();
+
+};
+
+const deleteCasePermanent =
+    async (id) => {
+
+        if (
+            !window.confirm(
+                "¿Eliminar este caso definitivamente?"
+            )
+        ) {
+            return;
+        }
+
+        await fetch(
+            `${API}/admin/casos/${id}/eliminar-definitivo`,
+            {
+                method: "DELETE",
+
+                headers:
+                    authHeaders,
+            }
+        );
+
+        loadPapelera();
+        loadDashboard();
+
+    };
 
     const markMessageRead =
         async (id) => {
@@ -465,26 +590,26 @@ function PanelAdministrador() {
 
 
     const filteredCasos =
-        casos.filter(
-            (item) =>
-                item.fullName
-                    .toLowerCase()
-                    .includes(
-                        search.toLowerCase()
-                    ) ||
+    casos.filter(
+        (item) =>
+            item.fullName
+                .toLowerCase()
+                .includes(
+                    search.toLowerCase()
+                ) ||
+            item.caseNumber
+                .toLowerCase()
+                .includes(
+                    search.toLowerCase()
+                ) ||
+            item.fraudType
+                .toLowerCase()
+                .includes(
+                    search.toLowerCase()
+                )
+    );
 
-                item.caseNumber
-                    .toLowerCase()
-                    .includes(
-                        search.toLowerCase()
-                    ) ||
-
-                item.fraudType
-                    .toLowerCase()
-                    .includes(
-                        search.toLowerCase()
-                    )
-        );
+console.log("CASOS:", casos);
 
 
     if (loading) {
@@ -820,7 +945,7 @@ function PanelAdministrador() {
                                     </strong>
 
                                     <small>
-                                        Requieren revisión
+                                        RequierEn revision
                                     </small>
 
                                 </div>
@@ -1243,7 +1368,7 @@ function PanelAdministrador() {
                                                             </option>
 
                                                             <option>
-                                                                En revisión
+                                                                En revision
                                                             </option>
 
                                                             <option>
@@ -1313,7 +1438,38 @@ function PanelAdministrador() {
 
                                 </div>
 
+<div className="admin-tabs">
 
+    <button
+        className={
+            vistaCasos === "activos"
+                ? "active"
+                : ""
+        }
+        onClick={() =>
+            setVistaCasos("activos")
+        }
+    >
+        Casos
+    </button>
+
+
+    <button
+        className={
+            vistaCasos === "papelera"
+                ? "active"
+                : ""
+        }
+        onClick={() =>
+            setVistaCasos("papelera")
+        }
+    >
+        Papelera
+    </button>
+
+
+
+</div>
                                 <div className="admin-search">
 
                                     <FaSearch />
@@ -1364,132 +1520,216 @@ function PanelAdministrador() {
                                             <th>
                                                 Estado
                                             </th>
+                                            <th>
+    Acciones
+</th>
 
                                         </tr>
 
                                     </thead>
 
 
-                                    <tbody>
 
-                                        {filteredCasos.map(
-                                            (item) => (
+<tbody>
 
-                                                <tr
-                                                    key={
-                                                        item._id
-                                                    }
-                                                >
+{
+    (
+    vistaCasos === "activos"
+    ? filteredCasos
+    : papelera
 
-                                                    <td>
-                                                        <strong>
-                                                            {
-                                                                item.caseNumber
-                                                            }
-                                                        </strong>
-                                                    </td>
+    
+    ).map(
+        (item) => (
 
+            <tr
+                key={
+                    item._id
+                }
+            >
 
-                                                    <td>
-
-                                                        <strong>
-                                                            {
-                                                                item.fullName
-                                                            }
-                                                        </strong>
-
-                                                        <small>
-                                                            {
-                                                                item.email
-                                                            }
-                                                        </small>
-
-                                                    </td>
+                <td>
+                    <strong>
+                        {
+                            item.caseNumber
+                        }
+                    </strong>
+                </td>
 
 
-                                                    <td>
-                                                        {
-                                                            item.fraudType
-                                                        }
-                                                    </td>
+                <td>
+
+                    <strong>
+                        {
+                            item.fullName
+                        }
+                    </strong>
+
+                    <small>
+                        {
+                            item.email
+                        }
+                    </small>
+
+                </td>
 
 
-                                                    <td>
-                                                        $
-                                                        {
-                                                            item.amount
-                                                        }
-                                                        {" "}
-                                                        {
-                                                            item.currency
-                                                        }
-                                                    </td>
+                <td>
+                    {
+                        item.fraudType
+                    }
+                </td>
 
 
-                                                    <td>
-                                                        {
-                                                            new Date(
-                                                                item.createdAt
-                                                            ).toLocaleDateString(
-                                                                "es-MX"
-                                                            )
-                                                        }
-                                                    </td>
+                <td>
+                    $
+                    {
+                        item.amount
+                    }
+                    {" "}
+                    {
+                        item.currency
+                    }
+                </td>
 
 
-                                                    <td>
+                <td>
+                    {
+                        new Date(
+                            item.createdAt
+                        ).toLocaleDateString(
+                            "es-MX"
+                        )
+                    }
+                </td>
 
-                                                        <select
-                                                            value={
-                                                                item.status
-                                                            }
-                                                            onChange={(
-                                                                event
-                                                            ) =>
-                                                                updateCaseStatus(
-                                                                    item._id,
-                                                                    event
-                                                                        .target
-                                                                        .value
-                                                                )
-                                                            }
-                                                        >
 
-                                                            <option>
-                                                                En revisión
-                                                            </option>
+                <td>
+                    {
+                        vistaCasos === "activos" && (
+                            <select
+                                value={
+                                    item.status
+                                }
+                                onChange={(event) =>
+                                    updateCaseStatus(
+                                        item._id,
+                                        event.target.value
+                                    )
+                                }
+                            >
 
-                                                            <option>
-                                                                En proceso
-                                                            </option>
+                                <option>
+                                    En revision
+                                </option>
 
-                                                            <option>
-                                                                Finalizado
-                                                            </option>
+                                <option>
+                                    En proceso
+                                </option>
 
-                                                            <option>
-                                                                Rechazado
-                                                            </option>
+                                <option>
+                                    Finalizado
+                                </option>
 
-                                                        </select>
+                                <option>
+                                    Rechazado
+                                </option>
 
-                                                    </td>
+                            </select>
+                        )
+                    }
 
-                                                </tr>
+                    {
+                        vistaCasos === "papelera" && (
+                            <span>
+                                Papelera
+                            </span>
+                        )
+                    }
 
-                                            )
-                                        )}
+                </td>
 
-                                    </tbody>
 
-                                </table>
+        
 
-                            </div>
+<td>
 
-                        </section>
+{
+vistaCasos === "activos" ? (
 
-                    )}
+<>
 
+<button
+    className="action-button"
+    onClick={() =>
+        verCaso(item)
+    }
+    title="Ver caso"
+>
+    <FaEye />
+</button>
+
+
+<button
+    className="action-button red"
+    onClick={() =>
+        deleteCase(item._id)
+    }
+    title="Enviar a papelera"
+>
+    <FaTimes />
+</button>
+
+</>
+
+) : (
+
+<>
+
+<button
+    className="action-button green"
+    onClick={() =>
+        restoreCase(item._id)
+    }
+    title="Restaurar caso"
+>
+    <FaCheck />
+</button>
+
+
+<button
+    className="action-button red"
+    onClick={() =>
+        deleteCasePermanent(item._id)
+    }
+    title="Eliminar definitivamente"
+>
+    <FaTimes />
+</button>
+
+</>
+
+)
+}
+
+</td>
+
+
+            </tr>
+
+        )
+    )
+}
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+)}
 
                     {/* =================================================
                         ADVERTENCIAS
@@ -1850,6 +2090,77 @@ function PanelAdministrador() {
 
                     )}
 
+{casoSeleccionado && (
+
+    <div className="modal-overlay">
+
+        <div className="modal-caso">
+
+            <h2>
+                Detalle del caso
+            </h2>
+
+
+            <p>
+                <strong>Número de caso:</strong>{" "}
+                {casoSeleccionado.caseNumber}
+            </p>
+
+
+            <p>
+                <strong>Nombre del cliente:</strong>{" "}
+                {casoSeleccionado.fullName}
+            </p>
+
+
+            <p>
+                <strong>Correo:</strong>{" "}
+                {casoSeleccionado.email}
+            </p>
+
+
+            <p>
+                <strong>Teléfono:</strong>{" "}
+                {casoSeleccionado.phone || "—"}
+            </p>
+
+
+            <p>
+                <strong>Tipo de fraude:</strong>{" "}
+                {casoSeleccionado.fraudType}
+            </p>
+
+
+            <p>
+                <strong>Monto:</strong>{" "}
+                ${casoSeleccionado.amount} {casoSeleccionado.currency}
+            </p>
+
+
+            <p>
+                <strong>Descripción:</strong>{" "}
+                {casoSeleccionado.description || "—"}
+            </p>
+
+
+            <p>
+                <strong>Estado actual:</strong>{" "}
+                {casoSeleccionado.status}
+            </p>
+
+
+            <button
+                onClick={cerrarCaso}
+            >
+                Cerrar
+            </button>
+
+
+        </div>
+
+    </div>
+
+)}
                 </div>
 
             </main>

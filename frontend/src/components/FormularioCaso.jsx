@@ -15,7 +15,7 @@ import "react-international-phone/style.css";
 import "../style/FormularioCaso.css";
 
 
-function FormularioCaso() {
+function FormularioCaso({ origen = "Formulario general" }) {
 
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
@@ -40,7 +40,7 @@ function FormularioCaso() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/evaluaciones",
+                "https://proyecto-cris.onrender.com/api/evaluaciones",
                 {
                     method: "POST",
 
@@ -48,26 +48,28 @@ function FormularioCaso() {
                         "Content-Type": "application/json",
                     },
 
-                    body: JSON.stringify({
+                  body: JSON.stringify({
 
-                        fullName,
+    fullName,
 
-                        email,
+    email,
 
-                        phone,
+    phone,
 
-                        fraudType:
-                            "Evaluación general",
+    fraudType:
+        origen,
 
-                        amount:
-                            Number(amount) || 0,
+    origen,
 
-                        currency:
-                            "USD",
+    amount:
+        Number(amount) || 0,
 
-                        description,
+    currency:
+        "USD",
 
-                    }),
+    description,
+
+}),
                 }
             );
 

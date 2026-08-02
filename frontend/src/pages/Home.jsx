@@ -39,12 +39,16 @@ function Home() {
 // =========================================================
 
 const [formulario, setFormulario] = useState({
+
     fullName: "",
     email: "",
     phone: "",
     fraudType: "",
     amount: "",
-    description: ""
+    currency: "USD",
+    description: "",
+    origen: "Inicio"
+
 });
 
 const [enviando, setEnviando] = useState(false);

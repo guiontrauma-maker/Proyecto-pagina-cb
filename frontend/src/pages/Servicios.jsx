@@ -1,5 +1,4 @@
 
-// src/pages/Servicios.jsx
 
 import { useState } from "react";
 
@@ -40,7 +39,8 @@ function Servicios() {
     });
 
     const [enviando, setEnviando] = useState(false);
-
+const [mensaje, setMensaje] = useState("");
+const [error, setError] = useState("");
 
     const abrirFaq = (index) => {
 
@@ -64,7 +64,8 @@ function Servicios() {
     const enviarFormulario = async (e) => {
 
         e.preventDefault();
-
+setMensaje("");
+setError("");
         if (enviando) return;
 
         setEnviando(true);
@@ -72,7 +73,7 @@ function Servicios() {
         try {
 
             const respuesta = await fetch(
-                "http://localhost:5000/api/evaluaciones",
+    "https://proyecto-cris.onrender.com/api/evaluaciones",
                 {
                     method: "POST",
 
@@ -106,9 +107,9 @@ function Servicios() {
             }
 
 
-            alert(
-                "Solicitud enviada correctamente."
-            );
+            setMensaje(
+    "Solicitud enviada correctamente. Nos pondremos en contacto contigo."
+);
 
 
             setFormulario({
@@ -124,10 +125,9 @@ function Servicios() {
 
             console.error(error);
 
-            alert(
-                "No fue posible enviar la solicitud. Intenta nuevamente."
-            );
-
+            setError(
+    "No fue posible enviar la solicitud. Intenta nuevamente."
+);
         } finally {
 
             setEnviando(false);
@@ -1169,17 +1169,29 @@ function Servicios() {
                             ></textarea>
 
 
-                            <button
-                                type="submit"
-                                disabled={enviando}
-                            >
+                           <button
+    type="submit"
+    disabled={enviando}
+>
+    {enviando
+        ? "Enviando..."
+        : "Enviar solicitud"
+    }
+</button>
 
-                                {enviando
-                                    ? "Enviando..."
-                                    : "Enviar solicitud"
-                                }
 
-                            </button>
+{mensaje && (
+    <div className="form-success">
+        {mensaje}
+    </div>
+)}
+
+
+{error && (
+    <div className="form-error">
+        {error}
+    </div>
+)}
 
 
                             <div className="seguridad">
