@@ -87,7 +87,7 @@
                 color:#222222;
                     font-weight:800;
                     }
-}
+
 
 /* CONOCE GRUPO SSM */
 
@@ -1965,20 +1965,21 @@
 
 }
 /* CORRECCIÓN POR QUÉ ELEGIRNOS */
+
 .porque-section .porque-card {
-    background: #355e3b; !important;
+    background: #355e3b !important;
     }
 
     .porque-section .porque-icon {
-        background:rgba(255,255,255,.12) !important;
-            color:#ffffff !important;
+        background: rgba(255,255,255,.12) !important;
+            color: #ffffff !important;
             }
 
             .porque-section .porque-icon svg {
-                color:#ffffff !important;
+                color: #ffffff !important;
                 }
 
                 .porque-section .porque-card h3,
                 .porque-section .porque-card p {
-                    color:#ffffff !important;
+                    color: #ffffff !important;
                     }
