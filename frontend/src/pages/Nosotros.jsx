@@ -53,7 +53,7 @@ function Nosotros() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/evaluaciones",
+            "https://proyecto-cris.onrender.com/api/evaluaciones",
                 {
                     method: "POST",
 
@@ -75,7 +75,9 @@ function Nosotros() {
 
                         currency: "USD",
 
-                        description: formData.description
+                     description: formData.description,
+
+                     source: "Nosotros"
 
                     })
                 }
