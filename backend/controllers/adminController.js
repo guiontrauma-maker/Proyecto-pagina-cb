@@ -172,35 +172,42 @@ const convertEvaluationToCase = async (req, res) => {
         }
 
 
-        // GENERAR NUMERO DE CASO CORRECTAMENTE
+    // GENERAR NUMERO DE CASO SEGURO
 
-        const lastCase =
-    await Caso.findOne()
-        .sort({
-            caseNumber: -1
-        });
-
-
-let nextNumber = 1;
+const cases = await Caso.find(
+    {},
+    {
+        caseNumber: 1
+    }
+);
 
 
-if (lastCase && lastCase.caseNumber) {
+let maxNumber = 0;
 
-    const lastNumber =
-        parseInt(
-            lastCase.caseNumber.replace(
-                "SSM-",
-                ""
-            )
+
+cases.forEach((item) => {
+
+    if (item.caseNumber) {
+
+        const number = parseInt(
+            item.caseNumber.replace("SSM-", "")
         );
 
-    nextNumber = lastNumber + 1;
-}
+
+        if (!isNaN(number) && number > maxNumber) {
+            maxNumber = number;
+        }
+
+    }
+
+});
 
 
-        const caseNumber =
-            `SSM-${String(nextNumber).padStart(5, "0")}`;
+const nextNumber = maxNumber + 1;
 
+
+const caseNumber =
+    `SSM-${String(nextNumber).padStart(5, "0")}`;
 
         const newCase =
             await Caso.create({
