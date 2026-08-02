@@ -175,14 +175,35 @@ const convertEvaluationToCase = async (req, res) => {
             });
         }
 
-        const totalCases =
-            await Caso.countDocuments();
+        const lastCase =
+    await Caso.findOne()
+        .sort({
+            createdAt: -1
+        });
 
-        const caseNumber =
-            `SSM-${String(
-                totalCases + 1
-            ).padStart(5, "0")}`;
 
+let nextNumber = 1;
+
+
+if (lastCase && lastCase.caseNumber) {
+
+    const number =
+        parseInt(
+            lastCase.caseNumber.replace(
+                "SSM-",
+                ""
+            )
+        );
+
+    nextNumber = number + 1;
+
+}
+
+
+const caseNumber =
+    `SSM-${String(
+        nextNumber
+    ).padStart(5, "0")}`;
        const newCase =
     await Caso.create({
         caseNumber,
