@@ -105,19 +105,17 @@ console.log("Respuesta del servidor:", datos);
             setMonto("");
             setDescripcion("");
 
+catch (error) {
 
-        } catch (error) {
-
-            console.error(
-                "Error al enviar formulario:",
-                error
-            );
+        console.error("Error real:", error);
 
             alert(
-                "No se pudo enviar la solicitud. Verifica que el servidor esté funcionando."
-            );
+                    "Error real: " + error.message
+                        );
 
-        } finally {
+                        }
+}
+         finally {
 
             setEnviando(false);
 
