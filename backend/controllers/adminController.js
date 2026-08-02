@@ -142,29 +142,25 @@ const updateEvaluationStatus = async (req, res) => {
     }
 };
 
-
-// =========================================================
-// CONVERTIR EVALUACIÓN EN CASO
-// =========================================================
-
 const convertEvaluationToCase = async (req, res) => {
     try {
+
         const evaluation =
-            await Evaluacion.findById(
-                req.params.id
-            );
+            await Evaluacion.findById(req.params.id);
+
 
         if (!evaluation) {
             return res.status(404).json({
-                message:
-                    "Evaluación no encontrada."
+                message: "Evaluación no encontrada."
             });
         }
+
 
         const existingCase =
             await Caso.findOne({
                 evaluationId: evaluation._id
             });
+
 
         if (existingCase) {
             return res.status(400).json({
@@ -175,69 +171,112 @@ const convertEvaluationToCase = async (req, res) => {
             });
         }
 
+
+        // GENERAR NUMERO DE CASO CORRECTAMENTE
+
         const lastCase =
-    await Caso.findOne()
-        .sort({
-            createdAt: -1
+            await Caso.findOne()
+                .sort({
+                    createdAt: -1
+                });
+
+
+        let nextNumber = 1;
+
+
+        if (lastCase && lastCase.caseNumber) {
+
+            const lastNumber =
+                parseInt(
+                    lastCase.caseNumber.replace(
+                        "SSM-",
+                        ""
+                    )
+                );
+
+            nextNumber = lastNumber + 1;
+        }
+
+
+        const caseNumber =
+            `SSM-${String(nextNumber).padStart(5, "0")}`;
+
+
+        const newCase =
+            await Caso.create({
+
+                caseNumber,
+
+                evaluationId:
+                    evaluation._id,
+
+                fullName:
+                    evaluation.fullName,
+
+                email:
+                    evaluation.email,
+
+                phone:
+                    evaluation.phone,
+
+                fraudType:
+                    evaluation.fraudType,
+
+                amount:
+                    evaluation.amount,
+
+                currency:
+                    evaluation.currency,
+
+                description:
+                    evaluation.description,
+
+                origin:
+                    evaluation.origin,
+
+                formSource:
+                    evaluation.formSource,
+
+                status:
+                    "En revisión"
+
+            });
+
+
+        evaluation.status = "Aprobada";
+
+        await evaluation.save();
+
+
+        res.status(201).json({
+
+            message:
+                "Caso creado correctamente.",
+
+            caseNumber:
+                newCase.caseNumber,
+
+            caso:
+                newCase
+
         });
 
-
-let nextNumber = 1;
-
-
-if (lastCase && lastCase.caseNumber) {
-
-    const number =
-        parseInt(
-            lastCase.caseNumber.replace(
-                "SSM-",
-                ""
-            )
-        );
-
-    nextNumber = number + 1;
-
-}
-
-
-const lastCase =
-    await Caso.findOne()
-        .sort({
-            createdAt: -1
-        });
-
-
-let nextNumber = 1;
-
-if (lastCase && lastCase.caseNumber) {
-
-    const lastNumber =
-        parseInt(
-            lastCase.caseNumber.split("-")[1]
-        );
-
-    nextNumber = lastNumber + 1;
-}
-
-
-const caseNumber =
-    `SSM-${String(
-        nextNumber
-    ).padStart(5, "0")}`;
 
     } catch (error) {
+
         console.error(
             "Error convirtiendo evaluación:",
             error.message
         );
 
+
         res.status(500).json({
             message:
                 "Error convirtiendo la evaluación en caso."
         });
+
     }
 };
-
 // =========================================================
 // CASOS
 // =========================================================
