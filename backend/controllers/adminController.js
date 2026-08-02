@@ -175,27 +175,27 @@ const convertEvaluationToCase = async (req, res) => {
         // GENERAR NUMERO DE CASO CORRECTAMENTE
 
         const lastCase =
-            await Caso.findOne()
-                .sort({
-                    createdAt: -1
-                });
+    await Caso.findOne()
+        .sort({
+            caseNumber: -1
+        });
 
 
-        let nextNumber = 1;
+let nextNumber = 1;
 
 
-        if (lastCase && lastCase.caseNumber) {
+if (lastCase && lastCase.caseNumber) {
 
-            const lastNumber =
-                parseInt(
-                    lastCase.caseNumber.replace(
-                        "SSM-",
-                        ""
-                    )
-                );
+    const lastNumber =
+        parseInt(
+            lastCase.caseNumber.replace(
+                "SSM-",
+                ""
+            )
+        );
 
-            nextNumber = lastNumber + 1;
-        }
+    nextNumber = lastNumber + 1;
+}
 
 
         const caseNumber =
