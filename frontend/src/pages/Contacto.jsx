@@ -79,7 +79,7 @@ function Contacto() {
 
 
             const datos = await respuesta.json();
-
+console.log("Respuesta del servidor:", datos);
 
             if (!respuesta.ok) {
 
