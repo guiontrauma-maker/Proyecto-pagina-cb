@@ -105,7 +105,7 @@ console.log("Respuesta del servidor:", datos);
             setMonto("");
             setDescripcion("");
 
-catch (error) {
+        }catch (error) {
 
         console.error("Error real:", error);
 
@@ -113,9 +113,8 @@ catch (error) {
                     "Error real: " + error.message
                         );
 
-                        }
-}
-         finally {
+                        
+}finally {
 
             setEnviando(false);
 
