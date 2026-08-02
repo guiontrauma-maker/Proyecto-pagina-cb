@@ -78,7 +78,16 @@
     margin-bottom:28px;
 
 }
+.titulo-verde{
+        color:var(--primary-green);
+            font-weight:800;
+            }
 
+            .titulo-negro{
+                color:#222222;
+                    font-weight:800;
+                    }
+}
 
 /* CONOCE GRUPO SSM */
 
@@ -1957,7 +1966,7 @@
 }
 /* CORRECCIÓN POR QUÉ ELEGIRNOS */
 .porque-section .porque-card {
-    background:#347c4a !important;
+    background: #93c572; !important;
     }
 
     .porque-section .porque-icon {
