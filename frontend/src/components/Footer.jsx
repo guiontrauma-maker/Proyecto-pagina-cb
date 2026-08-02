@@ -144,7 +144,7 @@ function Footer() {
                         <FaMapMarkerAlt />
 
                         <p>
-                            Av.insurgentes sur 1431, interior piso 14 oficina 01, colonia Insurgentes Mixcoac cp 03920,Benuto Juarez, Ciudada de Mexico
+                            Av.insurgentes sur 1431, interior piso 14 oficina 01, colonia Insurgentes Mixcoac C.P 03920,Benito Juarez, Ciudada de México
                         </p>
 
                     </div>
