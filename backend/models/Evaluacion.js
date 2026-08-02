@@ -21,10 +21,19 @@ const evaluacionSchema = new mongoose.Schema(
         },
 
         fraudType: {
-            type: String,
-            default: "Evaluación general",
-        },
+    type: String,
+    default: "Evaluación general",
+},
 
+origin: {
+    type: String,
+    default: "Página Inicio",
+},
+
+formSource: {
+    type: String,
+    default: "Evaluación",
+},
         amount: {
             type: Number,
             default: 0,

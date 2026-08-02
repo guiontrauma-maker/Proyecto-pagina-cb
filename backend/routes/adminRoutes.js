@@ -1,5 +1,7 @@
 const express = require("express");
 
+const router = express.Router();
+
 const authMiddleware = require("../middleware/authMiddleware");
 
 const {
@@ -7,18 +9,20 @@ const {
     getEvaluaciones,
     updateEvaluationStatus,
     convertEvaluationToCase,
+
     getCasos,
     updateCaseStatus,
     deleteCase,
     getCasosPapelera,
+    restoreCase,
+    deleteCasePermanent,
+
     getAdvertencias,
+
     getMensajes,
     markMessageRead,
     deleteMessage
 } = require("../controllers/adminController");
-
-
-const router = express.Router();
 
 // =========================================================
 // TODAS LAS RUTAS DE ADMIN REQUIEREN AUTENTICACIÓN
@@ -61,10 +65,14 @@ router.post(
 );
 
 
-// =========================================================
-// CASOS
-// =========================================================
+// CASOS PAPELERA
+router.get(
+    "/casos/papelera",
+    getCasosPapelera
+);
 
+
+// CASOS ACTIVOS
 router.get(
     "/casos",
     getCasos
@@ -75,16 +83,12 @@ router.put(
     "/casos/:id",
     updateCaseStatus
 );
+
+
 router.delete(
     "/casos/:id",
     deleteCase
 );
-
-router.get(
-    "/casos/papelera",
-    getCasosPapelera
-);
-
 // =========================================================
 // ADVERTENCIAS
 // =========================================================

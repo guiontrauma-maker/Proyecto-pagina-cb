@@ -69,9 +69,24 @@ const casoSchema = new mongoose.Schema(
         },
 
         deleted: {
-            type: Boolean,
-            default: false,
-        },
+    type: Boolean,
+    default: false,
+},
+
+deletedAt: {
+    type: Date,
+    default: null,
+},
+
+origin: {
+    type: String,
+    default: "Página Inicio",
+},
+
+formSource: {
+    type: String,
+    default: "Evaluación",
+},
 
         lastUpdate: {
             type: Date,

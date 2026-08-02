@@ -209,10 +209,16 @@ const convertEvaluationToCase = async (req, res) => {
                     evaluation.currency,
 
                 description:
-                    evaluation.description,
+    evaluation.description,
 
-                status:
-                    "En revisión"
+origin:
+    evaluation.origin,
+
+formSource:
+    evaluation.formSource,
+
+status:
+    "En revisión"
             });
 
         evaluation.status = "Aprobada";
@@ -243,22 +249,25 @@ const convertEvaluationToCase = async (req, res) => {
     }
 };
 
-
 // =========================================================
 // CASOS
 // =========================================================
 
 const getCasos = async (req, res) => {
     try {
+
         const casos =
-            await Caso.find()
-                .sort({
-                    createdAt: -1
-                });
+            await Caso.find({
+                deleted: false
+            })
+            .sort({
+                createdAt: -1
+            });
 
         res.status(200).json(casos);
 
     } catch (error) {
+
         console.error(
             "Error obteniendo casos:",
             error.message
@@ -268,8 +277,11 @@ const getCasos = async (req, res) => {
             message:
                 "Error obteniendo los casos."
         });
+
     }
 };
+
+
 // =========================================================
 // CASOS EN PAPELERA
 // =========================================================
@@ -304,8 +316,6 @@ const getCasosPapelera = async (req, res) => {
 
     }
 };
-
-
 // =========================================================
 // ACTUALIZAR ESTADO DE CASO
 // =========================================================
@@ -360,9 +370,10 @@ const deleteCase = async (req, res) => {
             await Caso.findByIdAndUpdate(
                 req.params.id,
                 {
-                    deleted: true,
-                    lastUpdate: new Date()
-                },
+    deleted: true,
+    deletedAt: new Date(),
+    lastUpdate: new Date()
+},
                 {
                     new: true
                 }
@@ -401,6 +412,114 @@ const deleteCase = async (req, res) => {
 
             message:
                 "Error enviando caso a papelera."
+
+        });
+
+    }
+};
+// =========================================================
+// RESTAURAR CASO DESDE PAPELERA
+// =========================================================
+
+const restoreCase = async (req, res) => {
+    try {
+
+        const caso =
+            await Caso.findByIdAndUpdate(
+                req.params.id,
+                {
+                    deleted: false,
+                    deletedAt: null,
+                    lastUpdate: new Date()
+                },
+                {
+                    new: true
+                }
+            );
+
+
+        if (!caso) {
+
+            return res.status(404).json({
+                message:
+                    "Caso no encontrado."
+            });
+
+        }
+
+
+        res.status(200).json({
+
+            message:
+                "Caso restaurado correctamente.",
+
+            caso
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Error restaurando caso:",
+            error.message
+        );
+
+
+        res.status(500).json({
+
+            message:
+                "Error restaurando caso."
+
+        });
+
+    }
+};
+
+
+// =========================================================
+// ELIMINAR CASO DEFINITIVAMENTE
+// =========================================================
+
+const deleteCasePermanent = async (req, res) => {
+    try {
+
+        const caso =
+            await Caso.findByIdAndDelete(
+                req.params.id
+            );
+
+
+        if (!caso) {
+
+            return res.status(404).json({
+                message:
+                    "Caso no encontrado."
+            });
+
+        }
+
+
+        res.status(200).json({
+
+            message:
+                "Caso eliminado definitivamente."
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Error eliminando caso definitivamente:",
+            error.message
+        );
+
+
+        res.status(500).json({
+
+            message:
+                "Error eliminando caso definitivamente."
 
         });
 
@@ -548,11 +667,16 @@ module.exports = {
     getEvaluaciones,
     updateEvaluationStatus,
     convertEvaluationToCase,
+
     getCasos,
     updateCaseStatus,
     deleteCase,
     getCasosPapelera,
+    restoreCase,
+    deleteCasePermanent,
+
     getAdvertencias,
+
     getMensajes,
     markMessageRead,
     deleteMessage
