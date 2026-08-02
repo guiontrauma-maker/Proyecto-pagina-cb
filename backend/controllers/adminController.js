@@ -200,61 +200,30 @@ if (lastCase && lastCase.caseNumber) {
 }
 
 
+const lastCase =
+    await Caso.findOne()
+        .sort({
+            createdAt: -1
+        });
+
+
+let nextNumber = 1;
+
+if (lastCase && lastCase.caseNumber) {
+
+    const lastNumber =
+        parseInt(
+            lastCase.caseNumber.split("-")[1]
+        );
+
+    nextNumber = lastNumber + 1;
+}
+
+
 const caseNumber =
     `SSM-${String(
         nextNumber
     ).padStart(5, "0")}`;
-       const newCase =
-    await Caso.create({
-        caseNumber,
-
-        evaluationId:
-            evaluation._id,
-
-        fullName:
-            evaluation.fullName,
-
-        email:
-            evaluation.email,
-
-        phone:
-            evaluation.phone,
-
-        fraudType:
-            evaluation.fraudType,
-
-        amount:
-            evaluation.amount,
-
-        currency:
-            evaluation.currency,
-
-        description:
-            evaluation.description || "",
-
-        origin:
-            evaluation.origin || "Panel Administrador",
-
-        formSource:
-            evaluation.formSource || "Evaluación",
-
-        status:
-            "En revisión"
-    });
-        evaluation.status = "Aprobada";
-
-        await evaluation.save();
-
-        res.status(201).json({
-            message:
-                "Caso creado correctamente.",
-
-            caseNumber:
-                newCase.caseNumber,
-
-            caso:
-                newCase
-        });
 
     } catch (error) {
         console.error(
