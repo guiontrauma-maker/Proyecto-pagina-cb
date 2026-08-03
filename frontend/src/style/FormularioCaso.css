@@ -1,13 +1,15 @@
-/*=========================================
- FORMULARIO CASO HORIZONTAL
-=========================================*/
+/* =========================================
+   FORMULARIO CASO COMPARTIDO
+========================================= */
 
 
-.formulario-seccion{
+.formulario-seccion {
 
     width:100%;
 
     padding:70px 8%;
+
+    box-sizing:border-box;
 
     background:#f8fafc;
 
@@ -15,26 +17,38 @@
 
 
 
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
 
 
-
-.contact-form{
+.formulario-seccion .caso-form {
 
     width:100%;
+
+
 
     max-width:1100px;
 
     margin:auto;
 
-    background:white;
+    background:#ffffff;
 
     border-radius:24px;
 
     padding:40px;
 
-    border:1px solid #d9f3df;
+    border:1px solid #c6e7d2;
 
     box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
 
 }
 
@@ -42,12 +56,13 @@
 
 
 
+/* =========================================
+   TITULO
+========================================= */
 
 
-/* TITULO */
+.caso-form h2 {
 
-
-.contact-form h2{
 
     text-align:center;
 
@@ -55,19 +70,20 @@
 
     font-size:30px;
 
-    margin-bottom:10px;
+    margin:0;
 
 }
 
 
 
-.contact-form > p{
+.caso-form > p {
+
 
     text-align:center;
 
     color:#64748b;
 
-    margin-bottom:30px;
+    margin:0 0 15px;
 
 }
 
@@ -75,20 +91,23 @@
 
 
 
+/* =========================================
+   CAMPOS GENERALES
+========================================= */
 
 
-/* CAMPOS EN FILA */
+.caso-form .input-group {
 
 
-.input-group{
+    width:100%;
+
+    height:54px;
 
     display:flex;
 
     align-items:center;
 
     gap:12px;
-
-    height:52px;
 
     border:1px solid #d8dee8;
 
@@ -98,25 +117,33 @@
 
     background:white;
 
-}
+    box-sizing:border-box;
 
-
-
-
-
-.input-group svg{
-
-    color:#5CBF67;
-
-    font-size:20px;
 
 }
 
 
 
-.input-group input{
+.caso-form .input-group svg {
+
+
+    color:#2F855A;
+
+    font-size:19px;
+
+    flex-shrink:0;
+
+
+}
+
+
+
+.caso-form .input-group input {
+
 
     width:100%;
+
+    height:100%;
 
     border:none;
 
@@ -124,21 +151,8 @@
 
     font-size:15px;
 
-}
+    color:#334155;
 
-
-
-
-
-
-
-
-/* ORGANIZAR CAMPOS */
-
-
-.contact-form{
-
-    display:block;
 
 }
 
@@ -146,99 +160,54 @@
 
 
 
-.contact-form .input-group:nth-of-type(1),
-
-.contact-form .input-group:nth-of-type(2){
-
-    display:inline-flex;
-
-    width:48%;
-
-}
+/* =========================================
+   SELECT TIPO FRAUDE
+========================================= */
 
 
+.select-group {
 
-.contact-form .input-group:nth-of-type(1){
-
-    margin-right:3%;
-
-}
-
-
-
-
-
-
-/* TELEFONO */
-
-
-.phone-row{
-
-    width:48%;
-
-    display:inline-block;
-
-    margin-right:3%;
-
-    margin-top:18px;
-
-}
-
-
-
-
-
-.phone-row .react-international-phone-input{
 
     width:100%;
 
-    height:52px;
+
+}
+
+
+
+.select-group select {
+
+
+    width:100%;
+
+    height:54px;
+
+    border:1px solid #d8dee8;
 
     border-radius:12px;
 
-}
+    padding:0 16px;
 
+    background:white;
 
+    color:#334155;
 
+    font-size:15px;
 
-
-
-
-/* MONTO */
-
-
-.phone-row + .input-group{
-
-    width:48%;
-
-    display:inline-flex;
-
-}
-
-
-
-
-
-
-
-/* COMENTARIOS */
-
-
-.comments-box{
-
-    margin-top:20px;
-
-}
-
-
-
-.comments-box summary{
+    outline:none;
 
     cursor:pointer;
 
-    color:#166534;
 
-    font-weight:600;
+}
+
+
+
+.select-group select:focus {
+
+
+    border-color:#2F855A;
+
 
 }
 
@@ -246,13 +215,143 @@
 
 
 
-.comments-box textarea{
+/* =========================================
+   TELEFONO
+========================================= */
+
+
+.caso-phone-row {
+
 
     width:100%;
 
-    height:100px;
+    height:54px;
 
-    margin-top:12px;
+
+}
+
+
+
+.caso-phone-row .react-international-phone {
+
+
+    width:100% !important;
+
+    height:54px !important;
+
+    display:flex !important;
+
+
+}
+
+
+
+.caso-phone-row 
+.react-international-phone-input-container {
+
+
+    width:100% !important;
+
+    height:54px !important;
+
+    display:flex !important;
+
+    align-items:stretch !important;
+
+
+}
+
+
+
+
+
+.caso-phone-row 
+.react-international-phone-country-selector {
+
+
+    height:54px !important;
+
+
+}
+
+
+
+.caso-phone-row 
+.react-international-phone-country-selector-button {
+
+
+    height:54px !important;
+
+    width:75px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    border:1px solid #d8dee8 !important;
+
+    border-right:none !important;
+
+    border-radius:12px 0 0 12px !important;
+
+    background:white !important;
+
+    box-sizing:border-box !important;
+
+
+}
+
+
+
+
+.caso-phone-row 
+.react-international-phone-input {
+
+
+    height:54px !important;
+
+    flex:1 !important;
+
+    border:1px solid #d8dee8 !important;
+
+    border-radius:0 12px 12px 0 !important;
+
+    padding:0 15px !important;
+
+    font-size:15px !important;
+
+    box-sizing:border-box !important;
+
+
+}
+
+
+
+
+
+/* =========================================
+   DESCRIPCION
+========================================= */
+
+
+.comments-box {
+
+
+    width:100%;
+
+
+}
+
+
+
+.comments-box textarea {
+
+
+    width:100%;
+
+    height:120px;
 
     border-radius:12px;
 
@@ -262,30 +361,115 @@
 
     resize:none;
 
+    box-sizing:border-box;
+
+    font-size:15px;
+
+    outline:none;
+
+
+}
+
+
+
+.comments-box textarea:focus {
+
+
+    border-color:#2F855A;
+
+
 }
 
 
 
 
 
+/* =========================================
+   MENSAJES
+========================================= */
 
 
-/* BOTON */
+.form-error {
 
 
-.contact-form button{
+    background:#fee2e2;
+
+    color:#991b1b;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border-left:5px solid #dc2626;
+
+
+}
+
+
+
+
+
+.form-success {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#e8f7ed;
+
+    color:#166534;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    border-left:5px solid #2F855A;
+
+    line-height:1.5;
+
+    font-size:14px;
+
+
+}
+
+
+
+.form-success svg {
+
+
+    font-size:24px;
+
+    color:#2F855A;
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+
+/* =========================================
+   BOTON
+========================================= */
+
+
+.caso-form button {
+
 
     width:100%;
 
-    margin-top:20px;
-
-    padding:16px;
+    height:55px;
 
     border:none;
 
     border-radius:12px;
 
-    background:#5CBF67;
+    background:#2F855A;
 
     color:white;
 
@@ -295,30 +479,44 @@
 
     cursor:pointer;
 
+    transition:.3s;
+
+
+}
+
+
+
+.caso-form button:hover {
+
+
+    background:#276749;
+
+
+}
+
+
+
+.caso-form button:disabled {
+
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+
 }
 
 
 
 
 
-.contact-form button:hover{
-
-    background:#41994c;
-
-}
+/* =========================================
+   SEGURIDAD
+========================================= */
 
 
+.secure {
 
-
-
-
-
-/* SEGURIDAD */
-
-
-.secure{
-
-    margin-top:15px;
 
     display:flex;
 
@@ -332,33 +530,68 @@
 
     font-size:13px;
 
+    margin-top:5px;
+
+
 }
 
 
 
 
 
-
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 
 @media(max-width:800px){
 
 
-.contact-form .input-group:nth-of-type(1),
+    .formulario-seccion {
 
-.contact-form .input-group:nth-of-type(2),
 
-.phone-row,
+        padding:40px 20px;
 
-.phone-row + .input-group{
 
-    width:100%;
+    }
 
-    display:flex;
 
-    margin-right:0;
 
-}
+    .formulario-seccion .caso-form {
+
+
+        padding:25px;
+
+        border-radius:18px;
+
+
+    }
+
+
+
+    .caso-form h2 {
+
+
+        font-size:24px;
+
+
+    }
+
+
+
+    .caso-form .input-group,
+    .select-group select,
+    .caso-phone-row,
+    .caso-phone-row .react-international-phone,
+    .caso-phone-row .react-international-phone-input-container,
+    .caso-phone-row .react-international-phone-country-selector-button,
+    .caso-phone-row .react-international-phone-input {
+
+
+        height:52px !important;
+
+
+    }
 
 
 

@@ -976,3 +976,34 @@
     }
 
 }
+/* =====================================
+   CORRECCIÓN DROPDOWN EN MÓVIL
+===================================== */
+
+@media (max-width: 850px) {
+
+    .navbar-dropdown {
+        display: block;
+    }
+
+    .navbar-dropdown .dropdown-panel {
+        display: none;
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        max-height: none;
+    }
+
+    .navbar-dropdown.dropdown-open .dropdown-panel {
+        display: block;
+    }
+
+    .dropdown-option {
+        display: flex;
+        width: 100%;
+    }
+
+}

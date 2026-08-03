@@ -2,10 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
-    FaUser,
-    FaEnvelope,
-    FaDollarSign,
-    FaLock,
     FaStar,
     FaMoneyBillWave,
     FaExclamationTriangle,
@@ -28,162 +24,25 @@ import {
     FaWhatsapp
 } from "react-icons/fa";
 
-import { PhoneInput } from "react-international-phone";
-import "react-international-phone/style.css";
+import FormularioCaso from "../components/FormularioCaso";
 
 function Home() {
 
     const [faqAbierta, setFaqAbierta] = useState(null);
-// =========================================================
-// FORMULARIO DE EVALUACIÓN
-// =========================================================
 
-const [formulario, setFormulario] = useState({
 
-    fullName: "",
-    email: "",
-    phone: "",
-    fraudType: "",
-    amount: "",
-    currency: "USD",
-    description: "",
-    origen: "Inicio"
+    const toggleFaq = (index) => {
 
-});
-
-const [enviando, setEnviando] = useState(false);
-const [mensajeFormulario, setMensajeFormulario] = useState("");
-
-const toggleFaq = (index) => {
-    setFaqAbierta(
-        faqAbierta === index ? null : index
-    );
-};
-
-// =========================================================
-// CAMBIOS DEL FORMULARIO
-// =========================================================
-
-const handleChange = (e) => {
-
-    const {
-        name,
-        value
-    } = e.target;
-
-    setFormulario((prev) => ({
-        ...prev,
-        [name]: value
-    }));
-
-};
-
-const handlePhoneChange = (phone) => {
-
-    setFormulario((prev) => ({
-        ...prev,
-        phone
-    }));
-
-};
-
-// =========================================================
-// ENVIAR EVALUACIÓN A MONGODB
-// =========================================================
-
-const handleSubmit = async (e) => {
-
-    e.preventDefault();
-
-    setEnviando(true);
-    setMensajeFormulario("");
-
-    try {
-
-        const response = await fetch(
-    "https://proyecto-cris.onrender.com/api/evaluaciones",
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    fullName:
-                        formulario.fullName,
-
-                    email:
-                        formulario.email,
-
-                    phone:
-                        formulario.phone,
-
-                    fraudType:
-    formulario.fraudType,
-
-                    amount:
-                        Number(formulario.amount) || 0,
-
-                    currency:
-                        "USD",
-
-                    description:
-                        formulario.description
-
-                })
-            }
+        setFaqAbierta(
+            faqAbierta === index ? null : index
         );
 
-        const data =
-            await response.json();
+    };
 
-        if (!response.ok) {
-
-            throw new Error(
-                data.message ||
-                "No se pudo enviar la evaluación."
-            );
-
-        }
-
-        setMensajeFormulario(
-            "Tu solicitud fue enviada correctamente. Nos pondremos en contacto contigo."
-        );
-
-       setFormulario({
-    fullName: "",
-    email: "",
-    phone: "",
-    fraudType: "",
-    amount: "",
-    description: ""
-});
-
-    } catch (error) {
-
-        console.error(
-            "Error enviando evaluación:",
-            error
-        );
-
-        setMensajeFormulario(
-            "No fue posible enviar tu solicitud. Intenta nuevamente."
-        );
-
-    } finally {
-
-        setEnviando(false);
-
-    }
-
-};
 
 // =========================================================
 // ÁREAS
 // =========================================================
-
 const areas = [
     {
         icon: <FaUniversity />,
@@ -266,25 +125,25 @@ const pasos = [
 
 const razones = [
     {
-        numero: "01",
+        
         icon: <FaShieldAlt />,
         titulo: "Experiencia especializada",
         texto: "Conocemos las principales modalidades de fraude financiero y digital."
     },
     {
-        numero: "02",
+      
         icon: <FaSearch />,
         titulo: "Análisis personalizado",
         texto: "Cada situación se estudia de acuerdo con sus circunstancias y evidencias."
     },
     {
-        numero: "03",
+       
         icon: <FaChartLine />,
         titulo: "Tecnología y estrategia",
         texto: "Utilizamos herramientas de análisis para comprender mejor cada caso."
     },
     {
-        numero: "04",
+        
         icon: <FaComments />,
         titulo: "Acompañamiento continuo",
         texto: "Mantenemos comunicación durante las distintas etapas del proceso."
@@ -343,19 +202,19 @@ const testimonios = [
         nombre: "Cesar M.",
         texto: "Recibí orientación clara para entender qué había ocurrido con mi operación y cuáles eran mis alternativas.",
         estrellas: 5,
-        recuperado: "$18,500 USD"
+        recuperado: "$18,500 MXN"
     },
     {
         nombre: "Nathan C.",
         texto: "Desde el primer contacto me explicaron el proceso de forma sencilla y estuvieron pendientes de mi caso.",
         estrellas: 5,
-        recuperado: "$27,000 USD"
+        recuperado: "$27,000 MXN"
     },
     {
         nombre: "David M.",
         texto: "La revisión de mi situación me permitió entender mejor el fraude y tomar decisiones con mayor información.",
         estrellas: 5,
-        recuperado: "$42,000 USD"
+        recuperado: "$42,000 MXN"
     }
 ];
 
@@ -389,272 +248,140 @@ const preguntas = [
 return (
     <main className="home-page">
 
-        {/* HERO */}
+       {/* HERO */}
 
-        <section className="hero">
+<section className="hero">
 
-            <div className="hero-text">
+    <div className="hero-text">
 
-                <div className="hero-alert">
-                    <FaExclamationTriangle />
-                    <span>Importante: el tiempo es clave</span>
+        <div className="hero-alert">
+            <FaExclamationTriangle />
+            <span>Importante: el tiempo es clave</span>
+        </div>
+
+        <h1 className="hero-title">
+            ¿FUISTE VÍCTIMA DE UNA ESTAFA?
+        </h1>
+
+        <h2 className="hero-subtitle">
+            RECUPERE SUS PÉRDIDAS
+        </h2>
+
+        <p>
+            Actúa ahora antes de que sea tarde.
+            Expertos en rastreo de activos digitales,
+            SPEI, brokers no regulados y estafas en línea.
+            Tecnología avanzada y estrategias inteligentes
+            para recuperar lo que te corresponde.
+        </p>
+
+        <h3 className="hero-free">
+            ¡CONSULTA GRATUITA HOY MISMO!
+        </h3>
+
+        <div className="hero-info">
+
+            <div className="rating-card">
+
+                <div className="stars">
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
                 </div>
 
-                <h1 className="hero-title">
-                    ¿FUISTE VÍCTIMA DE UNA ESTAFA?
-                </h1>
-
-                <h2 className="hero-subtitle">
-                    RECUPERE SUS PÉRDIDAS
-                </h2>
+                <h4>4.9</h4>
 
                 <p>
-                    Actúa ahora antes de que sea tarde.
-                    Expertos en rastreo de activos digitales,
-                    SPEI, brokers no regulados y estafas en línea.
-                    Tecnología avanzada y estrategias inteligentes
-                    para recuperar lo que te corresponde.
+                    Basado en +500 reseñas
                 </p>
 
-                <h3 className="hero-free">
-                    ¡CONSULTA GRATUITA HOY MISMO!
-                </h3>
+            </div>
 
-                <div className="hero-info">
+            <div className="money-card">
 
-                    <div className="rating-card">
+                <FaMoneyBillWave className="money-icon" />
 
-                        <div className="stars">
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                        </div>
+                <div>
+                    <h4>$50 M</h4>
 
-                        <h4>4.9</h4>
-
-                        <p>
-                            Basado en +500 reseñas
-                        </p>
-
-                    </div>
-
-                    <div className="money-card">
-
-                        <FaMoneyBillWave className="money-icon" />
-
-                        <div>
-                            <h4>+$50 M</h4>
-
-                            <p>
-                                Recuperados para víctimas
-                            </p>
-                        </div>
-
-                    </div>
-
+                    <p>
+                        Recuperados para víctimas
+                    </p>
                 </div>
 
             </div>
 
+        </div>
 
-            {/* FORMULARIO */}
-
-            <form
-                className="contact-form"
-                id="formulario"
-                onSubmit={handleSubmit}
-            >
-
-                <h2>
-                    RECUPERE SUS PÉRDIDAS
-                </h2>
-
-                <p>
-                    Solicite una revisión de caso sin costo hoy mismo.
-                </p>
-
-                <div className="input-group">
-
-                    <FaUser />
-
-                    <input
-                        type="text"
-                        name="fullName"
-                        value={formulario.fullName}
-                        onChange={handleChange}
-                        placeholder="Nombre completo"
-                        required
-                    />
-
-                </div>
-
-                <div className="input-group">
-
-                    <FaEnvelope />
-
-                    <input
-                        type="email"
-                        name="email"
-                        value={formulario.email}
-                        onChange={handleChange}
-                        placeholder="Correo electrónico"
-                        required
-                    />
-
-                </div>
-
-                <div className="phone-row">
-
-                    <PhoneInput
-                        defaultCountry="mx"
-                        value={formulario.phone}
-                        onChange={handlePhoneChange}
-                    />
-
-                </div>
-                <div className="input-group">
-
-    <FaExclamationTriangle />
-
-    <select
-        name="fraudType"
-        value={formulario.fraudType}
-        onChange={handleChange}
-        required
-    >
-        <option value="">
-            Selecciona el tipo de fraude
-        </option>
-
-        <option value="Fraude bancario">
-            Fraude bancario
-        </option>
-
-        <option value="Fraude digital">
-            Fraude digital
-        </option>
-
-        <option value="Robo de identidad">
-            Robo de identidad
-        </option>
-
-        <option value="Estafa de inversión">
-            Estafa de inversión
-        </option>
-
-        <option value="Estafa romántica">
-            Estafa romántica
-        </option>
-
-        <option value="Estafa piramidal">
-            Estafa piramidal
-        </option>
-
-    </select>
-
+    </div>
+<div 
+    id="formulario"
+    className="home-formulario"
+>
+    <FormularioCaso origen="Inicio" />
 </div>
 
-                <div className="input-group">
+</section>
+    {/* MEDIOS */}
 
-                    <FaDollarSign />
+<section className="medios">
 
-                    <input
-                        type="number"
-                        name="amount"
-                        value={formulario.amount}
-                        onChange={handleChange}
-                        placeholder="Monto aproximado (USD)"
-                        min="0"
-                    />
+    <div className="medios-container">
 
-                </div>
+        <h2>
+            Visto en Medios de Prestigio
+        </h2>
 
-                <details className="comments-box">
+        <div className="medios-grid">
 
-                    <summary>
-                        Agregar comentarios adicionales (Opcional)
-                    </summary>
+            <div className="medio">
 
-                    <textarea
-                        name="description"
-                        value={formulario.description}
-                        onChange={handleChange}
-                        placeholder="Describa brevemente su caso"
-                    />
+                <img 
+                    src="/images/reforma.png" 
+                    alt="Reforma"
+                />
 
-                </details>
-
-                <button
-                    type="submit"
-                    disabled={enviando}
-                >
-                    {enviando
-                        ? "Enviando..."
-                        : "Solicitar Evaluación Gratuita"}
-                </button>
-
-                {mensajeFormulario && (
-
-                    <p className="form-message">
-                        {mensajeFormulario}
-                    </p>
-
-                )}
-
-                <small className="secure">
-
-                    <FaLock />
-
-                    Información encriptada
-
-                </small>
-
-            </form>
-
-        </section>
-
-
-        {/* MEDIOS */}
-
-        <section className="medios">
-
-            <div className="medios-container">
-
-                <h2>
-                    Visto en Medios de Prestigio
-                </h2>
-
-                <div className="medios-grid">
-
-                    <div className="medio">
-                        <FaRegNewspaper />
-                        <span>Forbes</span>
-                    </div>
-
-                    <div className="medio">
-                        <FaRegNewspaper />
-                        <span>El Universal</span>
-                    </div>
-
-                    <div className="medio">
-                        <FaRegNewspaper />
-                        <span>Expansión</span>
-                    </div>
-
-                    <div className="medio">
-                        <FaRegNewspaper />
-                        <span>Reforma</span>
-                    </div>
-
-                </div>
+                <span>
+                    Reforma
+                </span>
 
             </div>
 
-        </section>
+
+            <div className="medio">
+
+                <img 
+                    src="/images/expansion.png" 
+                    alt="Expansión"
+                />
+
+                <span>
+                    Expansión
+                </span>
+
+            </div>
 
 
+            <div className="medio">
+
+                <img 
+                    src="/images/universal.png" 
+                    alt="El Universal"
+                />
+
+                <span>
+                    El Universal
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
         {/* TIPOS DE FRAUDES */}
 
         <section className="areas-practica">

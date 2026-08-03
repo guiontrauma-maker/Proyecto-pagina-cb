@@ -1,11 +1,11 @@
-
 import { useState } from "react";
 
 import {
     FaUser,
     FaEnvelope,
     FaDollarSign,
-    FaLock
+    FaLock,
+    FaCheckCircle
 } from "react-icons/fa";
 
 import { PhoneInput } from "react-international-phone";
@@ -17,68 +17,79 @@ import "../style/FormularioCaso.css";
 
 function FormularioCaso({ origen = "Formulario general" }) {
 
+
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [fraudType, setFraudType] = useState("");
     const [amount, setAmount] = useState("");
     const [description, setDescription] = useState("");
+
 
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
 
+
     const handleSubmit = async (event) => {
 
         event.preventDefault();
+
 
         setMessage("");
         setError("");
         setLoading(true);
 
 
+
         try {
+
 
             const response = await fetch(
                 "https://proyecto-cris.onrender.com/api/evaluaciones",
                 {
-                    method: "POST",
 
-                    headers: {
-                        "Content-Type": "application/json",
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":"application/json"
                     },
 
-                  body: JSON.stringify({
 
-    fullName,
+                    body:JSON.stringify({
 
-    email,
+                        fullName,
 
-    phone,
+                        email,
 
-    fraudType:
-        origen,
+                        phone,
 
-    origen,
+                        fraudType,
 
-    amount:
-        Number(amount) || 0,
+                        origin: origen,
 
-    currency:
-        "USD",
+                        formSource: origen,
 
-    description,
+                        amount:
+                            Number(amount) || 0,
 
-}),
+                        currency:"MXN",
+
+                        description
+
+                    })
+
                 }
             );
 
 
-            const data =
-                await response.json();
+
+            const data = await response.json();
 
 
-            if (!response.ok) {
+
+            if(!response.ok){
 
                 throw new Error(
                     data.message ||
@@ -88,38 +99,51 @@ function FormularioCaso({ origen = "Formulario general" }) {
             }
 
 
+
             setMessage(
-                "Su solicitud fue enviada correctamente. Nos pondremos en contacto con usted."
+                "Información enviada correctamente. Nuestro equipo revisará su caso y se pondrá en contacto contigo."
             );
+
 
 
             setFullName("");
             setEmail("");
             setPhone("");
+            setFraudType("");
             setAmount("");
             setDescription("");
 
 
-        } catch (error) {
+
+        }catch(error){
+
 
             console.error(
                 "Error enviando evaluación:",
                 error
             );
 
+
             setError(
                 error.message ||
-                "Ocurrió un error al enviar la solicitud."
+                "Ocurrió un error al enviar la información."
             );
 
 
-        } finally {
+
+        }finally{
+
 
             setLoading(false);
 
+
         }
 
+
     };
+
+
+
 
 
     return (
@@ -128,7 +152,7 @@ function FormularioCaso({ origen = "Formulario general" }) {
 
 
             <form
-                className="contact-form"
+                className="caso-form"
                 onSubmit={handleSubmit}
             >
 
@@ -138,150 +162,315 @@ function FormularioCaso({ origen = "Formulario general" }) {
                 </h2>
 
 
+
                 <p>
                     Solicite una revisión de caso sin costo hoy mismo.
                 </p>
+
+
 
 
                 <div className="input-group">
 
                     <FaUser />
 
+
                     <input
+
                         type="text"
+
                         placeholder="Nombre completo"
+
                         value={fullName}
-                        onChange={(event) =>
-                            setFullName(
-                                event.target.value
-                            )
+
+                        onChange={(event)=>
+                            setFullName(event.target.value)
                         }
+
                         required
+
                     />
+
 
                 </div>
 
 
+
+
+
                 <div className="input-group">
+
 
                     <FaEnvelope />
 
+
                     <input
+
                         type="email"
+
                         placeholder="Correo electrónico"
+
                         value={email}
-                        onChange={(event) =>
-                            setEmail(
-                                event.target.value
-                            )
+
+                        onChange={(event)=>
+                            setEmail(event.target.value)
                         }
+
                         required
+
                     />
+
 
                 </div>
 
 
-                <div className="phone-row">
+
+
+
+
+                <div className="select-group">
+
+
+                    <select
+
+                        value={fraudType}
+
+                        onChange={(event)=>
+                            setFraudType(event.target.value)
+                        }
+
+                        required
+
+                    >
+
+
+                        <option value="">
+                            Seleccione el tipo de fraude
+                        </option>
+
+
+                        <option value="Fraude bancario">
+                            Fraude bancario
+                        </option>
+
+
+                        <option value="Fraude digital">
+                            Fraude digital
+                        </option>
+
+
+                        <option value="Robo de identidad">
+                            Robo de identidad
+                        </option>
+
+
+                        <option value="Estafa de inversión">
+                            Estafa de inversión
+                        </option>
+
+
+                        <option value="Estafa romántica">
+                            Estafa romántica
+                        </option>
+
+
+                        <option value="Estafa piramidal">
+                            Estafa piramidal
+                        </option>
+
+
+                        <option value="Otro">
+                            Otro
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+
+
+
+
+
+                <div className="caso-phone-row">
+
 
                     <PhoneInput
+
                         defaultCountry="mx"
+
                         value={phone}
-                        onChange={(value) =>
+
+                        onChange={(value)=>
                             setPhone(value)
                         }
+
                     />
 
+
                 </div>
+
+
+
+
+
 
 
                 <div className="input-group">
 
+
                     <FaDollarSign />
 
+
                     <input
+
                         type="number"
-                        placeholder="Monto aproximado (USD)"
+
+                        placeholder="Monto aproximado perdido"
+
                         value={amount}
-                        onChange={(event) =>
-                            setAmount(
-                                event.target.value
-                            )
+
+                        onChange={(event)=>
+                            setAmount(event.target.value)
                         }
+
                         min="0"
+
                     />
+
 
                 </div>
 
 
-                <details className="comments-box">
 
-                    <summary>
-                        Agregar comentarios adicionales (Opcional)
-                    </summary>
+
+
+
+
+                <div className="comments-box">
 
 
                     <textarea
+
                         placeholder="Describa brevemente su caso"
+
                         value={description}
-                        onChange={(event) =>
-                            setDescription(
-                                event.target.value
-                            )
-                    }
+
+                        onChange={(event)=>
+                            setDescription(event.target.value)
+                        }
+
                     />
 
-                </details>
+
+                </div>
 
 
-                {error && (
+
+
+
+
+
+                {
+                    error &&
 
                     <div className="form-error">
+
                         {error}
+
                     </div>
 
-                )}
+                }
 
 
-                {message && (
+
+
+
+
+
+                {
+                    message &&
 
                     <div className="form-success">
-                        {message}
+
+
+                        <FaCheckCircle />
+
+
+                        <span>
+
+                            {message}
+
+                        </span>
+
+
                     </div>
 
-                )}
+                }
+
+
+
+
+
 
 
                 <button
+
                     type="submit"
+
                     disabled={loading}
+
                 >
 
-                    {loading
+
+                    {
+                        loading
+
                         ? "Enviando..."
+
                         : "Solicitar Evaluación Gratuita"
+
                     }
+
 
                 </button>
 
 
+
+
+
+
+
                 <small className="secure">
+
 
                     <FaLock />
 
+
                     Información encriptada
 
+
                 </small>
+
+
+
 
 
             </form>
 
 
+
         </section>
 
+
     );
+
 
 }
 
 
-export default FormularioCaso;
 
+export default FormularioCaso;

@@ -87,7 +87,7 @@ setError("");
                         phone: formulario.phone,
                         fraudType: "Evaluación desde Servicios",
                         amount: formulario.amount,
-                        currency: "USD",
+                        currency: "MXN",
                         description: formulario.description
                     })
                 }

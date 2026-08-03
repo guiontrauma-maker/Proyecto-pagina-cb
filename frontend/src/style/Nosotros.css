@@ -1,245 +1,356 @@
-/* =========================================
-   NOSOTROS
-========================================= */
+/* ===========================================================
+   NOSOTROS.CSS
+   Grupo SSM
+   Diseño limpio
+=========================================================== */
+
+
+/*============================================================
+ VARIABLES
+============================================================*/
+
+.nosotros{
+
+    --primary:#285f3d;
+    --primary-dark:#1d472e;
+    --primary-light:#edf5ef;
+
+    --secondary:#4d7b5f;
+
+    --background:#ffffff;
+    --section:#f7faf8;
+
+    --text:#1f2420;
+    --text-soft:#657168;
+
+    --border:#dde6df;
+
+    --shadow-sm:0 8px 22px rgba(0,0,0,.05);
+    --shadow-md:0 14px 35px rgba(0,0,0,.08);
+    --shadow-lg:0 20px 50px rgba(0,0,0,.12);
+
+    --radius:22px;
+
+}
+
+
+
+/*============================================================
+ PAGINA GENERAL
+============================================================*/
+
 
 .nosotros{
 
     width:100%;
-    overflow-x:hidden;
-    background:#ffffff;
-    color:#222222;
+
+    overflow:hidden;
+
+    background:var(--background);
+
+    color:var(--text);
 
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+
+.nosotros img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+
+
+/*============================================================
+ HERO
+============================================================*/
+
 
 .nosotros-hero{
 
-    width:min(1250px,92%);
-    margin:0 auto;
+    width:min(1220px,92%);
 
-    padding:135px 0 100px;
+    margin:auto;
+
+    padding:140px 0 95px;
 
     display:grid;
-    grid-template-columns:1fr 1fr;
 
-    align-items:center;
+    grid-template-columns:1.05fr .95fr;
 
     gap:70px;
 
+    align-items:center;
+
 }
 
 
-.nosotros-info{
+
+.hero-content{
 
     display:flex;
+
     flex-direction:column;
-    justify-content:center;
 
 }
 
 
-.nosotros-badge{
+
+.hero-badge{
+
+    width:max-content;
 
     display:flex;
+
     align-items:center;
 
     gap:10px;
 
-    margin-bottom:20px;
-
-    color:var(--primary-green);
-
-    font-size:14px;
-    font-weight:600;
-
-}
-
-
-.badge-icon{
-
-    width:18px;
-    height:18px;
-
-    color:var(--primary-green);
-
-}
-
-
-.nosotros-titulo{
-
-    font-size:48px;
-
-    line-height:1.15;
+    padding:10px 18px;
 
     margin-bottom:28px;
 
-}
-.titulo-verde{
-        color:var(--primary-green);
-            font-weight:800;
-            }
+    border-radius:999px;
 
-            .titulo-negro{
-                color:#222222;
-                    font-weight:800;
-                    }
+    background:var(--primary-light);
 
-
-/* CONOCE GRUPO SSM */
-
-.titulo-negro{
-
-    color:var(--primary-green);
-
-    font-weight:800;
-
-}
-
-
-/* TU PUNTO DE DEFENSA */
-
-.titulo-verde-frase{
-
-    display:block;
-
-    margin-top:10px;
-
-    color: #5f8575;
-
-    font-weight:800;
-
-}
-
-
-.nosotros-info > p{
-
-    max-width:600px;
-
-    margin:0;
-
-    color:#5e5e5e;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-
-
-/* =========================================
-   IMAGEN HERO
-========================================= */
-
-.nosotros-imagen{
-
-    position:relative;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-}
-
-
-.nosotros-imagen img{
-
-    width:100%;
-    max-width:600px;
-
-    height:540px;
-
-    object-fit:cover;
-
-    border-radius:24px;
-
-    box-shadow:0 18px 45px rgba(0,0,0,.14);
-
-}
-
-
-.nosotros-imagen span{
-
-    position:absolute;
-
-    left:50%;
-    bottom:28px;
-
-    transform:translateX(-50%);
-
-    width:82%;
-
-    text-align:center;
-
-    color:rgba(255,255,255,.9);
+    color:var(--primary);
 
     font-size:14px;
 
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-    font-weight:600;
-
-    text-shadow:0 2px 10px rgba(0,0,0,.7);
+    font-weight:700;
 
 }
 
 
-/* =========================================
-   NUESTRA ESENCIA
-========================================= */
 
-.mision-section{
+.hero-content h1{
 
-    width:min(1200px,92%);
+    margin:0;
 
-    margin:0 auto;
+    font-size:52px;
 
-    padding:90px 0 105px;
+    line-height:1.15;
+
+    font-weight:800;
 
 }
 
 
-.mision-header{
 
-    text-align:center;
+.hero-content h1 span{
+
+    color:var(--primary);
+
+}
+
+
+
+.hero-content>p{
+
+    margin:28px 0 0;
+
+    max-width:590px;
+
+    color:var(--text-soft);
+
+    font-size:18px;
+
+    line-height:1.85;
+
+}
+
+
+
+
+
+/*============================================================
+ TARJETA NO SOMOS UN DESPACHO
+============================================================*/
+
+
+.no-abogados-card{
+
+    width:100%;
+
+    max-width:470px;
+
+    margin-top:35px;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+
+.no-abogados-card svg{
+
+    width:48px;
+
+    height:48px;
+
+    padding:12px;
+
+    flex-shrink:0;
+
+    border-radius:14px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+
+
+.no-abogados-card h3{
+
+    margin:0 0 6px;
+
+    color:var(--primary-dark);
+
+    font-size:18px;
+
+}
+
+
+
+.no-abogados-card p{
+
+    margin:0;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    line-height:1.55;
+
+}
+
+
+
+
+
+/*============================================================
+ IMAGEN HERO
+============================================================*/
+
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.hero-image img{
+
+    width:100%;
+
+    height:560px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+
+
+/*============================================================
+ TITULOS GENERALES
+============================================================*/
+
+
+.section-heading{
+
+    width:min(760px,100%);
 
     margin:0 auto 55px;
 
-}
-
-
-.mision-header h2{
-
-    margin:0 0 18px;
-
-    color:#111111;
-
-    font-size:44px;
+    text-align:center;
 
 }
 
 
-.mision-header p{
 
-    max-width:720px;
+.section-heading h2{
 
-    margin:0 auto;
+    margin:0;
 
-    color:#666666;
+    font-size:42px;
 
-    font-size:18px;
+    color:var(--text);
+
+}
+
+
+
+.section-heading p{
+
+    margin:18px auto 0;
+
+    max-width:650px;
+
+    color:var(--text-soft);
+
+    font-size:17px;
 
     line-height:1.8;
 
 }
 
 
-.mision-grid{
+
+
+
+
+/*============================================================
+ NUESTRA ESENCIA
+============================================================*/
+
+
+.esencia-section{
+
+    padding:95px 5%;
+
+    background:var(--section);
+
+}
+
+
+
+.esencia-grid{
+
+    width:min(1200px,100%);
+
+    margin:auto;
 
     display:grid;
 
@@ -250,417 +361,433 @@
 }
 
 
-.mision-card{
 
-    min-height:390px;
+.esencia-card{
+
+    position:relative;
 
     padding:38px 34px;
 
+    overflow:hidden;
+
     background:#ffffff;
 
-    border-radius:22px;
+    border:1px solid var(--border);
 
-    border-top:6px solid var(--primary-green);
+    border-radius:24px;
 
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-    display:flex;
-
-    flex-direction:column;
-
-    transition:.3s ease;
+    box-shadow:var(--shadow-sm);
 
 }
 
 
-.mision-card:hover{
 
-    transform:translateY(-7px);
+.esencia-card::before{
 
-    box-shadow:0 18px 42px rgba(0,0,0,.12);
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:var(--primary);
 
 }
 
 
-/* ICONOS */
 
-.mision-icon{
+.icon-box{
 
-    width:58px;
-    height:58px;
+    width:64px;
 
-    margin-bottom:22px;
+    height:64px;
 
-    border-radius:50%;
-
-    background:#e4f0e7;
-
-    color:var(--primary-green);
+    margin-bottom:25px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    font-size:25px;
+    border-radius:18px;
 
-}
+    background:var(--primary-light);
 
-
-.mision-card h3{
-
-    margin:0 0 17px;
-
-    color:var(--primary-green);
+    color:var(--primary);
 
     font-size:27px;
 
 }
 
 
-.mision-card p{
 
-    margin:0 0 15px;
+.esencia-card h3{
 
-    color: #4f7942;;
+    margin:0 0 18px;
 
-    font-size:16px;
+    color:var(--primary-dark);
+
+    font-size:27px;
+
+}
+
+
+
+.esencia-card p{
+
+    margin:0;
+
+    color:var(--text-soft);
+
+    font-size:15px;
 
     line-height:1.85;
 
 }
+/*============================================================
+ COMO FUNCIONA NUESTRA EVALUACION
+============================================================*/
 
-
-.mision-card p:last-child{
-
-    margin-bottom:0;
-
-}
-
-
-/* =========================================
-   CÓMO FUNCIONA NUESTRA EVALUACIÓN
-========================================= */
 
 .proceso-section{
 
-    width:min(1200px,92%);
+    padding:95px 5%;
 
-    margin:0 auto;
-
-    padding:95px 0 110px;
-
-    background:#ffffff;
+    background:var(--section);
 
 }
 
 
-.proceso-header{
 
-    text-align:center;
+.proceso-container{
 
-    margin-bottom:70px;
+    width:min(1200px,100%);
 
-}
-
-
-.proceso-header h2{
-
-    margin:0 0 18px;
-
-    color:#111111;
-
-    font-size:44px;
+    margin:auto;
 
 }
 
 
-.proceso-header p{
 
-    max-width:720px;
+.proceso-list{
 
-    margin:0 auto;
+    display:grid;
 
-    color:#666666;
+    grid-template-columns:repeat(3,1fr);
 
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-
-
-.proceso-timeline{
+    gap:45px;
 
     position:relative;
 
-    max-width:850px;
-
-    margin:0 auto;
-
 }
 
 
-.proceso-timeline::before{
+
+.proceso-list::before{
 
     content:"";
 
     position:absolute;
 
-    left:29px;
+    top:32px;
 
-    top:0;
+    left:12%;
 
-    width:2px;
+    right:12%;
 
-    height:100%;
+    height:1px;
 
-    background:#d9dedb;
+    background:#d5e2d8;
 
 }
 
 
-.proceso-item{
+
+
+
+.proceso-list article{
 
     position:relative;
 
+    text-align:center;
+
+    background:transparent;
+
+}
+
+
+
+
+
+.proceso-list span{
+
+    position:relative;
+
+    z-index:2;
+
+    width:64px;
+
+    height:64px;
+
+    margin:0 auto 25px;
+
     display:flex;
 
-    gap:35px;
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    box-shadow:0 8px 20px rgba(40,95,61,.18);
+
+}
+
+
+
+.proceso-list h3{
+
+    margin:0 0 12px;
+
+    color:var(--primary-dark);
+
+    font-size:23px;
+
+    font-weight:750;
+
+}
+
+
+
+.proceso-list p{
+
+    margin:0 auto;
+
+    max-width:310px;
+
+    color:var(--text-soft);
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+/*============================================================
+ CONEXION OPCIONAL CON ABOGADO
+============================================================*/
+
+
+.proceso-opcional{
+
+    grid-column:1 / -1;
+
+    width:min(650px,100%);
+
+    margin:50px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+.proceso-opcional span{
+
+    width:46px;
+
+    height:46px;
+
+    margin-bottom:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+
+
+.proceso-opcional h3{
+
+    margin:0 0 10px;
+
+    color:var(--primary-dark);
+
+    font-size:22px;
+
+}
+
+
+
+.proceso-opcional p{
+
+    margin:0;
+
+    max-width:560px;
+
+    color:var(--text-soft);
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+/*============================================================
+  POR QUE ELEGIRNOS
+============================================================*/
+
+
+.porque-section{
+
+    padding:95px 5%;
+
+    background:#285f3d;
+
+}
+
+
+
+.porque-section .section-heading{
 
     margin-bottom:55px;
 
 }
 
 
-.proceso-item:last-child{
 
-    margin-bottom:0;
-
-}
-
-
-.proceso-numero{
-
-    width:58px;
-    height:58px;
-
-    flex:0 0 58px;
-
-    border-radius:50%;
-
-    background:#ffffff;
-
-    border:3px solid var(--primary-green);
-
-    color:var(--primary-green);
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:17px;
-
-    font-weight:700;
-
-    z-index:2;
-
-}
-
-
-.proceso-item.activo .proceso-numero{
-
-    background:var(--primary-green);
+.porque-section .section-heading h2{
 
     color:#ffffff;
 
 }
 
 
-.proceso-contenido{
 
-    padding-top:5px;
+.porque-section .section-heading p{
 
-    flex:1;
-
-}
-
-
-.proceso-contenido h3{
-
-    margin:0 0 13px;
-
-    color:#111111;
-
-    font-size:25px;
+    color:rgba(255,255,255,.85);
 
 }
 
-
-.proceso-contenido p{
-
-    max-width:620px;
-
-    margin:0;
-
-    color:#555555;
-
-    font-size:16px;
-
-    line-height:1.8;
-
-}
-
-
-.proceso-contenido span{
-
-    display:inline-block;
-
-    margin-bottom:8px;
-
-    color:var(--primary-green);
-
-    font-size:13px;
-
-    font-weight:700;
-
-}
-
-
-.proceso-item.opcional .proceso-numero{
-
-    border-style:dashed;
-
-}
-
-
-/* =========================================
-   POR QUÉ ELEGIRNOS
-========================================= */
-
-.porque-section{
-
-    width:100%;
-
-    padding:90px 5% 100px;
-
-    background:#286d3d;
-
-}
-
-
-.porque-header{
-
-    max-width:760px;
-
-    margin:0 auto 50px;
-
-    text-align:center;
-
-}
-
-
-.porque-header h2{
-
-    margin:0 0 18px;
-
-    color:#ffffff;
-
-    font-size:44px;
-
-}
-
-
-.porque-header p{
-
-    margin:0;
-
-    color:#ffffff;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
 
 
 .porque-grid{
 
     width:min(1200px,100%);
 
-    margin:0 auto;
+    margin:auto;
 
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:22px;
+    gap:28px;
 
 }
 
 
-/* TARJETAS CON VERDE DIFERENTE */
+
+
 
 .porque-card{
 
-    min-height:255px;
+    position:relative;
 
-    padding:32px 27px;
+    padding:35px 30px;
 
-    background:#347c4a;
-
-    border:1px solid rgba(220,240,225,.32);
-
-    border-radius:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    min-height:270px;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:flex-start;
+    background:#285f3d;
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
 
     transition:.3s ease;
 
 }
 
 
+
+
+
 .porque-card:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-7px);
 
-    border-color:rgba(255,255,255,.5);
-
-    box-shadow:0 15px 30px rgba(0,0,0,.16);
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.25);
 
 }
 
 
-/* ICONOS BLANCOS */
+
+
 
 .porque-icon{
 
-    width:55px;
-    height:55px;
+    width:62px;
 
-    margin-bottom:20px;
+    height:62px;
 
-    border-radius:50%;
-
-    background:rgba(255,255,255,.12);
-
-    color:#ffffff;
+    margin-bottom:25px;
 
     display:flex;
 
-    align-items:center;
     justify-content:center;
 
-    font-size:23px;
+    align-items:center;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    color:#ffffff;
+
+    font-size:27px;
 
 }
+
+
+
 
 
 .porque-card h3{
@@ -671,75 +798,77 @@
 
     font-size:21px;
 
+    line-height:1.3;
+
 }
+
+
+
 
 
 .porque-card p{
 
     margin:0;
 
-    color:#ffffff;
+    color:rgba(255,255,255,.88);
 
     font-size:15px;
 
-    line-height:1.8;
+    line-height:1.75;
 
 }
+/*============================================================
+  FORMULARIO DE EVALUACION
+============================================================*/
 
-
-/* =========================================
-   FORMULARIO
-========================================= */
 
 .formulario-section{
 
-    width:100%;
+    padding:100px 5%;
 
-    padding:90px 5% 110px;
-
-    background:#ffffff;
+    background:#f7faf8;
 
 }
 
 
-.formulario-contenedor{
+
+
+
+.formulario-wrapper{
 
     width:min(1200px,100%);
 
-    margin:0 auto;
+    margin:auto;
 
     display:grid;
 
-    grid-template-columns:.9fr 1.1fr;
+    grid-template-columns:0.9fr 1.1fr;
 
-    background:#ffffff;
+    gap:60px;
 
-    border-radius:25px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
+    align-items:center;
 
 }
 
+/*============================================================
+  INFORMACION LATERAL
+============================================================*/
 
-/* IZQUIERDA */
 
 .formulario-info{
 
-    background:#0b3316;
+    padding:40px;
 
-    padding:50px;
+    background:#285f3d;
 
-    color:#ffffff;
+    border-radius:28px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
 
 }
+
+
+
 
 
 .formulario-info h2{
@@ -748,256 +877,278 @@
 
     color:#ffffff;
 
-    font-size:38px;
+    font-size:40px;
 
     line-height:1.2;
 
 }
 
 
-.formulario-info > p{
 
-    margin:0 0 35px;
 
-    color:#ffffff;
+
+.formulario-info p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.88);
 
     font-size:16px;
 
-    line-height:1.7;
+    line-height:1.8;
 
 }
 
 
-.formulario-beneficio{
+
+
+
+.info-beneficio{
 
     display:flex;
 
     align-items:center;
 
-    gap:15px;
+    gap:12px;
 
-    margin-bottom:25px;
-
-}
-
-
-.formulario-beneficio svg{
-
-    flex-shrink:0;
-
-    color:#355E3B;
-
-    font-size:25px;
-
-}
-
-
-.formulario-beneficio span{
+    margin-top:25px;
 
     color:#ffffff;
-
-    font-size:16px;
 
     font-weight:600;
 
 }
 
 
-.formulario-contacto{
+
+
+
+.info-beneficio svg{
+
+    font-size:20px;
+
+    color:#ffffff;
+
+}
+
+
+
+
+
+.contact-box{
 
     margin-top:35px;
 
+    padding:25px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:18px;
+
 }
 
 
-.formulario-contacto small{
+
+
+
+.contact-box small{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+
+
+
+
+.contact-box h3{
+
+    margin:10px 0;
 
     color:#ffffff;
-
-    font-size:13px;
-
-}
-
-
-.formulario-contacto h3{
-
-    margin:8px 0;
-
-    color:#5CBF67;
-
-    font-size:28px;
-
-}
-
-
-.formulario-contacto p{
-
-    margin:0;
-
-    color:#ffffff;
-
-    font-size:16px;
-
-}
-
-
-/* =========================================
-   FORMULARIO DERECHA
-========================================= */
-
-.formulario-card{
-
-    max-width:none;
-
-    margin:0;
-
-    padding:50px;
-
-    background:#ffffff;
-
-    border:none;
-
-    border-radius:0;
-
-    box-shadow:none;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:22px;
-
-}
-
-
-.formulario-card h2{
-
-    grid-column:1 / -1;
-
-    margin:0;
-
-    color:var(--primary-green);
 
     font-size:30px;
 
 }
 
 
-.formulario-card > p{
-
-    grid-column:1 / -1;
-
-    margin:0 0 5px;
-
-    color:#666666;
-
-    line-height:1.7;
-
-}
 
 
-.input-group{
 
-    width:100%;
+.contact-box p{
+
+    color:rgba(255,255,255,.9);
+
+    font-size:14px;
 
 }
 
 
-.input-group input,
-.input-group select,
-.comments-box textarea{
+/* TARJETA DEL FORMULARIO */
+
+
+.evaluacion-form{
 
     width:100%;
 
-    box-sizing:border-box;
-
-    border:1px solid #dddddd;
-
-    border-radius:12px;
-
-    outline:none;
+    padding:45px;
 
     background:#ffffff;
 
-    color:#333333;
+    border-radius:28px;
 
-    font-family:inherit;
+    border:1px solid #dde6df;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.10);
+
+    box-sizing:border-box;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.evaluacion-form h2{
+
+    margin:0 0 12px;
+
+    color:#1d472e;
+
+    font-size:30px;
+
+}
+
+
+
+
+
+.evaluacion-form>p{
+
+    margin:0 0 30px;
+
+    color:#1d472e;
+
+    line-height:1.9;
+
+}
+
+
+
+
+
+
+
+/* CAMPOS */
+
+
+.form-grid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+}
+
+
+
+
+
+.form-grid input,
+
+.form-grid select,
+
+.form-grid textarea{
+
+    width:100%;
+
+    min-width:0;
+
+    box-sizing:border-box;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    border:1px solid #dde6df;
+
+    background:#ffffff;
+
+    color:#1f2420;
 
     font-size:15px;
 
-    transition:.3s ease;
+    font-family:inherit;
 
 }
 
 
-.input-group input{
 
-    height:52px;
 
-    padding:0 17px;
+
+
+.form-grid input:focus,
+
+.form-grid select:focus,
+
+.form-grid textarea:focus{
+
+    outline:none;
+
+    border-color:#1d472e;
+
+    box-shadow:0 0 0 3px rgba(40,95,61,.12);
 
 }
 
 
-.input-group select{
-
-    height:52px;
-
-    padding:0 17px;
-
-    cursor:pointer;
-
-}
 
 
-.comments-box{
+
+.form-grid textarea{
 
     grid-column:1 / -1;
 
-}
+    min-height:140px;
 
-
-.comments-box textarea{
-
-    min-height:145px;
-
-    padding:15px 17px;
-
-    resize:vertical;
+    resize:none;
 
 }
 
 
-.input-group input:focus,
-.input-group select:focus,
-.comments-box textarea:focus{
-
-    border-color:var(--primary-green);
-
-    box-shadow:0 0 0 3px rgba(0,150,90,.10);
-
-}
 
 
-.formulario-card button{
 
-    grid-column:1 / -1;
+/* BOTON */
 
-    min-height:52px;
+
+.evaluacion-form button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    background:var(--primary-green);
+    background:#285f3d;
 
     color:#ffffff;
 
-    font-family:inherit;
-
     font-size:16px;
 
-    font-weight:600;
+    font-weight:700;
 
     cursor:pointer;
 
@@ -1006,980 +1157,409 @@
 }
 
 
-.formulario-card button:hover{
 
-    transform:translateY(-2px);
 
-    opacity:.92;
+
+.evaluacion-form button:hover{
+
+    background:#1d472e;
 
 }
 
 
-.secure{
 
-    grid-column:1 / -1;
+
+
+.form-success{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#edf5ef;
+
+    color:#285f3d;
+
+}
+
+
+
+
+
+.form-error{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#fff0f0;
+
+    color:#9b2929;
+
+}
+
+
+
+
+
+.secure-message{
+
+    margin-top:22px;
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    gap:8px;
+    align-items:center;
 
-    color:#666666;
+    gap:10px;
 
-    font-size:13px;
+    color:#657168;
 
-}
-
-
-.secure svg{
-
-    color:var(--primary-green);
+    font-size:14px;
 
 }
 
 
-/* =========================================
-   WHATSAPP
-========================================= */
+
+
+
+
+
+
+
+/*============================================================
+  WHATSAPP
+============================================================*/
+
 
 .whatsapp-button{
 
     position:fixed;
 
-    right:30px;
+    right:25px;
 
-    bottom:90px;
+    bottom:25px;
 
-    width:60px;
-    height:60px;
+    width:58px;
 
-    border-radius:50%;
-
-    background:#25D366;
-
-    color:#ffffff;
+    height:58px;
 
     display:flex;
 
-    align-items:center;
     justify-content:center;
 
-    font-size:32px;
+    align-items:center;
 
-    text-decoration:none;
+    border-radius:50%;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    background:#25d366;
 
-    z-index:999;
+    color:#ffffff;
 
-    transition:.3s ease;
+    font-size:30px;
 
-}
-
-
-.whatsapp-button:hover{
-
-    transform:translateY(-5px);
+    z-index:50;
 
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+
+
+
+
+
+
+
+/*============================================================
+  RESPONSIVE
+============================================================*/
+
 
 @media(max-width:1100px){
 
-    .nosotros-hero{
+
+    .formulario-wrapper{
+
+        grid-template-columns:1fr;
 
         gap:45px;
 
     }
 
 
-    .titulo-verde{
-
-        font-size:47px;
-
-    }
-
-
-    .titulo-negro{
-
-        font-size:40px;
-
-    }
-
-
-    .mision-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-
-    .mision-card{
-
-        min-height:360px;
-
-    }
-
-
-    .porque-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
 }
 
 
-/* =========================================
-   TABLET PEQUEÑA
-========================================= */
-
-@media(max-width:850px){
-
-    .nosotros-hero{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-        padding:120px 0 80px;
-
-    }
 
 
-    .nosotros-info{
-
-        align-items:center;
-
-    }
 
 
-    .nosotros-info > p{
-
-        max-width:680px;
-
-    }
-
-
-    .nosotros-imagen img{
-
-        height:450px;
-
-    }
-
-
-    .formulario-contenedor{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-
-/* =========================================
-   CELULAR
-========================================= */
 
 @media(max-width:768px){
 
-    .nosotros{
-
-        padding-top:15px;
-
-    }
-
-
-    .nosotros-hero{
-
-        width:calc(100% - 36px);
-
-        padding:105px 0 65px;
-
-        gap:40px;
-
-    }
-
-
-    .titulo-verde{
-
-        font-size:36px;
-
-    }
-
-
-    .titulo-negro{
-
-        font-size:31px;
-
-        line-height:1.2;
-
-    }
-
-
-    .nosotros-info > p{
-
-        font-size:16px;
-
-        line-height:1.75;
-
-    }
-
-
-    .nosotros-imagen img{
-
-        height:360px;
-
-        border-radius:20px;
-
-    }
-
-
-    .nosotros-imagen span{
-
-        width:88%;
-
-        font-size:11px;
-
-        letter-spacing:1px;
-
-    }
-
-
-    .mision-section,
-    .proceso-section{
-
-        width:calc(100% - 36px);
-
-        padding:70px 0 80px;
-
-    }
-
-
-    .mision-header,
-    .proceso-header{
-
-        margin-bottom:40px;
-
-    }
-
-
-    .mision-header h2,
-    .proceso-header h2{
-
-        font-size:32px;
-
-    }
-
-
-    .mision-header p,
-    .proceso-header p{
-
-        font-size:16px;
-
-        line-height:1.7;
-
-    }
-
-
-    .mision-grid{
-
-        grid-template-columns:1fr;
-
-        gap:20px;
-
-    }
-
-
-    .mision-card{
-
-        min-height:auto;
-
-        padding:30px 26px;
-
-    }
-
-
-    .mision-card h3{
-
-        font-size:25px;
-
-    }
-
-
-    .mision-card p{
-
-        font-size:15px;
-
-        line-height:1.75;
-
-    }
-
-
-    /* PROCESO */
-
-    .proceso-timeline{
-
-        width:100%;
-
-    }
-
-
-    .proceso-timeline::before{
-
-        left:24px;
-
-    }
-
-
-    .proceso-item{
-
-        gap:18px;
-
-        margin-bottom:42px;
-
-    }
-
-
-    .proceso-numero{
-
-        width:48px;
-        height:48px;
-
-        flex-basis:48px;
-
-        font-size:14px;
-
-    }
-
-
-    .proceso-contenido{
-
-        padding-top:3px;
-
-    }
-
-
-    .proceso-contenido h3{
-
-        font-size:21px;
-
-    }
-
-
-    .proceso-contenido p{
-
-        font-size:15px;
-
-        line-height:1.7;
-
-    }
-
-
-    /* POR QUÉ */
-
-    .porque-section{
-
-        padding:70px 18px 80px;
-
-    }
-
-
-    .porque-header h2{
-
-        font-size:32px;
-
-    }
-
-
-    .porque-header p{
-
-        font-size:16px;
-
-    }
-
-
-    .porque-grid{
-
-        grid-template-columns:1fr;
-
-        gap:18px;
-
-    }
-
-
-    .porque-card{
-
-        min-height:auto;
-
-        padding:28px 25px;
-
-    }
-
-
-    /* FORMULARIO */
 
     .formulario-section{
 
-        padding:70px 18px 90px;
+        padding:70px 5%;
 
     }
 
-
-    .formulario-info{
-
-        padding:38px 28px;
-
-    }
 
 
     .formulario-info h2{
 
-        font-size:31px;
+        font-size:32px;
 
     }
 
 
-    .formulario-contenedor .contact-form{
 
-        padding:32px 25px;
+    .evaluacion-form{
+
+        padding:25px;
+
+    }
+
+
+
+    .form-grid{
 
         grid-template-columns:1fr;
 
     }
 
 
-    .formulario-card h2,
-    .formulario-card > p,
-    .comments-box,
-    .formulario-card button,
-    .secure{
+
+    .form-grid textarea{
 
         grid-column:auto;
 
     }
 
 
-    .formulario-card h2{
-
-        font-size:27px;
-
-    }
-
 
     .whatsapp-button{
 
-        width:55px;
-        height:55px;
+        width:52px;
 
-        right:20px;
-        bottom:75px;
+        height:52px;
 
-        font-size:28px;
+        right:18px;
+
+        bottom:18px;
+
+        font-size:25px;
 
     }
+
 
 }
 
 
-/* =========================================
-   CELULAR PEQUEÑO
-========================================= */
-
-@media(max-width:380px){
-
-    .nosotros-hero{
-
-        width:calc(100% - 28px);
-
-    }
 
 
-    .titulo-verde{
 
-        font-size:32px;
+
+
+@media(max-width:480px){
+
+
+    .evaluacion-form h2{
+
+        font-size:25px;
 
     }
 
 
-    .titulo-negro{
 
-        font-size:28px;
+    .contact-box h3{
 
-    }
-
-
-    .mision-section,
-    .proceso-section{
-
-        width:calc(100% - 28px);
+        font-size:24px;
 
     }
 
-
-    .porque-section{
-
-        padding-left:14px;
-        padding-right:14px;
-
-    }
-
-
-    .formulario-section{
-
-        padding-left:14px;
-        padding-right:14px;
-
-    }
 
 }
-/* =========================================================
-   CORRECCIÓN FINAL DEL FORMULARIO
-   ========================================================= */
+/*============================================================
+  BLOQUEO ESTILOS NOSOTROS
+  Evita sobrescritura de otras reglas
+============================================================*/
 
-/* CONTENEDOR PRINCIPAL */
 
-.formulario-contenedor .contact-form.formulario-card {
+/* PORQUE ELEGIRNOS */
 
-    width:100%;
-    box-sizing:border-box;
+.nosotros .porque-section{
 
-    display:flex;
-    flex-direction:column;
+    background:#2e4e3a;
 
-    gap:18px;
+}
 
-    padding:50px;
+
+
+.nosotros .porque-card{
+
+    background:#2e4e3a;
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+
+
+.nosotros .porque-card h3{
+
+    color:#ffffff;
+
+}
+
+
+
+.nosotros .porque-card p{
+
+    color:rgba(255,255,255,.88);
+
+}
+
+
+
+.nosotros .porque-icon{
+
+    background:rgba(255,255,255,.15);
+
+    color:#ffffff;
+
+}
+
+
+
+
+
+
+/* FORMULARIO INFORMACION */
+
+.nosotros .formulario-info{
+
+    background:#285f3d;
+
+    padding:40px;
+
+    border-radius:28px;
+
+}
+
+
+
+.nosotros .formulario-info h2{
+
+    color:#ffffff;
+
+}
+
+
+
+.nosotros .formulario-info p{
+
+    color:rgba(255,255,255,.88);
+
+}
+
+
+
+.nosotros .info-beneficio{
+
+    color:#ffffff;
+
+}
+
+
+
+.nosotros .info-beneficio svg{
+
+    color:#ffffff;
+
+}
+
+
+
+.nosotros .contact-box{
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+
+
+.nosotros .contact-box small,
+
+.nosotros .contact-box p{
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+
+.nosotros .contact-box h3{
+
+    color:#ffffff;
+
+}
+
+
+
+
+
+
+/* TARJETA DEL FORMULARIO */
+
+.nosotros .evaluacion-form{
 
     background:#ffffff;
 
-    border:none;
-    border-radius:0;
-
-    box-shadow:none;
+    border:1px solid #dde6df;
 
 }
 
 
-/* TITULO */
 
-.formulario-contenedor .contact-form h2 {
+.nosotros .evaluacion-form h2{
 
-    margin:0 0 5px;
-
-    color:#1f6b3a;
-
-    font-size:32px;
-
-    line-height:1.2;
+    color:#1d472e;
 
 }
 
 
-/* DESCRIPCIÓN */
 
-.formulario-contenedor .contact-form > p {
+.nosotros .evaluacion-form>p{
 
-    margin:0 0 18px;
+    color:#657168;
 
-    color:#666666;
+}
+/*============================================================
+  IGUALAR ALTURA FORMULARIO
+============================================================*/
 
-    font-size:16px;
 
-    line-height:1.7;
+.nosotros .formulario-wrapper{
+
+    align-items:stretch;
 
 }
 
 
-/* =========================================================
-   CAMPOS
-   ========================================================= */
 
-.formulario-contenedor .contact-form .input-group {
+.nosotros .formulario-info,
+.nosotros .evaluacion-form{
 
-    width:100%;
-
-    margin:0;
-
-    padding:0;
-
-    display:block;
+    height:100%;
 
     box-sizing:border-box;
 
 }
-
-
-/* INPUTS */
-
-.formulario-contenedor .contact-form .input-group input {
-
-    display:block;
-
-    width:100%;
-
-    min-height:58px;
-
-    box-sizing:border-box;
-
-    padding:16px 18px;
-
-    margin:0;
-
-    border:1px solid #d9dfda;
-
-    border-radius:12px;
-
-    background:#ffffff;
-
-    color:#333333;
-
-    font-family:inherit;
-
-    font-size:15px;
-
-    outline:none;
-
-    box-shadow:none;
-
-}
-
-
-/* SELECT */
-
-.formulario-contenedor .contact-form .input-group select {
-
-    display:block;
-
-    width:100%;
-
-    min-height:58px;
-
-    box-sizing:border-box;
-
-    padding:16px 18px;
-
-    margin:0;
-
-    border:1px solid #d9dfda;
-
-    border-radius:12px;
-
-    background:#ffffff;
-
-    color:#333333;
-
-    font-family:inherit;
-
-    font-size:15px;
-
-    outline:none;
-
-    box-shadow:none;
-
-}
-
-
-/* QUITAR RECUADROS INTERNOS AL ENFOCAR */
-
-.formulario-contenedor .contact-form .input-group input:focus,
-.formulario-contenedor .contact-form .input-group select:focus {
-
-    border-color:#2f7d4a;
-
-    outline:none;
-
-    box-shadow:0 0 0 3px rgba(47,125,74,.10);
-
-}
-
-
-/* =========================================================
-   NOMBRE + CORREO MÁS LARGOS
-   ========================================================= */
-
-.formulario-contenedor .contact-form .input-group:nth-of-type(1),
-.formulario-contenedor .contact-form .input-group:nth-of-type(2) {
-
-    width:100%;
-
-}
-
-
-/* =========================================================
-   TELEFONO + TIPO DE FRAUDE
-   ========================================================= */
-
-.formulario-contenedor .contact-form .input-group:nth-of-type(3),
-.formulario-contenedor .contact-form .input-group:nth-of-type(4) {
-
-    width:100%;
-
-}
-
-
-/* =========================================================
-   DESCRIPCIÓN
-   ========================================================= */
-
-.formulario-contenedor .contact-form .comments-box {
-
-    width:100%;
-
-    margin:8px 0 0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-}
-
-
-.formulario-contenedor .contact-form .comments-box textarea {
-
-    display:block;
-
-    width:100%;
-
-    min-height:150px;
-
-    box-sizing:border-box;
-
-    padding:17px 18px;
-
-    margin:0;
-
-    border:1px solid #d9dfda;
-
-    border-radius:12px;
-
-    background:#ffffff;
-
-    color:#333333;
-
-    font-family:inherit;
-
-    font-size:15px;
-
-    line-height:1.6;
-
-    resize:vertical;
-
-    outline:none;
-
-    box-shadow:none;
-
-}
-
-
-.formulario-contenedor .contact-form .comments-box textarea:focus {
-
-    border-color:#2f7d4a;
-
-    outline:none;
-
-    box-shadow:0 0 0 3px rgba(47,125,74,.10);
-
-}
-
-
-/* =========================================================
-   BOTÓN SOLICITAR EVALUACIÓN
-   ========================================================= */
-
-.formulario-contenedor .contact-form button {
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:100%;
-
-    min-height:56px;
-
-    margin:8px 0 0;
-
-    padding:15px 22px;
-
-    background:#2f7d4a !important;
-
-    color:#ffffff !important;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-family:inherit;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    line-height:1;
-
-    cursor:pointer;
-
-    opacity:1 !important;
-
-    visibility:visible !important;
-
-    box-shadow:none;
-
-    transition:transform .25s ease,
-               background .25s ease,
-               box-shadow .25s ease;
-
-}
-
-
-/* QUE SIEMPRE SE VEA */
-
-.formulario-contenedor .contact-form button:hover {
-
-    background:#25663c !important;
-
-    color:#ffffff !important;
-
-    opacity:1 !important;
-
-    transform:translateY(-2px);
-
-    box-shadow:0 8px 18px rgba(47,125,74,.20);
-
-}
-
-
-/* =========================================================
-   MENSAJE DE SEGURIDAD
-   ========================================================= */
-
-.formulario-contenedor .contact-form .secure {
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    width:100%;
-
-    margin-top:12px;
-
-    color:#666666;
-
-    font-size:14px;
-
-    text-align:center;
-
-}
-
-
-.formulario-contenedor .contact-form .secure svg {
-
-    flex-shrink:0;
-
-    color:#666666;
-
-    font-size:14px;
-
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width:900px) {
-
-    .formulario-contenedor .contact-form.formulario-card {
-
-        padding:40px 35px;
-
-    }
-
-}
-
-
-/* =========================================================
-   CELULAR
-   ========================================================= */
-
-@media (max-width:600px) {
-
-    .formulario-contenedor .contact-form.formulario-card {
-
-        padding:35px 25px;
-
-        gap:16px;
-
-    }
-
-
-    .formulario-contenedor .contact-form h2 {
-
-        font-size:28px;
-
-    }
-
-
-    .formulario-contenedor .contact-form > p {
-
-        font-size:15px;
-
-    }
-
-
-    .formulario-contenedor .contact-form .input-group input,
-    .formulario-contenedor .contact-form .input-group select {
-
-        min-height:56px;
-
-        padding:15px 16px;
-
-    }
-
-
-    .formulario-contenedor .contact-form .comments-box textarea {
-
-        min-height:140px;
-
-    }
-
-
-    .formulario-contenedor .contact-form button {
-
-        min-height:55px;
-
-    }
-
-}
-/* CORRECCIÓN POR QUÉ ELEGIRNOS */
-
-.porque-section .porque-card {
-    background: #355e3b !important;
-    }
-
-    .porque-section .porque-icon {
-        background: rgba(255,255,255,.12) !important;
-            color: #ffffff !important;
-            }
-
-            .porque-section .porque-icon svg {
-                color: #ffffff !important;
-                }
-
-                .porque-section .porque-card h3,
-                .porque-section .porque-card p {
-                    color: #ffffff !important;
-                    }

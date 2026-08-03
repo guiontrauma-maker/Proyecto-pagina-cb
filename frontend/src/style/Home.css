@@ -77,8 +77,6 @@ body {
     line-height: 1.8;
     max-width: 760px;
 }
-
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -90,27 +88,35 @@ body {
 
     min-height: 760px;
 
-    padding: 150px 55px 90px;
+    padding: 130px 55px 80px;
 
     display: grid;
-    grid-template-columns: 1.08fr 0.92fr;
+
+    grid-template-columns: 1.15fr 0.85fr;
 
     align-items: center;
-    gap: 65px;
+
+    gap: 45px;
 
     background: #ffffff;
 }
+
+
+/* TEXTO HERO */
 
 .hero-text {
     min-width: 0;
 }
 
+
 .hero-alert {
     display: inline-flex;
     align-items: center;
+
     gap: 8px;
 
     padding: 8px 15px;
+
     margin-bottom: 22px;
 
     border-radius: 30px;
@@ -120,55 +126,205 @@ body {
     color: var(--green-dark);
 
     font-size: 13px;
+
     font-weight: 700;
 }
 
-.hero-alert svg {
-    font-size: 15px;
-}
 
 .hero-title {
+
     margin: 0 0 18px;
 
     color: var(--black);
 
-    font-size: clamp(36px, 4.5vw, 54px);
+    font-size: clamp(36px, 4.5vw, 50px);
 
     line-height: 1.08;
+
     font-weight: 700;
 }
 
+
 .hero-subtitle {
-    margin: 0 0 24px;
+
+    margin: 0 0 20px;
 
     color: var(--green-dark);
 
     font-size: clamp(22px, 3vw, 30px);
 
     line-height: 1.2;
+
     font-weight: 700;
 }
 
-.hero-text > p {
-    max-width: 650px;
 
-    margin: 0 0 25px;
+.hero-text > p {
+
+    max-width: 600px;
+
+    margin: 0 0 22px;
 
     color: var(--gray);
 
     font-size: 17px;
-    line-height: 1.8;
+
+    line-height: 1.7;
 }
 
-.hero-free {
-    margin: 0 0 30px;
 
-    color: var(--green);
+.hero-free {
+
+    margin: 0 0 25px;
+
+    color: var(--green-dark);
 
     font-size: 23px;
+
     font-weight: 700;
 }
 
+
+/* =========================================================
+   FORMULARIO HERO AJUSTADO
+========================================================= */
+
+.hero #formulario {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.hero #formulario .formulario-seccion {
+
+    padding: 0;
+
+}
+
+
+.hero #formulario .caso-form {
+
+    width: 100%;
+
+    max-width: 410px;
+
+    padding: 18px 22px;
+
+    border-radius: 18px;
+
+}
+
+
+.hero #formulario .caso-form h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.hero #formulario .caso-form label {
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+
+}
+
+
+.hero #formulario .caso-form input,
+.hero #formulario .caso-form select {
+
+    height: 38px;
+
+    padding: 8px 12px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.hero #formulario .caso-form textarea {
+
+    height: 65px;
+
+    min-height: 65px;
+
+    padding: 8px 12px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.hero #formulario .caso-form button {
+
+    height: 42px;
+
+    padding: 8px 18px;
+
+}
+
+@media(max-width:1050px){
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 130px 35px 70px;
+
+        gap: 40px;
+
+    }
+
+
+    .hero-text {
+
+        text-align: center;
+
+    }
+
+
+    .hero #formulario .caso-form {
+
+        max-width: 600px;
+
+        margin: auto;
+
+    }
+
+}
+
+
+
+/* MOVIL */
+
+@media(max-width:600px){
+
+    .hero {
+
+        padding: 120px 20px 60px;
+
+    }
+
+
+    .hero #formulario .caso-form {
+
+        padding: 20px;
+
+        max-width: 100%;
+
+    }
+
+}
 
 /* =========================================================
    ESTADISTICAS
@@ -223,7 +379,7 @@ body {
 
     color: var(--green-dark);
 
-    font-size: 34px;
+    font-size: 30px;
     line-height: 1;
 }
 
@@ -243,306 +399,223 @@ body {
     color: var(--green);
     font-size: 38px;
 }
-
-
-/* =========================================================
-   FORMULARIO
-========================================================= */
-
-.contact-form {
-    width: 100%;
-
-    background: #ffffff;
-
-    border: 2px solid #8ab894;
-    border-radius: 18px;
-
-    padding: 30px;
-
-    box-shadow: 0 18px 40px rgba(0, 0, 0, .09);
-}
-
-.contact-form h2 {
-    margin: 0 0 10px;
-
-    text-align: center;
-
-    color: var(--green-dark);
-
-    font-size: 29px;
-    line-height: 1.2;
-}
-
-.contact-form > p {
-    margin: 0 0 24px;
-
-    text-align: center;
-
-    color: var(--gray);
-
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-
-/* CAMPOS INDIVIDUALES */
-
-.input-group {
-    width: 100%;
-
-    min-height: 54px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 11px;
-
-    padding: 0 16px;
-    margin-bottom: 15px;
-
-    border: 1px solid #d7ddd9;
-    border-radius: 10px;
-
-    background: #ffffff;
-}
-
-.input-group:focus-within {
-    border-color: #79a984;
-    box-shadow: 0 0 0 3px rgba(67, 141, 89, .10);
-}
-
-.input-group svg {
-    flex-shrink: 0;
-
-    color: var(--green);
-    font-size: 19px;
-}
-
-.input-group input {
-    width: 100%;
-
-    border: none;
-    outline: none;
-
-    padding: 15px 5px;
-
-    background: transparent;
-
-    color: #333333;
-
-    font-size: 15px;
-}
-
-
-/* =========================================================
-   TELEFONO
-========================================================= */
-
-.phone-row {
-    width:100%;
-    margin-bottom:15px;
-}
-
-
-.phone-row .react-international-phone {
-    width:100%;
-}
-
-
-.phone-row .react-international-phone-input-container {
-    width:100%;
-    display:flex;
-    align-items:center;
-}
-
-
-.phone-row .react-international-phone-country-selector-button {
-
-    height:54px !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    border:1px solid #d7ddd9 !important;
-
-    border-right:none !important;
-
-    border-radius:10px 0 0 10px !important;
-
-    background:#ffffff !important;
-
-}
-
-
-.phone-row .react-international-phone-input {
-
-    height:54px !important;
-
-    display:flex !important;
-
-    align-items:center !important;
-
-    padding:0 15px !important;
-
-    border:1px solid #d7ddd9 !important;
-
-    border-radius:0 10px 10px 0 !important;
-
-    font-size:15px !important;
-
-}
-
-/* =========================================================
-   COMENTARIOS
-========================================================= */
-
-.comments-box {
-    margin-bottom: 18px;
-}
-
-.comments-box summary {
-    cursor: pointer;
-
-    color: var(--gray-dark);
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.comments-box textarea {
-    width: 100%;
-
-    min-height: 110px;
-
-    margin-top: 12px;
-
-    padding: 14px;
-
-    resize: vertical;
-
-    border: 1px solid #d7ddd9;
-    border-radius: 10px;
-
-    outline: none;
-
-    color: #333333;
-
-    font-size: 14px;
-}
-
-.comments-box textarea:focus {
-    border-color: #79a984;
-}
-
-
-/* BOTON */
-
-.contact-form button {
-    width: 100%;
-
-    min-height: 53px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: var(--green-dark);
-
-    color: #ffffff;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: .25s ease;
-}
-
-.contact-form button:hover {
-    background: #174f2b;
-}
-
-.secure {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 7px;
-
-    margin-top: 14px;
-
-    color: #777777;
-
-    font-size: 12px;
-}
-
-
 /* =========================================================
    MEDIOS
 ========================================================= */
 
 .medios {
+
     width: 100%;
 
     background: #f1f2f2;
 
     padding: 45px 30px;
+
 }
 
+
 .medios-container {
+
     width: 100%;
+
     max-width: 1050px;
 
     margin: 0 auto;
+
 }
 
+
+/* TITULO */
+
 .medios h2 {
-    margin: 0 0 30px;
+
+    margin: 0 0 35px;
 
     text-align: center;
 
     color: #666666;
 
     font-size: 21px;
+
     font-weight: 700;
+
 }
+
+
+
+/* GRID */
 
 .medios-grid {
+
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 25px;
+    gap: 0;
+
 }
 
+
+
+/* CADA MEDIO */
+
 .medio {
-    min-height: 70px;
+
+    min-height: 120px;
 
     display: flex;
 
+    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
+
+    border-right: 1px solid #d2d2d2;
+
+}
+
+
+/* QUITAR BARRA AL ULTIMO */
+
+.medio:last-child {
+
+    border-right: none;
+
+}
+
+
+
+/* IMAGENES */
+
+.medio img {
+
+    width: 170px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+    filter: grayscale(100%);
+
+    opacity: .65;
+
+    transition: .3s ease;
+
+}
+
+
+
+/* EFECTO HOVER */
+
+.medio:hover img {
+
+    filter: grayscale(0%);
+
+    opacity: 1;
+
+}
+
+
+
+/* NOMBRE DEL MEDIO */
+
+.medio span {
 
     color: #727272;
 
-    font-size: 20px;
+    font-size: 15px;
+
     font-weight: 700;
 
-    border-right: 1px solid #d2d2d2;
-}
+    text-align: center;
 
-.medio:last-child {
-    border-right: none;
-}
-
-.medio svg {
-    font-size: 22px;
 }
 
 
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:800px){
+
+
+    .medios {
+
+        padding: 40px 20px;
+
+    }
+
+
+    .medios-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .medio {
+
+        min-height: 110px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #d2d2d2;
+
+        padding-bottom: 25px;
+
+    }
+
+
+    .medio:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .medio img {
+
+        width: 160px;
+
+        height: 50px;
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media(max-width:500px){
+
+
+    .medios h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .medio img {
+
+        width: 145px;
+
+        height: 45px;
+
+    }
+
+
+}
 /* =========================================================
    AREAS
 ========================================================= */
@@ -902,26 +975,6 @@ body {
     font-size: 21px;
 }
 
-.razon-number {
-    display: inline-flex;
-
-    width: 32px;
-    height: 32px;
-
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 16px;
-
-    border-radius: 50%;
-
-    background: #eef5ef;
-
-    color: var(--green-dark);
-
-    font-size: 12px;
-    font-weight: 700;
-}
 
 .razon-card h3 {
     margin: 0 0 13px;
@@ -1826,116 +1879,35 @@ body {
 
 }
 /* =========================================================
-   CORRECCIÓN FORMULARIO
+   TITULOS PASOS - COMO LUCHAMOS POR TI
 ========================================================= */
 
-.contact-form {
-    overflow: hidden;
-}
-
-.contact-form input,
-.contact-form textarea {
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.phone-row {
-    display: flex;
-}
-
-.phone-row .react-international-phone {
-    display: flex;
-    width: 100%;
-}
-
-.phone-row .react-international-phone-input-container {
-    width: 100%;
-}
-
-.phone-row .react-international-phone-input-container input {
-    background: #ffffff !important;
-}
-
-.phone-row .react-international-phone-input:focus {
-    border-color: #79a984 !important;
+.timeline-card h3 {
+    color: var(--green-dark);
 }
 
 
-/* evita doble apariencia de caja en comentarios */
-.comments-box {
-    border: none;
-    background: transparent;
-}
-
-.comments-box textarea {
-    display: block;
+.timeline-card h3:hover {
+    color: var(--green);
 }
 
 
-/* botón evaluación */
-.contact-form button {
-    position: relative;
-    z-index: 1;
-}
+/* NUMEROS DE PASO */
 
-.contact-form button:disabled {
-    opacity: .7;
-    cursor: not-allowed;
-}
-.whatsapp-float svg {
-    width: 34px;
-    height: 34px;
-    display: block;
-    color: #ffffff;
-}
-/* Igualar altura teléfono con los demás campos */
-
-.phone-row,
-.phone-row .react-international-phone,
-.phone-row .react-international-phone-input-container,
-.phone-row .react-international-phone-input,
-.phone-row .react-international-phone-country-selector-button {
-
-    height: 54px !important;
-
+.step-number {
+    color: #7c9982;
 }
 
 
-.phone-row .react-international-phone-input-container {
+/* ICONOS CIRCULARES */
 
-    display: flex !important;
-    align-items: center !important;
-
+.timeline-circle svg {
+    color: var(--green-dark);
 }
 
 
-.phone-row .react-international-phone-country-selector-button {
+/* LINEA ENTRE PASOS */
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-}
-
-
-.phone-row .react-international-phone-input {
-
-    display: flex !important;
-    align-items: center !important;
-
-}
-.input-group select {
-
-    height: 54px !important;
-
-    flex: 1;
-
-    border: none !important;
-
-    outline: none !important;
-
-    background: transparent !important;
-
-    font-size: 15px;
-
+.timeline-line {
+    background: #b7cfbc;
 }
