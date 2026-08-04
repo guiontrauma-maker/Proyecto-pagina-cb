@@ -47,7 +47,7 @@ function FormularioCaso({ origen = "Formulario general" }) {
 
 
             const response = await fetch(
-                "${import.meta.env.VITE_API_URL}/api/evaluaciones",
+                `${import.meta.env.VITE_API_URL}/evaluaciones`,
                 {
 
                     method:"POST",

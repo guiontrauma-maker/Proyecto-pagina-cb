@@ -47,7 +47,7 @@ const [tipoMensaje, setTipoMensaje] = useState("");
         try {
 
             const respuesta = await fetch(
-                "${import.meta.env.VITE_API_URL}/api/evaluaciones",
+                `${import.meta.env.VITE_API_URL}/evaluaciones`,
                 {
                     method: "POST",
 
