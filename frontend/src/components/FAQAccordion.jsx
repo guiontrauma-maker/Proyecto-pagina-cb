@@ -80,3 +80,6 @@ function FAQAccordion({ preguntas }) {
 }
 
 export default FAQAccordion;
+
+
+

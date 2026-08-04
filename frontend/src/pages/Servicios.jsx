@@ -73,7 +73,7 @@ setError("");
         try {
 
             const respuesta = await fetch(
-    "https://proyecto-cris.onrender.com/api/evaluaciones",
+    "https://ssm-backend-2b2k.onrender.com/api/evaluaciones",
                 {
                     method: "POST",
 
@@ -1315,3 +1315,7 @@ setError("");
 
 
 export default Servicios;
+
+
+
+

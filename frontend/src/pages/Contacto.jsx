@@ -47,7 +47,7 @@ const [tipoMensaje, setTipoMensaje] = useState("");
         try {
 
             const respuesta = await fetch(
-                "https://proyecto-cris.onrender.com/api/evaluaciones",
+                "https://ssm-backend-2b2k.onrender.com/api/evaluaciones",
                 {
                     method: "POST",
 
@@ -546,3 +546,6 @@ setMensaje(
 
 
 export default Contacto;
+
+
+

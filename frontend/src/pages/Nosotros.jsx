@@ -77,7 +77,7 @@ function Nosotros() {
 
             const response = await fetch(
 
-                "https://proyecto-cris.onrender.com/api/evaluaciones",
+                "https://ssm-backend-2b2k.onrender.com/api/evaluaciones",
 
                 {
 
@@ -1425,3 +1425,6 @@ function Nosotros() {
 
 
 export default Nosotros;
+
+
+

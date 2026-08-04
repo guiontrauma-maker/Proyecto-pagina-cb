@@ -2173,3 +2173,7 @@ vistaCasos === "activos" ? (
 
 
 export default PanelAdministrador;
+
+
+
+

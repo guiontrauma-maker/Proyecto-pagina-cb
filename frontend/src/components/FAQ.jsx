@@ -218,3 +218,6 @@ activo===index && (
 
 
 export default FAQ;
+
+
+
