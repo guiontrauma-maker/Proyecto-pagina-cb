@@ -1098,7 +1098,7 @@ Ver si mi caso es similar →
 
 
 
-<FormularioCaso origin:="Estafas Románticas"/>
+<FormularioCaso origin="Estafas Románticas"/>
 
 
 
@@ -1242,7 +1242,7 @@ Fraude Bancario
 
 <a
 
-href="https://wa.me/5663820152"
+href="https://wa.me/5559032021"
 
 target="_blank"
 

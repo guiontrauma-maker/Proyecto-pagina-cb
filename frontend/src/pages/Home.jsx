@@ -320,7 +320,7 @@ return (
     id="formulario"
     className="home-formulario"
 >
-    <FormularioCaso origin:="Inicio" />
+    <FormularioCaso origin="Inicio" />
 </div>
 
 </section>
@@ -872,7 +872,7 @@ return (
 
         </section>
           <a
-    href="https://wa.me/5663820152"
+    href="https://wa.me/5559032021"
     target="_blank"
     rel="noopener noreferrer"
     className="whatsapp-float"

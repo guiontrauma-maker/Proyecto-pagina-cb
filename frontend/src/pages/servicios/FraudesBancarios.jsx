@@ -981,7 +981,7 @@ Analizar mi caso bancario →
 
 
 
-<FormularioCaso origin:="Fraudes Bancarios"/>
+<FormularioCaso origin="Fraudes Bancarios"/>
 
 
 
@@ -1109,7 +1109,7 @@ Estafas Románticas
 
 <a
 
-href="https://wa.me/5663820152"
+href="https://wa.me/5559032021"
 
 target="_blank"
 

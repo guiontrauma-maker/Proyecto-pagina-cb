@@ -1099,7 +1099,7 @@ Integración a Grupo de Demandantes
 
 
 
-<FormularioCaso origin:="Esquemas Piramidales"/>
+<FormularioCaso origin="Estafas Piramidales"/>
 
 
 

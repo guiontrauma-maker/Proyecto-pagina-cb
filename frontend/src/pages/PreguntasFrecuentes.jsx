@@ -235,7 +235,7 @@ function PreguntasFrecuentes(){
 
                 className="whatsapp-float"
 
-                href="https://wa.me/5663820152"
+                href="https://wa.me/5559032021"
 
                 target="_blank"
 

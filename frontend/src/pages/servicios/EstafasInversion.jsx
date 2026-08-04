@@ -1310,7 +1310,7 @@ Análisis Inicial del Caso
 
 
 
-<FormularioCaso origin:="Estafas de Inversión"/>
+<FormularioCaso origin="Estafas de Inversión"/>
 
 
 

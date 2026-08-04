@@ -976,38 +976,17 @@
     }
 
 }
-/* =====================================
-   CORRECCIÓN DROPDOWN EN MÓVIL
-===================================== */
+@media (max-width:850px){
 
-@media (max-width: 850px) {
-
-    .navbar-dropdown {
-        display: block;
+    .navbar-links{
+        overflow-y:auto;
+        max-height:calc(100vh - 88px);
     }
 
-    .navbar-dropdown .dropdown-panel {
-        display: none;
-        position: static;
-        width: 100%;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: none;
-        max-height: none;
-    }
-
-    .navbar-dropdown.dropdown-open .dropdown-panel {
-        display: block;
-    }
-
-    .dropdown-option {
-        display: flex;
-        width: 100%;
+    .dropdown-panel{
+        display:block;
+        position:static;
+        width:100%;
     }
 
 }
-
-
-
-

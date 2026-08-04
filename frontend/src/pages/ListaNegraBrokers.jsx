@@ -193,7 +193,7 @@ function ListaNegraBrokers() {
                         currency: "USD",
 
                         description: formulario.description,
-                        origin:: "Lista Negra de Brokers"
+                        origin: "Lista Negra de Brokers"
 
                     })
                 }
@@ -567,7 +567,7 @@ function ListaNegraBrokers() {
                         </p>
 
                         <h3>
-                            5663820152
+                            5559032021
                         </h3>
 
                         <span>
@@ -671,7 +671,7 @@ function ListaNegraBrokers() {
             {/* BOTÓN FLOTANTE WHATSAPP */}
 
             <a
-                href="https://wa.me/5663820152"
+                href="https://wa.me/5559032021"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-float"

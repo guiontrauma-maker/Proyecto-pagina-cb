@@ -1350,7 +1350,7 @@ Análisis Digital Inicial
 
 
 
-<FormularioCaso origin:="Fraudes Digitales"/>
+<FormularioCaso origin="Fraudes Digitales"/>
 
 
 

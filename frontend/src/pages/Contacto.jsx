@@ -187,7 +187,7 @@ setMensaje(
                         <p>
                             Teléfono
                             <br />
-                            5663820152
+                            5559032021
                         </p>
 
                     </div>
@@ -525,7 +525,7 @@ setMensaje(
 
             className="whatsapp-button"
 
-            href="https://wa.me/5663820152"
+            href="https://wa.me/5559032021"
 
             target="_blank"
 
