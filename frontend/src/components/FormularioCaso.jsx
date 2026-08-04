@@ -47,7 +47,7 @@ function FormularioCaso({ origen = "Formulario general" }) {
 
 
             const response = await fetch(
-                "https://ssm-backend-2b2k.onrender.com/api/evaluaciones",
+                "${import.meta.env.VITE_API_URL}/api/evaluaciones",
                 {
 
                     method:"POST",
