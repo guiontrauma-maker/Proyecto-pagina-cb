@@ -193,7 +193,7 @@ function ListaNegraBrokers() {
                         currency: "USD",
 
                         description: formulario.description,
-                        origen: "Lista Negra de Brokers"
+                        origin:: "Lista Negra de Brokers"
 
                     })
                 }

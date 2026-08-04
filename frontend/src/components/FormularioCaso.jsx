@@ -15,7 +15,7 @@ import "react-international-phone/style.css";
 import "../style/FormularioCaso.css";
 
 
-function FormularioCaso({ origen = "Formulario general" }) {
+function FormularioCaso({ origin: = "Formulario general" }) {
 
 
     const [fullName, setFullName] = useState("");
@@ -67,9 +67,9 @@ function FormularioCaso({ origen = "Formulario general" }) {
 
                         fraudType,
 
-                        origin: origen,
+                        origin: origin:,
 
-                        formSource: origen,
+                        formSource: origin:,
 
                         amount:
                             Number(amount) || 0,

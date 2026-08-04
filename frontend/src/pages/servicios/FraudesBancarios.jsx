@@ -981,7 +981,7 @@ Analizar mi caso bancario →
 
 
 
-<FormularioCaso origen="Fraudes Bancarios"/>
+<FormularioCaso origin:="Fraudes Bancarios"/>
 
 
 

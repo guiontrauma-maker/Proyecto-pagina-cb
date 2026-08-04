@@ -35,7 +35,7 @@ texto:
 icon:<FaSearch />,
 titulo:"Investigación y análisis",
 texto:
-"Revisamos información, movimientos y evidencias para comprender el origen del fraude."
+"Revisamos información, movimientos y evidencias para comprender el origin: del fraude."
 },
 
 

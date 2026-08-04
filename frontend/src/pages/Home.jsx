@@ -320,7 +320,7 @@ return (
     id="formulario"
     className="home-formulario"
 >
-    <FormularioCaso origen="Inicio" />
+    <FormularioCaso origin:="Inicio" />
 </div>
 
 </section>

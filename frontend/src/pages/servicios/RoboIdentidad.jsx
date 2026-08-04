@@ -99,7 +99,7 @@ Recupera el Control de Tu Información
 cuentas, solicitar créditos o realizar operaciones
 sin tu autorización?
 
-Investigamos el origen del fraude y buscamos
+Investigamos el origin: del fraude y buscamos
 proteger nuevamente tu patrimonio.
 
 </p>
@@ -769,7 +769,7 @@ Guiamos todo el proceso hasta la solución del caso.
 
 "Descubrí que habían solicitado créditos a mi nombre
 y mi historial estaba afectado. El equipo investigó
-el origen del fraude y logró aclarar mi situación
+el origin: del fraude y logró aclarar mi situación
 con las instituciones involucradas."
 
 </p>
@@ -1244,7 +1244,7 @@ Protección de Datos
 
 
 
-<FormularioCaso origen="Robo Identidad"/>
+<FormularioCaso origin:="Robo Identidad"/>
 
 
 

@@ -71,7 +71,7 @@ const [tipoMensaje, setTipoMensaje] = useState("");
 
                                                 description: descripcion,
 
-                                                    origen: "Contacto"
+                                                    origin:: "Contacto"
 
                                                     
                  })
