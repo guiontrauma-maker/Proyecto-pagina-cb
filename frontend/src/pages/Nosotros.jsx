@@ -77,7 +77,7 @@ function Nosotros() {
 
             const response = await fetch(
 
-                `${import.meta.env.VITE_API_URL}/evaluaciones`,
+                `${import.meta.env.VITE_API_URL}/api/evaluaciones`,
 
                 {
 
