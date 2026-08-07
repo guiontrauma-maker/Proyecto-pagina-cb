@@ -149,7 +149,7 @@ function PanelAdministrador() {
 
         const response =
             await fetch(
-                `${API}/admin/dashboard`,
+                `${API}/api/admin/dashboard`,
                 {
                     headers:
                         authHeaders,
@@ -183,7 +183,7 @@ function PanelAdministrador() {
 
         const response =
             await fetch(
-                `${API}/admin/evaluaciones`,
+                `${API}/api/admin/evaluaciones`,
                 {
                     headers:
                         authHeaders,
@@ -211,7 +211,7 @@ function PanelAdministrador() {
 
     const response =
         await fetch(
-            `${API}/admin/casos`,
+            `${API}/api/admin/casos`,
             {
                 headers:
                     authHeaders,
@@ -240,7 +240,7 @@ const loadPapelera = async () => {
 
     const response =
         await fetch(
-            `${API}/admin/casos/papelera`,
+            `${API}/api/admin/casos/papelera`,
             {
                 headers:
                     authHeaders,
@@ -267,7 +267,7 @@ const loadPapelera = async () => {
 
         const response =
             await fetch(
-                `${API}/admin/advertencias`,
+                `${API}/api/admin/advertencias`,
                 {
                     headers:
                         authHeaders,
@@ -295,7 +295,7 @@ const loadPapelera = async () => {
 
         const response =
             await fetch(
-                `${API}/admin/mensajes`,
+                `${API}/api/admin/mensajes`,
                 {
                     headers:
                         authHeaders,
@@ -343,7 +343,7 @@ const loadPapelera = async () => {
         ) => {
 
             await fetch(
-                `${API}/admin/evaluaciones/${id}`,
+                `${API}/api/admin/evaluaciones/${id}`,
                 {
                     method: "PUT",
 
@@ -367,7 +367,7 @@ const loadPapelera = async () => {
 
             const response =
                 await fetch(
-                    `${API}/admin/evaluaciones/${id}/convertir`,
+                    `${API}/api/admin/evaluaciones/${id}/convertir`,
                     {
                         method: "POST",
 
@@ -409,7 +409,7 @@ const loadPapelera = async () => {
         ) => {
 
             await fetch(
-                `${API}/admin/casos/${id}`,
+                `${API}/api/admin/casos/${id}`,
                 {
                     method: "PUT",
 
@@ -439,7 +439,7 @@ const cerrarCaso = () => {
         const deleteCase = async (id) => {
 
     const response = await fetch(
-        `${API}/admin/casos/${id}`,
+        `${API}/api/admin/casos/${id}`,
         {
             method: "DELETE",
             headers: authHeaders,
@@ -464,7 +464,7 @@ const cerrarCaso = () => {
        const restoreCase = async (id) => {
 
     const response = await fetch(
-        `${API}/admin/casos/${id}/restaurar`,
+        `${API}/api/admin/casos/${id}/restaurar`,
         {
             method: "PUT",
             headers: authHeaders,
@@ -502,7 +502,7 @@ const deleteCasePermanent =
         }
 
         await fetch(
-            `${API}/admin/casos/${id}/eliminar-definitivo`,
+            `${API}/api/admin/casos/${id}/eliminar-definitivo`,
             {
                 method: "DELETE",
 
@@ -520,7 +520,7 @@ const deleteCasePermanent =
         async (id) => {
 
             await fetch(
-                `${API}/admin/mensajes/${id}/leido`,
+                `${API}/api/admin/mensajes/${id}/leido`,
                 {
                     method: "PUT",
 
@@ -549,7 +549,7 @@ const deleteCasePermanent =
 
 
             await fetch(
-                `${API}/admin/mensajes/${id}`,
+                `${API}/api/admin/mensajes/${id}`,
                 {
                     method: "DELETE",
 
