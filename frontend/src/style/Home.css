@@ -1911,7 +1911,135 @@ body {
 .timeline-line {
     background: #b7cfbc;
 }
+/* =========================================================
+   CTA WHATSAPP DEBAJO DEL HERO
+========================================================= */
 
+.whatsapp-cta {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px 35px;
+    box-sizing: border-box;
+}
+
+.whatsapp-cta-button {
+    width: 100%;
+    min-height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 22px 35px;
+    box-sizing: border-box;
+
+    background: #20c968;
+    color: #ffffff;
+    text-decoration: none;
+
+    border-radius: 22px;
+    border: 2px solid #35e27b;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 12px rgba(32, 201, 104, 0.45),
+        0 8px 25px rgba(32, 201, 104, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.whatsapp-cta-button svg {
+    font-size: 48px;
+    flex-shrink: 0;
+}
+
+.whatsapp-cta-button:hover {
+    background: #19b95d;
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(32, 201, 104, 0.65),
+        0 10px 30px rgba(32, 201, 104, 0.35);
+}
+
+.whatsapp-cta-text {
+    margin: 14px 0 0;
+    text-align: center;
+
+    color: #666666;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.whatsapp-cta-text span {
+    color: #20c968;
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .whatsapp-cta {
+        padding: 0 18px 30px;
+    }
+
+    .whatsapp-cta-button {
+        min-height: 90px;
+        font-size: 27px;
+        gap: 18px;
+        border-radius: 18px;
+    }
+
+    .whatsapp-cta-button svg {
+        font-size: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .whatsapp-cta {
+        padding: 0 15px 25px;
+    }
+
+    .whatsapp-cta-button {
+        min-height: 78px;
+        padding: 16px 18px;
+        gap: 12px;
+
+        font-size: 20px;
+        border-radius: 16px;
+    }
+
+    .whatsapp-cta-button svg {
+        font-size: 34px;
+    }
+
+    .whatsapp-cta-text {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .whatsapp-cta-text span {
+        font-size: 20px;
+    }
+
+}
 
 
 
