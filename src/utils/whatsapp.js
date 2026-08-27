@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = "5559032021";
 
-const WHATSAPP_MESSAGE = `Hola, quiero un analisis gratuito de mi caso.`;
+const WHATSAPP_MESSAGE = `Hola, quiero un analisis gratuito de mi caso`;
 
 export const abrirWhatsApp = () => {
     const mensaje = encodeURIComponent(WHATSAPP_MESSAGE);
