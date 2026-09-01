@@ -200,7 +200,7 @@ setMensaje(
                         <p>
                             Correo electrónico
                             <br />
-                            recuperacionasistente@gmail.com
+                            contacto@ssmrecuperadora.com
                         </p>
 
                     </div>
