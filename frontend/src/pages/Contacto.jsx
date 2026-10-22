@@ -454,20 +454,6 @@ setMensaje(
                     </div>
 
 
-                    <div className="trust-card">
-
-                        <FaBalanceScale className="trust-icon" />
-
-                        <h3>
-                            Abogados Certificados
-                        </h3>
-
-                        <p>
-                            Cédulas profesionales vigentes
-                        </p>
-
-                    </div>
-
 
                 </div>
 
