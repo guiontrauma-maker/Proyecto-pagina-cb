@@ -30,8 +30,9 @@ function Footer() {
                     />
 
                     <p>
-                        Asesoría y acompañamiento especializado
-                        para la recuperación patrimonial.
+                         Los servicios están dirigidos sólo a residentes de México. SSM Asesoría en Recuperación es una empresa privada, no somos institución gubernamental.
+
+Nuestro servicio se basa en una asesoría. El costo por honorarios se cubre únicamente al tener certeza de un resultado exitoso.
                     </p>
 
                 </div>
