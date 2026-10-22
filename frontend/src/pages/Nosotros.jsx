@@ -281,19 +281,9 @@ function Nosotros() {
                         <div>
 
 
-                            <h3>
-
-                                No somos un despacho de abogados
-
-                            </h3>
-
-
-
                             <p>
 
-                                Brindamos evaluación, análisis y orientación
-
-                                inicial para comprender cada caso.
+                               SSM Asesoría en Recuperación es una consultoría privada e independiente. No es una autoridad, ni está afiliada a instituciones gubernamentales, entidades financieras o bancos, ni constituye un despacho de abogados. No garantiza resultados; cada caso se evalúa individualmente y se informa con claridad sobre su viabilidad.
 
                             </p>
 
@@ -726,52 +716,6 @@ function Nosotros() {
 
 
                     </article>
-
-
-
-
-
-
-                    <article className="proceso-opcional">
-
-
-                        <span>
-
-                            +
-
-                        </span>
-
-
-
-                        <div>
-
-
-                            <h3>
-
-                                Conexión con un abogado
-
-                            </h3>
-
-
-
-                            <p>
-
-                                Si lo deseas, podemos orientarte para
-
-                                continuar con apoyo legal especializado
-
-                                bajo tu consentimiento.
-
-                            </p>
-
-
-                        </div>
-
-
-
-                    </article>
-
-
 
 
 
