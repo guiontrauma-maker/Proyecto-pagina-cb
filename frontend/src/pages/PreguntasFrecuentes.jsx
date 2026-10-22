@@ -48,18 +48,8 @@ const preguntas = [
     },
 
     {
-        pregunta: "¿Pueden conectarme con un abogado?",
-        respuesta: "Sí. Dependiendo del caso, podemos orientar sobre las opciones disponibles y, cuando corresponda, canalizar con especialistas."
-    },
-
-    {
         pregunta: "¿Mis datos personales están seguros?",
         respuesta: "Sí. Toda la información se maneja de forma confidencial y únicamente para la evaluación del caso."
-    },
-
-    {
-        pregunta: "¿Qué diferencia hay entre una denuncia penal y una demanda civil?",
-        respuesta: "Son procedimientos distintos. La evaluación permite identificar qué alternativas pueden resultar más convenientes según cada situación."
     },
 
     {
