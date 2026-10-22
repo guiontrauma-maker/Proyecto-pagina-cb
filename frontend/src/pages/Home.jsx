@@ -325,22 +325,6 @@ return (
 
 </section>
 
-{/* WHATSAPP CTA */}
-<section className="whatsapp-cta">
-    <a
-        href="https://wa.me/5559032021"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-cta-button"
-    >
-        <FaWhatsapp />
-        <span>Hablar ahora por WhatsApp</span>
-    </a>
-
-    <p className="whatsapp-cta-text">
-        <span>•</span> Respuesta inmediata en horario laboral · gratuita
-    </p>
-</section>
 
 {/* MEDIOS */}
 <section className="medios">
