@@ -81,7 +81,7 @@ function Navbar() {
                     onClick={cerrarMenu}
                 >
 
-                    SSM | Asesoría Legal y Recuperación Patrimonial
+                    SSM | Asesoría en recuperacion
 
                 </Link>
 
@@ -405,33 +405,6 @@ function Navbar() {
 
 
             </nav>
-
-
-
-            {/* =====================================
-                CONSULTA
-            ====================================== */}
-
-            <div className="navbar-action">
-
-
-                <a
-                    href="tel:+5559032021"
-                    className="call-button"
-                >
-
-                    <FaPhoneAlt />
-
-                    <span>
-                        Consulta
-                    </span>
-
-                </a>
-
-
-            </div>
-
-
 
             {/* =====================================
                 HAMBURGUESA
