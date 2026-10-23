@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 import {
@@ -5,19 +6,14 @@ import {
     FaEnvelope,
     FaDollarSign,
     FaLock,
-    FaCheckCircle
+    FaWhatsapp
 } from "react-icons/fa";
 
 import { PhoneInput } from "react-international-phone";
-
 import "react-international-phone/style.css";
-
 import "../style/FormularioCaso.css";
 
-
 function FormularioCaso({ origin = "Formulario general" }) {
-
-
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -25,455 +21,147 @@ function FormularioCaso({ origin = "Formulario general" }) {
     const [amount, setAmount] = useState("");
     const [description, setDescription] = useState("");
 
-
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
-    const [error, setError] = useState("");
-
-
-
-    const handleSubmit = async (event) => {
-
+    const handleSubmit = (event) => {
         event.preventDefault();
 
+        const whatsappMessage = [
+            "SOLICITUD DE EVALUACIÓN GRATUITA - SSM",
+            "",
+            `Formulario: ${origin}`,
+            `Nombre completo: ${fullName}`,
+            `Correo electrónico: ${email}`,
+            `Teléfono: ${phone || "No proporcionado"}`,
+            `Tipo de fraude: ${fraudType}`,
+            `Monto aproximado perdido: ${
+                amount ? `$${amount} MXN` : "No proporcionado"
+            }`,
+            `Descripción del caso: ${
+                description.trim() || "No proporcionada"
+            }`
+        ].join("\n");
 
-        setMessage("");
-        setError("");
-        setLoading(true);
+        const whatsappUrl =
+            `https://wa.me/525559032021?text=${encodeURIComponent(
+                whatsappMessage
+            )}`;
 
-
-
-        try {
-
-
-            const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/evaluaciones`,
-                {
-
-                    method:"POST",
-
-                    headers:{
-                        "Content-Type":"application/json"
-                    },
-
-
-                    body:JSON.stringify({
-
-                        fullName,
-
-                        email,
-
-                        phone,
-
-                        fraudType,
-
-                        origin: origin,
-
-                        formSource: origin,
-
-                        amount:
-                            Number(amount) || 0,
-
-                        currency:"MXN",
-
-                        description
-
-                    })
-
-                }
-            );
-
-
-
-            const data = await response.json();
-
-
-
-            if(!response.ok){
-
-                throw new Error(
-                    data.message ||
-                    "No fue posible enviar la solicitud."
-                );
-
-            }
-
-
-
-            setMessage(
-                "Información enviada correctamente. Nuestro equipo revisará su caso y se pondrá en contacto contigo."
-            );
-
-
-
-            setFullName("");
-            setEmail("");
-            setPhone("");
-            setFraudType("");
-            setAmount("");
-            setDescription("");
-
-
-
-        }catch(error){
-
-
-            console.error(
-                "Error enviando evaluación:",
-                error
-            );
-
-
-            setError(
-                error.message ||
-                "Ocurrió un error al enviar la información."
-            );
-
-
-
-        }finally{
-
-
-            setLoading(false);
-
-
-        }
-
-
+        window.location.href = whatsappUrl;
     };
 
-
-
-
-
     return (
-
         <section className="formulario-seccion">
-
-
             <form
                 className="caso-form"
                 onSubmit={handleSubmit}
             >
-
-
-                <h2>
-                    RECUPERE SUS PÉRDIDAS
-                </h2>
-
-
+                <h2>RECUPERE SUS PÉRDIDAS</h2>
 
                 <p>
                     Solicite una revisión de caso sin costo hoy mismo.
                 </p>
 
-
-
-
                 <div className="input-group">
-
                     <FaUser />
-
-
                     <input
-
                         type="text"
-
                         placeholder="Nombre completo"
-
                         value={fullName}
-
-                        onChange={(event)=>
+                        onChange={(event) =>
                             setFullName(event.target.value)
                         }
-
                         required
-
                     />
-
-
                 </div>
-
-
-
-
 
                 <div className="input-group">
-
-
                     <FaEnvelope />
-
-
                     <input
-
                         type="email"
-
                         placeholder="Correo electrónico"
-
                         value={email}
-
-                        onChange={(event)=>
+                        onChange={(event) =>
                             setEmail(event.target.value)
                         }
-
                         required
-
                     />
-
-
                 </div>
 
-
-
-
-
-
                 <div className="select-group">
-
-
                     <select
-
                         value={fraudType}
-
-                        onChange={(event)=>
+                        onChange={(event) =>
                             setFraudType(event.target.value)
                         }
-
                         required
-
                     >
-
-
                         <option value="">
                             Seleccione el tipo de fraude
                         </option>
-
-
                         <option value="Fraude bancario">
                             Fraude bancario
                         </option>
-
-
                         <option value="Fraude digital">
                             Fraude digital
                         </option>
-
-
                         <option value="Robo de identidad">
                             Robo de identidad
                         </option>
-
-
                         <option value="Estafa de inversión">
                             Estafa de inversión
                         </option>
-
-
                         <option value="Estafa romántica">
                             Estafa romántica
                         </option>
-
-
                         <option value="Estafa piramidal">
                             Estafa piramidal
                         </option>
-
-
-                        <option value="Otro">
-                            Otro
-                        </option>
-
-
+                        <option value="Otro">Otro</option>
                     </select>
-
-
                 </div>
-
-
-
-
-
-
 
                 <div className="caso-phone-row">
-
-
                     <PhoneInput
-
                         defaultCountry="mx"
-
                         value={phone}
-
-                        onChange={(value)=>
-                            setPhone(value)
-                        }
-
+                        onChange={setPhone}
                     />
-
-
                 </div>
-
-
-
-
-
-
 
                 <div className="input-group">
-
-
                     <FaDollarSign />
-
-
                     <input
-
                         type="number"
-
                         placeholder="Monto aproximado perdido"
-
                         value={amount}
-
-                        onChange={(event)=>
+                        onChange={(event) =>
                             setAmount(event.target.value)
                         }
-
                         min="0"
-
                     />
-
-
                 </div>
-
-
-
-
-
-
 
                 <div className="comments-box">
-
-
                     <textarea
-
                         placeholder="Describa brevemente su caso"
-
                         value={description}
-
-                        onChange={(event)=>
+                        onChange={(event) =>
                             setDescription(event.target.value)
                         }
-
                     />
-
-
                 </div>
 
-
-
-
-
-
-
-                {
-                    error &&
-
-                    <div className="form-error">
-
-                        {error}
-
-                    </div>
-
-                }
-
-
-
-
-
-
-
-                {
-                    message &&
-
-                    <div className="form-success">
-
-
-                        <FaCheckCircle />
-
-
-                        <span>
-
-                            {message}
-
-                        </span>
-
-
-                    </div>
-
-                }
-
-
-
-
-
-
-
-                <button
-
-                    type="submit"
-
-                    disabled={loading}
-
-                >
-
-
-                    {
-                        loading
-
-                        ? "Enviando..."
-
-                        : "Solicitar Evaluación Gratuita"
-
-                    }
-
-
+                <button type="submit">
+                    <FaWhatsapp />
+                    Solicitar Evaluación Gratuita
                 </button>
 
-
-
-
-
-
-
                 <small className="secure">
-
-
                     <FaLock />
-
-
-                    Información encriptada
-
-
+                    Tus datos se preparan para enviarse por WhatsApp.
                 </small>
-
-
-
-
-
             </form>
-
-
-
         </section>
-
-
     );
-
-
 }
 
-
-
 export default FormularioCaso;
-
-
-
