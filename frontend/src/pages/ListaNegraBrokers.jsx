@@ -327,15 +327,8 @@ function ListaNegraBrokers() {
                 </form>
             </section>
 
-            <a
-                href="https://wa.me/525559032021"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="whatsapp-float"
-                aria-label="Contactar a SSM por WhatsApp"
-            >
-                <FaWhatsapp />
-            </a>
+            
+
         </main>
     );
 }

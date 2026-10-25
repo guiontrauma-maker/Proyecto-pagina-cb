@@ -872,14 +872,8 @@ return (
             </a>
 
         </section>
-          <a
-    href="https://wa.me/5559032021"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="whatsapp-float"
->
-    <FaWhatsapp />
-</a>
+          
+
     </main>
 );
 
@@ -887,6 +881,7 @@ return (
 }
 
 export default Home;
+
 
 
 

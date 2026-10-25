@@ -557,16 +557,7 @@ function Servicios() {
                 </div>
             </section>
 
-            {/* WHATSAPP FLOTANTE */}
-            <a
-                href="https://wa.me/525559032021"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="whatsapp-float"
-                aria-label="Contactar por WhatsApp"
-            >
-                <FaWhatsapp />
-            </a>
+          
         </main>
     );
 }

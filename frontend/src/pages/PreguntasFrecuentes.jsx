@@ -221,21 +221,7 @@ function PreguntasFrecuentes(){
             </section>
 
 
-            <a
-
-                className="whatsapp-float"
-
-                href="https://wa.me/5559032021"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-            >
-
-                <FaWhatsapp />
-
-            </a>
+            
 
         </main>
 
