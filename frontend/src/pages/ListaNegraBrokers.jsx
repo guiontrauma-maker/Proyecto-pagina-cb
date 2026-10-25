@@ -72,7 +72,7 @@ function ListaNegraBrokers() {
         ].join("\n");
 
         const enlaceWhatsApp =
-            `https://wa.me/525559032021?text=${encodeURIComponent(
+            `https://wa.me/525520870671?text=${encodeURIComponent(
                 mensajeWhatsApp
             )}`;
 
@@ -263,7 +263,7 @@ function ListaNegraBrokers() {
 
                     <div className="linea-directa">
                         <p>Línea directa</p>
-                        <h3>5559032021</h3>
+                        <h3>5520870671</h3>
                         <span>recuperacionasistente@gmail.com</span>
                     </div>
                 </div>

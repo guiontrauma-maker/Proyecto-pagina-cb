@@ -65,7 +65,7 @@ function Servicios() {
             }`
         ].join("\n");
 
-        const enlaceWhatsApp = `https://wa.me/525559032021?text=${encodeURIComponent(
+        const enlaceWhatsApp = `https://wa.me/525520870671?text=${encodeURIComponent(
             mensajeWhatsApp
         )}`;
 

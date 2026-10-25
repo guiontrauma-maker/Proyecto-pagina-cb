@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "5559032021";
+const WHATSAPP_NUMBER = "5520870671";
 
 const WHATSAPP_MESSAGE = `Hola, quiero un analisis gratuito de mi caso`;
 

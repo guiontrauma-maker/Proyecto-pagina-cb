@@ -41,7 +41,7 @@ function FormularioCaso({ origin = "Formulario general" }) {
         ].join("\n");
 
         const whatsappUrl =
-            `https://wa.me/525559032021?text=${encodeURIComponent(
+            `https://wa.me/525520870671?text=${encodeURIComponent(
                 whatsappMessage
             )}`;
 

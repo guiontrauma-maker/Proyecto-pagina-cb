@@ -55,7 +55,7 @@ function Nosotros() {
         ].join("\n");
 
         const enlaceWhatsApp =
-            `https://wa.me/525559032021?text=${encodeURIComponent(
+            `https://wa.me/525520870671?text=${encodeURIComponent(
                 mensajeWhatsApp
             )}`;
 
@@ -277,7 +277,7 @@ function Nosotros() {
 
                         <div className="contact-box">
                             <small>Línea directa</small>
-                            <h3>5559032021</h3>
+                            <h3>5520870671</h3>
                             <p>recuperacionasistente@gmail.com</p>
                         </div>
                     </div>
@@ -381,7 +381,7 @@ function Nosotros() {
             </section>
 
             <a
-                href="https://wa.me/525559032021"
+                href="https://wa.me/525520870671"
                 className="whatsapp-button"
                 target="_blank"
                 rel="noopener noreferrer"
