@@ -263,10 +263,6 @@ return (
             ¿FUISTE VÍCTIMA DE UNA ESTAFA?
         </h1>
 
-        <h2 className="hero-subtitle">
-            RECUPERE SUS PÉRDIDAS
-        </h2>
-
         <p>
             Actúa ahora antes de que sea tarde.
             Expertos en rastreo de activos digitales,
@@ -278,42 +274,6 @@ return (
         <h3 className="hero-free">
             ¡CONSULTA GRATUITA HOY MISMO!
         </h3>
-
-        <div className="hero-info">
-
-            <div className="rating-card">
-
-                <div className="stars">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                </div>
-
-                <h4>4.9</h4>
-
-                <p>
-                    Basado en +500 reseñas
-                </p>
-
-            </div>
-
-            <div className="money-card">
-
-                <FaMoneyBillWave className="money-icon" />
-
-                <div>
-                    <h4>$50 M</h4>
-
-                    <p>
-                        Recuperados para víctimas
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 <div 

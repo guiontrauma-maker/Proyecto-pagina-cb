@@ -54,7 +54,7 @@ function FormularioCaso({ origin = "Formulario general" }) {
                 className="caso-form"
                 onSubmit={handleSubmit}
             >
-                <h2>RECUPERE SUS PÉRDIDAS</h2>
+                <h2>CUÉNTANOS QUÉ PASÓ</h2>
 
                 <p>
                     Solicite una revisión de caso sin costo hoy mismo.
